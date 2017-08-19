@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MenumealX</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">
+        <h1>
+          <a href="/">
+            menumeal
+          </a>
+        </h1>
+      </div><!-- .header__logo -->
+      <div class="header__menu">
+        <ul>
+          <% if user_signed_in? %>
+            <li><strong><%= link_to current_user.name, top_show_path %></strong></li>
+            <li><%= link_to '店舗一覧', shops_path %></li>
+            <li><%= link_to '店舗を登録', new_shop_path %></li>
+            <li><%= link_to 'メニューを登録', new_menu_path %></li>
+            <li><%= link_to "(仮)TL", reviews_path %></li>
+            <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><a href="/top/about">menumealの使い方</a><%=  %></li>
+            <li><%= link_to '店舗一覧', shops_path %></li>
+            <li><%= link_to '無料会員登録', new_user_registration_path %></li>
+            <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <% end %>
+        </ul>
+      </div><!-- .header__menu -->
+    </div>
+  </header>
+
+  <main class="main">
+    <div class="main__container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div><!-- .main__container -->
+  </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__menu">
+      </div><!-- .footer__menu -->
+      <p class="footer__copyright">© 2017 Menumeal</p>
+    </div><!-- .footer__container -->
+  </footer>
+  </body>
+</html>

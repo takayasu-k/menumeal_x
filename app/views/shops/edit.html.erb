@@ -1,0 +1,18 @@
+<%= form_for(@shop, url: shop_path(@shop) ) do |f| %>
+  <%= f.label :name, '店舗名' %><br/>
+  <%= f.text_field :name, size: 25 %><br/>
+
+  <%= f.label :kana, 'よみがな(店舗名)' %><br/>
+  <%= f.text_field :kana, size: 25 %><br/>
+
+  <%= f.label :address,'住所' %><br/>
+  <%= f.text_field :address, size: 25 %><br/>
+
+  <%= f.label :tel, '電話番号' %><br/>
+  <%= f.text_field :tel, size: 12 %><br/>
+
+  <%= f.label :image, '店舗画像' %><br/>
+  <%= f.file_field :image %><br/>
+
+  <%= f.submit '編集を登録' %>
+<% end %>

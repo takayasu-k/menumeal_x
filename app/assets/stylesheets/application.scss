@@ -1,0 +1,480 @@
+@import 'reset.css';
+@import 'font-awesome';
+// @import "bootstrap";
+
+
+/**
+ * html5doctor.com Reset Stylesheet v1.6.1 (http://html5doctor.com/html-5-reset-stylesheet/)
+ * Richard Clark (http://richclarkdesign.com)
+ * http://cssreset.com
+ */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+body {
+    line-height:1;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+nav, ul {
+    list-style:none;
+}
+blockquote, q {
+    quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+del {
+    text-decoration: line-through;
+}
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+input, select {
+    vertical-align:middle;
+}
+/*========↑ここまでreset.css ===============*/
+
+/* 共通部分 */
+html {
+  font-size: 62.5%;
+}
+body {
+  position: relative;
+  color: #333;
+  font-size: 1.2rem;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  background-color: #fff;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+a:link, a:visited, a:hover, a:active {
+  color: black;
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+* {
+  font-family: Arial;
+}
+
+/* 各要素 */
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/*---------- .header ----------*/
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 55px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  // opacity: 1;
+  z-index: 10;
+}
+.header__container {
+  display: table;
+  width: 970px;
+  height: 55px;
+  margin: 0 auto;
+  // background-color: pink;
+}
+.header__logo {
+  display: table-cell;
+  vertical-align: middle;
+  width: 150px;
+  height: 40px;
+  // padding-left: 10px;
+  // margin-left: 10px;
+}
+.header__logo h1 a{
+  // background-color: pink;
+  display: inline-block;
+  width: 150px;
+  height: 40px;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  vertical-align: middle;
+  background: url(menumeal_logo_7.png) no-repeat 0 0;
+}
+.header__menu {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+.header__menu li {
+  display: inline-block;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+.header__menu li::after {
+  content: '|';
+  display: inline-block;
+  padding: 0 5px;
+}
+.header__menu li:last-of-type::after {
+  content: none;
+}
+.header__menu a {
+  color: #ff8000;
+}
+.header__menu a:hover {
+  border-bottom: 1px solid #ff8000;
+}
+
+
+/* ------- .container ------- */
+main {
+  // background-color: #eaeaea;
+  background-color: #fff;
+}
+
+.main__container {
+  width: 990px;
+  margin: 0 auto;
+  padding-top: 55px; /* header分の余白確保 */
+  // padding-bottom: 0px;
+  // background-color: grey;
+}
+/* ------------ .footer --------- */
+.footer {
+  width: 100%;
+  max-height: 80px;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+  text-align: center;
+}
+.footer__container {
+  width: 970px;
+  height: 80px;
+  margin: 0 auto;
+}
+.footer__menu {
+  height: 60px;
+}
+.footer__copyright {
+  color: grey;
+
+}
+ /*======================================================================*/
+ /*======================================================================*/
+
+
+
+/*=================以下==============================*/
+.review-container {
+  /*margin: 0 auto;*/
+  // margin-bottom: 20px;
+  width: 300px;
+  /*background-color: pink;*/
+  /*float: left;*/
+  background-color: white;
+  margin: 0 auto 5px;
+}
+/*===============================*/
+.rev-top {
+  height: 40px;
+  /*background-color: lightgrey;*/
+  padding: 5px;
+}
+.rev-top-left {
+  float: left;
+  padding: 5px;
+}
+.user-icon-a {
+  display: inline-block;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.user-icon {
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.user-name {
+  vertical-align: 80%;
+  font-size: 1.4rem;
+  /*background-color: red;*/
+}
+
+/*==============レビュー画像部分=====================*/
+.image-container {
+  position: relative;
+  width: 300px;
+  background-color: lightgreen;
+}
+.rev-img {
+  width: 100%;
+}
+
+.image-container a {
+  color: white;
+  display: inline-block;
+  bottom: 5px;
+  left: 5px;
+  padding: 5px 15px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  background-color: rgba(50,50,50,0.5);
+  color: #eeeeee;
+  position: absolute;
+  /*border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;*/
+  border-radius: 15px;
+}
+
+.icons-container {
+  margin:0 5px;
+  height: 30px;
+  /*background-color: pink;*/
+  font-size: 1.8rem;
+}
+.icons-container a {
+  display: inline-block;
+  float: left;
+  margin: 5px;
+  font-size: 2rem;
+}
+.heart-icon {
+  /*color: grey;*/
+  /*background-color: blue;*/
+}
+.comment-icon {
+  /*background-color: red;*/
+  /*color: grey;*/
+}
+
+
+/*==================レビューボトム===================================*/
+.rev-bottom {
+  /*background-color: lightblue;*/
+  min-height: 30px;
+  margin: 0 10px;
+  padding-bottom: 5px;
+}
+.rev-bottom a {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.rev-bottom span {
+  font-size: 1.1rem;
+}
+
+.rev-bottom li {
+  margin-bottom: 5px;
+}
+
+
+/*=================外部サイトから=====================*/
+.item__header {
+  padding: 10px;
+}
+
+.item__user-icon {
+  float: left;
+  width: 30px;
+  height: 30px;
+}
+// .item__user-icon a {
+//   z-index: 10;
+// }
+
+.item__user-name, .item__date {
+  display: block;
+  margin-left: 40px;
+  margin-bottom: 3px;
+}
+.item__date {
+  font-size: 1rem;
+}
+
+
+
+.shop_container {
+  padding: 10px;
+  border-bottom: 1px solid #eaeaea;
+  background-color: white;
+  // margin-bottom: 1px;
+}
+
+.shop_container a {
+  font-weight: bold;
+}
+
+  /*=========.shop_top  shop#show==================== */
+.shop_top {
+  background-color: #fff;
+  padding: 10px;
+}
+
+.shop_name {
+  font-size: 2.5rem;
+  border-bottom: 1px dotted lightgrey;
+  // border-left: 5px solid #ff8000;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  // letter-spacing: 1px;
+  // background-color: pink;
+}
+
+.shop_top h2 {
+  margin-bottom: 5px;
+  letter-spacing: 1px;
+}
+
+.shop_top span {
+  display: inline-block;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+.shop_menu_link {
+  padding: 5px;
+  border: 1px solid grey;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.shop_kana {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-left: 2rem;
+  vertical-align: baseline;;
+}
+
+/*=========.shop_menu_container ==================== */
+// .shop_menus_container {
+//   background-color: #fff;
+// }
+// .shop_menus_container li {
+//   background-color: #fff;
+//   margin-bottom: 1px;
+//   height: 40px;
+// }
+// .shop_menus_container li a {
+// }
+.menu_pict {
+  margin: 5px 5px 5px;
+}
+.menu_name {
+  display: inline-block;
+  padding: 5px;
+  font-size: 2rem;
+  height: 30px;
+  // background-color: pink;
+  vertical-align: 70%;
+  // background-color: red;
+}
+
+.shop_menu_container {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  // background-color: #fff;
+  // margin-bottom: 1px;
+  border-bottom: 1px solid #eaeaea;
+  height: 40px;
+}
+.menu_price {
+  display: inline-block;
+  padding: 10px 5px 5px;
+  font-size: 2rem;
+  height: 30px;
+  // background-color: pink;
+  vertical-align: 70%;
+  float: right;
+  // background-color: red;
+}
+
+.menu_price, .menu_name {
+  opacity: 0.7;
+}
+
+.shop_menu_header {
+  width: 50%;
+  margin: 0 auto;
+  background-color: #fff;
+  margin-bottom: 3px;
+  height: 40px;
+  padding: 5px;
+  border-bottom: 1px solid #eaeaea;
+}
+.shop_menu_header a {
+  padding: 5px;
+  font-size: 2rem;
+  // background-color: pink;
+  // margin-left: 5px;
+  // margin-top: px;
+  opacity: 0.7;
+}
+.shop_menu_header span {
+  padding: 5px;
+  font-size: 2rem;
+  opacity: 0.7;
+}
+/*============================= */

@@ -1,0 +1,17 @@
+<%= form_for(@menu, url: menus_path) do |f| %>
+
+  <%= f.label :shop_id, '店舗' %><br/>
+  <%= f.collection_select :shop_id, @shops, :id, :name %><br/>
+
+  <%= f.label :name, 'メニュー名' %><br/>
+  <%= f.text_field :name, size: 30 %><br/>
+
+  <%= f.label :price, '値段(税込)' %><br/>
+  <%= f.number_field :price %><br/>
+
+  <%= f.label :menu_type, 'メニューの種類' %><br/>
+  <%= f.select :menu_type, ['food', 'drink', 'others'],
+          { include_blank: '選択してください' } %><br/>
+
+  <%= f.submit 'メニューを新規登録' %>
+<% end %>
