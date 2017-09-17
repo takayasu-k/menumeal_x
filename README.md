@@ -195,6 +195,3 @@ Admin_users
 | password  | string |      NOT_NULL       |
 |   name    | string |      NOT_NULL       |
 | authority |  int   | NOT_NULL, default:0 |
-
-
-あいう
