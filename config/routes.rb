@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   get 'shops/:id/menu' => 'shops#shop_menu', as: 'shop_menu'
   resources :menus
   resources :reviews
+  resources :shop_details
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  shop_id: 1
+  access: MyString
+  parking: MyString
+  operating_hours: MyString
+  budget: MyString
+  payment: MyString
+  seats: 1
+  private_room: MyString
+  smoking: MyString
+  bar: MyString
