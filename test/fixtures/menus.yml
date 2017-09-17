@@ -6,10 +6,10 @@ one:
   price: 1
   status: 1
   menu_type: 1
-
-two:
-  shop_id: 1
-  name: MyString
-  price: 1
-  status: 1
-  menu_type: 1
+# 
+# two:
+#   shop_id: 1
+#   name: MyString
+#   price: 1
+#   status: 1
+#   menu_type: 1
