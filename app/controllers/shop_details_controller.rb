@@ -1,11 +1,18 @@
 class ShopDetailsController < ApplicationController
-	def show
-	end
 	
 	def new
+		@shop_detail = ShopDetail.new()
 	end
 	
 	def create
+		@shop_detail = ShopDetail.new(
+#		shop_id = params[:shop][:id],
+		
+		)
+	end
+	
+	def show
+		#@shop_detail = Shop_detail.find_by(shop_id: p
 	end
 	
 	def edit
