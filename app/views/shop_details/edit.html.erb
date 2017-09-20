@@ -1,0 +1,34 @@
+<h1><%= @shop.name %></h1>
+<%= form_for(@shop_detail, url: shop_detail_path(@shop)) do |f| %>
+  <%= f.label :access, 'アクセス情報' %><br/>
+  <%= f.text_field :access, size: 50 %><br/>
+
+  <%= f.label :parking, '駐車場' %><br/>
+  <%= f.text_field :parking, size: 50 %><br/>
+
+  <%= f.label :operating_hours,'営業時間' %><br/>
+  <%= f.text_field :operating_hours, size: 50 %><br/>
+
+  <%= f.label :holiday, '定休日' %><br/>
+  <%= f.text_field :holiday, size: 50 %><br/>
+
+  <%= f.label :budget, '予算' %><br/>
+  <%= f.text_field :budget, size: 50 %><br/>
+
+  <%= f.label :payment, '支払い方法' %><br/>
+  <%= f.text_field :payment, size: 50 %><br/>
+
+  <%= f.label :seats, '席数' %><br/>
+  <%= f.number_field :seats, size: 50 %><br/>
+
+  <%= f.label :private_room, '個室の有無' %><br/>
+  <%= f.text_field :private_room, size: 50 %><br/>
+
+  <%= f.label :smoking, '喫煙情報' %><br/>
+  <%= f.text_field :smoking, size: 50 %><br/>
+
+  <%= f.label :bar, 'カウンター席' %><br/>
+  <%= f.text_field :bar, size: 50 %><br/>
+
+  <%= f.submit '編集を登録' %>
+<% end %>

@@ -1,4 +1,8 @@
+<h1><%= @shop.name %></h1>
 <%= form_for(@shop_detail, url: shop_details_path) do |f| %>
+  <%= f.label :shop_id, '店舗' %><br/>
+  <%= f.collection_select :shop_id, @shops, :id, :name %><br/>
+
   <%= f.label :access, 'アクセス情報' %><br/>
   <%= f.text_field :access, size: 50 %><br/>
 
