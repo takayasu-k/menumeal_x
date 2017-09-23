@@ -46,6 +46,4 @@ class ShopDetailsController < ApplicationController
     redirect_to "/shops/#{@shop_detail.shop_id}"
 	end
 
-	def destroy
-	end
 end
