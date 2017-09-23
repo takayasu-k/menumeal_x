@@ -17,6 +17,10 @@ class ShopsController < ApplicationController
     prof_picture: "default.jpg"
     )
     @shop.save
+    @shop_detail = ShopDetail.new(
+    shop_id: @shop.id
+    )
+    @shop_detail.save
     redirect_to "/shops/#{@shop.id}"
   end
 
