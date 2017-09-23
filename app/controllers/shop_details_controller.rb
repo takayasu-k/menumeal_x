@@ -24,10 +24,6 @@ class ShopDetailsController < ApplicationController
     redirect_to shop_path(@shop_detail.shop_id)
 	end
 
-	def show
-		#@shop_detail = Shop_detail.find_by(shop_id: p
-	end
-
 	def edit
     @shop = Shop.find_by(id: params[:id])
     @shop_detail = ShopDetail.find_by(shop_id: params[:id])

@@ -22,6 +22,7 @@ class ShopsController < ApplicationController
 
   def show
     @shop = Shop.find_by(id: params[:id])
+    @shop_detail = ShopDetail.find_by(shop_id: params[:id])
   end
 
   def edit
