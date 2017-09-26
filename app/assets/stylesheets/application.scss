@@ -100,7 +100,7 @@ body {
   color: #333;
   font-size: 1.2rem;
   font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  background-color: #fff;
+  background-color: #fafafa;
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -190,7 +190,7 @@ a {
 /* ------- .container ------- */
 main {
   // background-color: #eaeaea;
-  background-color: #fff;
+  background-color: #fafafa;
 }
 
 .main__container {
@@ -205,7 +205,7 @@ main {
   width: 100%;
   max-height: 80px;
   border-top: 1px solid #ddd;
-  background-color: #fff;
+  background-color: #fafafa;
   text-align: center;
 }
 .footer__container {
@@ -360,8 +360,12 @@ main {
 .shop_container {
   padding: 10px;
   border-bottom: 1px solid #eaeaea;
-  background-color: white;
+  display: block;
+  background-color: #fafafa;
   // margin-bottom: 1px;
+}
+.shop_container:hover {
+  background-color: #fff;
 }
 
 .shop_container a {
