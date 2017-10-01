@@ -444,6 +444,9 @@ main {
   border-bottom: 1px solid #eaeaea;
   height: 40px;
 }
+.shop_menu_container:hover {
+  background-color: #fff;
+}
 .menu_price {
   display: inline-block;
   padding: 10px 5px 5px;
@@ -462,7 +465,6 @@ main {
 .shop_menu_header {
   width: 50%;
   margin: 0 auto;
-  background-color: #fff;
   margin-bottom: 3px;
   height: 40px;
   padding: 5px;
