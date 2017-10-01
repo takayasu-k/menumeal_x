@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get 'shop_detail/:id/new' => 'shop_details#new', as: 'shop_detail_new'
   resources :shop_details
   resources :user_profiles
+  resources :users, :only => [:show]
 end
