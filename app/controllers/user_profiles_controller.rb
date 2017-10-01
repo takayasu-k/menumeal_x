@@ -1,6 +1,8 @@
 class UserProfilesController < ApplicationController
 
     def show
+      @user = User.find_by(id: params[:id])
+      @user_profile = UserProfile.find_by(user_id: params[:id])
     end
 
     def edit
