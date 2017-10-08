@@ -42,6 +42,9 @@ gem 'devise-i18n'
 gem 'font-awesome-rails'
 gem 'hirb'         # モデルの出力結果を表形式で表示するGem
 gem 'hirb-unicode'
+gem 'carrierwave'
+gem 'mini_magick'
+# gem 'rmagick', require: 'RMagick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
