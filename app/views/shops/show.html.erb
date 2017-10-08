@@ -4,6 +4,7 @@
 
   <img src="<%= "/shop_prof_images/#{@shop.prof_picture}" %>" width="50%" height="50%"><br/>
   <%= link_to "メニュー (#{@shop.menus.size})", shop_menu_path(@shop), class: "shop_menu_link" %>
+  <%= link_to '＋', new_menu_path %>
 
   <h2>■住所</h2>
   <span><%= @shop.address %></span>

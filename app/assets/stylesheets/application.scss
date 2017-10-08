@@ -483,8 +483,8 @@ main {
   font-size: 2rem;
   opacity: 0.7;
 }
-/*============================= */
-/*=============↓user_profile関連================ */
+// /*============================= */
+// /*=============↓user_profile関連================ */
 
 
 
@@ -536,4 +536,5 @@ main {
 .user_profile_bottom {
   // background-color: pink;
   min-height: 500px;
+  border-top: 1px solid #ddd;
 }
