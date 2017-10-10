@@ -1,9 +1,8 @@
 <header class="user_profile_header">
   <div class="user_header_left">
   <% if @user.prof_picture? %>
-   <%= image_tag @user.prof_picture.url %>
+   <%= image_tag @user.prof_picture %>
   <% else %>
-   <img src="images/user-icon1.jpg" alt="">
    <%= image_tag '/user_picts/default.png' %>
   <% end %>
   <!--ユーザープロフ画像-->
