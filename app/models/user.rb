@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-  has_one :user_profile, dependent: :destroy  
+  has_one :user_profile, dependent: :destroy
+  has_many :reviews 
   after_create :init_user_profile
   mount_uploader :prof_picture, ImageUploader
 
