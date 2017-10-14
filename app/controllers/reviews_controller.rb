@@ -6,12 +6,17 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new()
+    @menus = Menu.all
   end
 
   def create
     @review = Review.new()
+    @review.user_id = current_user.id
+    @review.menu_id = params[:review][:menu_id]
+    @review.picture = params[:review][:picture]
+    @review.content = params[:review][:content]
     @review.save
-    redirect_to "/review"
+    redirect_to reviews_path
   end
 
   def show
