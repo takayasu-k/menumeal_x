@@ -100,7 +100,6 @@ body {
   color: #333;
   font-size: 1.2rem;
   font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  background-color: #fefefe;
 }
 *, *::before, *::after {
   box-sizing: border-box;
@@ -189,7 +188,6 @@ a {
 
 /* ------- .container ------- */
 main {
-  // background-color: #eaeaea;
   background-color: #fafafa;
 }
 
@@ -275,7 +273,6 @@ main {
 }
 
 .image-container a {
-  // color: white;
   display: inline-block;
   bottom: 5px;
   left: 5px;
@@ -537,4 +534,62 @@ main {
   // background-color: pink;
   min-height: 500px;
   border-top: 1px solid #ddd;
+}
+
+
+
+// /*============menu#show関連================= */
+.menu_detail_header {
+  text-align: center;
+  padding: 10px;
+  h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+  }
+}
+
+.menu_detail_image_container {
+  margin-bottom: 10px;
+  text-align: center;
+  .menu_show_picture {
+    max-width: 50%;
+  }
+}
+
+.menu_detail_review_container {
+  max-width: 50%;
+  min-height: 50px;
+  text-align: center;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  .review_left {
+    max-width: 50px;
+    float: left;
+    margin-right: 10px;
+    .item__user-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+
+
+  .review_right {
+    width: 435px;
+    display: inline-block;
+    text-align: left;
+
+    .user_name {
+      font-size: 1.2rem;
+      padding-top: 0;
+      margin-bottom: 5px;
+      color: lightgrey;
+      display: inline-block;
+    }
+    .review_content {
+      font-size: 1.5rem;
+      // letter-spacing: 1px;
+      line-height: 1.5rem;
+    }
+  }
 }

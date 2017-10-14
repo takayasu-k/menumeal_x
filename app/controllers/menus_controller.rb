@@ -3,6 +3,9 @@ class MenusController < ApplicationController
   end
 
   def show
+    @menu = Menu.find_by(id: params[:id])
+    @reviews = Review.where(menu_id: params[:id])
+    @review = @reviews.first
   end
 
   def new

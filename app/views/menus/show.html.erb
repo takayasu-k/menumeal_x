@@ -1,2 +1,28 @@
-<h1>Menus#show</h1>
-<p>Find me in app/views/menus/show.html.erb</p>
+<div class="menu_detail_container">
+  <div class="menu_detail_header">
+    <h1><%= link_to @menu.shop.name, shop_path(@menu.shop_id) %> >
+      <%= @menu.name %>
+    </h1>
+  </div><!--.menu_detail_header-->
+
+  <div class="menu_detail_image_container">
+    <%= image_tag @review.picture, class: "menu_show_picture" %>
+  </div>
+
+  <div class="menu_detail_reviews_container">
+    <% @reviews.each do |review| %>
+    <div class="menu_detail_review_container clearfix">
+      <div class="review_left">
+      <%= link_to image_tag(review.user.prof_picture, class: "item__user-icon"), user_path(review.user_id) %>
+      </div>
+      <div class="review_right clear">
+      <span class="user_name"><%= link_to review.user.name, user_path(review.user_id) %></span>
+      <div class="review_content">
+        <span><%= review.content %></span>
+      </div><!--.review_content -->
+    </div><!--.review_right-->
+    </div><!--.menu_detail_review_container-->
+    <!-- <div class="clearfix"></div> -->
+    <% end %>
+  </div><!--.menu_detail_reviews_container-->
+</div><!--.menu_detail_container-->
