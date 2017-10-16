@@ -17,6 +17,7 @@
       </div>
       <div class="review_right clear">
       <span class="user_name"><%= link_to review.user.name, user_path(review.user_id) %></span>
+      <span class="post_time"><%= review.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
       <div class="review_content">
         <span><%= review.content %></span>
       </div><!--.review_content -->
