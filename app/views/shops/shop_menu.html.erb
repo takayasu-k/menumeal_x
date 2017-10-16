@@ -16,7 +16,11 @@
     <% @shop_menus.each do |menu|%>
     <li>
       <%= link_to(menu_path(menu), class: "shop_menu_container") do %>
+        <% if menu.reviews.present? %>
+        <%= image_tag menu.reviews.last.picture, size: 30, class: "menu_pict" %>
+        <% else %>
         <%= image_tag "/user_picts/noimage.png", size: 30, class: "menu_pict" %>
+        <% end %>
           <span class="menu_name"><%= menu.name %></span>
           <span class="menu_price clearfix"><%= menu.price %>円</span>
       <% end %>
