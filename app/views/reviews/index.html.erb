@@ -9,8 +9,8 @@
   </div>
 
   <div class="image-container">
-    <%= image_tag review.picture, class: "rev-img" %>
-    <%= link_to review.menu.name, menu_path(review.menu_id) %>
+    <%= link_to image_tag(review.picture, class: "rev-img"), review_path(review) %>
+    <%= link_to review.menu.name, menu_path(review.menu_id), class: "review_menu_name" %>
   </div>
 
   <div class="icons-container">

@@ -234,6 +234,7 @@ main {
   margin: 0 auto;
 }
 /*===============================*/
+
 .rev-top {
   height: 40px;
   /*background-color: lightgrey;*/
@@ -272,19 +273,22 @@ main {
   width: 100%;
 }
 
-.image-container a {
+a.review_menu_name {
   display: inline-block;
+  color: #eeeeee;
   bottom: 5px;
   left: 5px;
   padding: 5px 15px;
   font-size: 1.1rem;
   letter-spacing: 1px;
-  background-color: rgba(50,50,50,0.5);
-  color: #eeeeee;
+  background-color: rgba(100,100,100,0.5);
   position: absolute;
   /*border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;*/
   border-radius: 15px;
+  &:hover {
+    background-color: rgba(200,200,200,0.5);
+  }
 }
 
 .icons-container {

@@ -1,1 +1,37 @@
-<h1>Review#show</h1>
+<div class="review-container">
+  <div class="item__header clearfix">
+      <%= link_to image_tag(@review.user.prof_picture, class: "item__user-icon-img user-icon"), user_path(@review.user_id), class: "item__user-icon" %>
+      <strong><%= link_to @review.user.name, user_path(@review.user_id), class: "item__user-name" %></strong>
+    <!-- <span class="item__date">
+      2014/08/29 19:00
+    </span> -->
+  </div>
+
+  <div class="image-container">
+    <%= image_tag @review.picture, class: "rev-img" %>
+    <%= link_to @review.menu.name, menu_path(@review.menu_id) %>
+  </div>
+
+  <div class="icons-container">
+    <a href="#">
+      <i class="fa fa-heart-o heart-icon"></i>
+    </a>
+    <a href="#">
+      <i class="fa fa-comment-o comment-icon"></i>
+    </a>
+  </div><!-- .icons-container -->
+
+  <div class="rev-bottom">
+    <ul>
+      <li><!--自分のコメント-->
+        <%= link_to @review.user.name, user_path(@review.user_id), class: "content-user-name" %>
+        <span><%= @review.content %></span>
+      </li>
+      <!-- ここ以下は他人からのコメント(if文で分岐)-->
+      <!-- <li>
+        <a href="#" class="content-user-name">shinnosuke_nohara</a>
+        <span>同じの食べてんねｗ</span>
+      </li> -->
+    </ul>
+  </div>
+</div><!-- review-container -->
