@@ -1,8 +1,11 @@
 <div class="menu_detail_container">
   <div class="menu_detail_header">
-    <h1><%= link_to @menu.shop.name, shop_path(@menu.shop_id) %> >
-      <%= @menu.name %>
-    </h1>
+    <%= link_to @menu.shop.name, shop_path(@menu.shop_id), class: "menu_shop_name" %>
+    <div class="menu_detail_header_menu">
+      <span class="menu_detail_menu_name"><%= @menu.name %></span>
+      <span class="menu_detail_menu_price"><%= @menu.price %>円</span>
+
+    </div>
   </div><!--.menu_detail_header-->
 
   <div class="menu_detail_image_container">
