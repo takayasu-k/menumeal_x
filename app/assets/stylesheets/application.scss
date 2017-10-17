@@ -573,27 +573,30 @@ a.review_menu_name {
   max-width: 50%;
   min-height: 50px;
   text-align: center;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   padding-bottom: 10px;
+  &:last-child {
+    margin-bottom: 0;
+  }
   .review_left {
     max-width: 50px;
     float: left;
-    margin-right: 10px;
+    margin-right: 5px;
     .item__user-icon {
-      width: 50px;
-      height: 50px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
     }
   }
 
 
   .review_right {
-    width: 435px;
+    width: 450px;
     display: inline-block;
     text-align: left;
 
     .user_name {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       padding-top: 0;
       margin-bottom: 5px;
       color: lightgrey;
@@ -602,7 +605,7 @@ a.review_menu_name {
     .review_content {
       font-size: 1.5rem;
       // letter-spacing: 1px;
-      line-height: 1.5rem;
+      line-height: 1.6rem;
     }
   }
 }
