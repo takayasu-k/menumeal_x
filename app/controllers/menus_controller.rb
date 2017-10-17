@@ -4,7 +4,7 @@ class MenusController < ApplicationController
 
   def show
     @menu = Menu.find_by(id: params[:id])
-    @reviews = Review.where(menu_id: params[:id])
+    @reviews = Review.where(menu_id: params[:id]).order(updated_at: :desc)
     @review = @reviews.first
   end
 
