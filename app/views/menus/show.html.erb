@@ -9,7 +9,11 @@
   </div><!--.menu_detail_header-->
 
   <div class="menu_detail_image_container">
+    <% if @review.present? %>
     <%= image_tag @review.picture, class: "menu_show_picture" %>
+    <% else %>
+    <%= image_tag "/user_picts/noimage.png", class: "menu_show_picture" %>
+    <% end %>
   </div>
 
   <div class="menu_detail_reviews_container">
