@@ -9,6 +9,12 @@ class User < ApplicationRecord
                                    dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+  has_many :eaten_menu, class_name: "EatenMenu",
+                               foreign_key: "user_id",
+                               dependent: :destroy
+  has_many :desired_menu, class_name: "DesiredMenu",
+                                 foreign_key: "user_id",
+                                 dependent: :destroy
   after_create :init_user_profile
   mount_uploader :prof_picture, ImageUploader
   

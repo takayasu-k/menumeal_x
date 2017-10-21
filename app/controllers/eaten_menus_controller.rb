@@ -1,0 +1,2 @@
+class EatenMenusController < ApplicationController
+end

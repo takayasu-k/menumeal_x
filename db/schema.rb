@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171014062218) do
+ActiveRecord::Schema.define(version: 20171021163339) do
+
+  create_table "desired_menus", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "menu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_desired_menus_on_menu_id"
+    t.index ["user_id", "menu_id"], name: "index_desired_menus_on_user_id_and_menu_id", unique: true
+    t.index ["user_id"], name: "index_desired_menus_on_user_id"
+  end
+
+  create_table "eaten_menus", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "menu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_eaten_menus_on_menu_id"
+    t.index ["user_id", "menu_id"], name: "index_eaten_menus_on_user_id_and_menu_id", unique: true
+    t.index ["user_id"], name: "index_eaten_menus_on_user_id"
+  end
 
   create_table "menus", force: :cascade do |t|
     t.integer  "shop_id"

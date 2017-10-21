@@ -1,0 +1,2 @@
+class DesiredMenusController < ApplicationController
+end
