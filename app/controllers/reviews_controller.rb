@@ -1,7 +1,8 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all.order(created_at: :desc)
+    following_user_ids = current_user.following.ids
+    @reviews = Review.where(user_id: following_user_ids).order(created_at: :desc)
   end
 
   def new
