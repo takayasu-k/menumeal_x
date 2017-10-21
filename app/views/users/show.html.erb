@@ -12,6 +12,9 @@
     <div class="user_header_right_top">
       <h2 class="user_name"><%= @user.name %></h2>
     </div>
+    <div class="user_header_right_middle">
+       <%= render 'follow_form' %>
+    </div>
     <div class="user_header_right_bottom">
       <span><%= @user_profile.profile %></span>
     </div>

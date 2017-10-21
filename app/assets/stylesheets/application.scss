@@ -519,8 +519,8 @@ a.review_menu_name {
 }
 
 .user_header_right_top {
-  // background-color: red;
-  height: 40%;
+  background-color: red;
+  // height: 40%;
 }
 .user_name {
   font-size: 2.5rem;
@@ -529,6 +529,7 @@ a.review_menu_name {
 }
 .user_header_right_bottom {
   padding-bottom: 25px;
+  background-color: pink;
 }
 .user_header_right_bottom span {
   font-size: 1.5rem;
