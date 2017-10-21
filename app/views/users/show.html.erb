@@ -36,6 +36,14 @@
     </div>
   </div>
 </header>
+
 <div class="user_profile_bottom">
   <!-- ここにユーザーの投稿した写真一覧が出る -->
+  <div class="user_profile_bottom_container">
+  <% if @user.reviews %>
+    <% @user.reviews.each do |review| %>
+      <%= link_to image_tag(review.picture, size: 300), review_path(review), class: "user_post_picture" %>
+    <% end %>
+  <% end %>
+  </div>
 </div>

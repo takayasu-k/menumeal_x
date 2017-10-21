@@ -493,6 +493,7 @@ a.review_menu_name {
 .user_profile_header {
   background-color: #fafafa;
   height: 200px;
+  margin-top: 20px;
 }
 
 .user_header_left {
@@ -529,8 +530,13 @@ a.review_menu_name {
     }
     #follow_form {
       display: inline-block;
-      form {
-        // background-color: pink;
+      .edit_relationship {
+        display: inline-block;
+        input.f-btn {
+          display: inline-block;
+          padding: 5px;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -539,7 +545,7 @@ a.review_menu_name {
     // background-color: grey;
     padding: 5px 0;
     span {
-      font-size: 2rem;
+      font-size: 1.6rem;
       // background-color: yellow;
       display: inline-block;
       margin-right: 50px;
@@ -561,9 +567,23 @@ a.review_menu_name {
 
 
 .user_profile_bottom {
-  // background-color: pink;
-  min-height: 500px;
-  border-top: 1px solid #ddd;
+  // border-top: 1px solid #ddd;
+  // background-color: green;
+  padding-top: 20px;
+  width: 990px;
+  .user_profile_bottom_container {
+    width: 980px;
+    // background-color: pink;
+    margin: 0 auto;
+    padding-left: 6px;
+    .user_post_picture {
+      margin-bottom: 30px;
+      &:nth-of-type(3n-1) {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
+  }
 }
 
 
