@@ -1,5 +1,5 @@
 <div class="follow_container">
-  <h1>フォロー中</h1>
+  <h1><%= @title %></h1>
   <% if @users.any? %>
   <ul>
     <% @users.each do |user| %>
@@ -12,12 +12,12 @@
       <% if current_user.following?(user) %>
         <%= form_for(current_user.active_relationships.find_by(followed_id: user.id),
                      html: { method: :delete }) do |f| %>
-          <%= f.submit "フォロー中", class: "btn" %>
+          <%= f.submit "フォロー中", class: "f_btn" %>
         <% end %>
       <% else %>
         <%= form_for(current_user.active_relationships.build) do |f| %>
           <div><%= hidden_field_tag :followed_id, user.id %></div>
-          <%= f.submit "フォローする", class: "btn" %>
+          <%= f.submit "フォローする", class: "f_btn" %>
         <% end %>
       <% end %>
       </div>
