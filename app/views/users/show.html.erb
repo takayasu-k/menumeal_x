@@ -11,9 +11,25 @@
   <div class="user_header_right">
     <div class="user_header_right_top">
       <h2 class="user_name"><%= @user.name %></h2>
+      <%= render 'follow_form' %>
     </div>
     <div class="user_header_right_middle">
-       <%= render 'follow_form' %>
+      <% if @user.reviews %>
+        <span>投稿件数<%= @user.reviews.count %>件</span>
+      <% else %>
+        <span>投稿件数0件</span>
+      <% end %>
+
+      <% if @user.followers %>
+        <span><%= link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %></span>
+      <% else %>
+        <span>フォロワー0人</span>
+      <% end  %>
+      <% if @user.following %>
+      <span><%= link_to "フォロー中#{@user.following.count}人", following_user_path(@user) %></span>
+      <% else %>
+      <span>フォロー中0人</span>
+      <% end %>
     </div>
     <div class="user_header_right_bottom">
       <span><%= @user_profile.profile %></span>
