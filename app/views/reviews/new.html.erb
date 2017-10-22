@@ -3,12 +3,11 @@
   <%= f.label :menu_id, 'メニュー' %><br/>
   <%= f.collection_select :menu_id, @menus, :id, :name %><br/>
 
-  <%= f.label :picture, '写真' %><br/>
+  <%= f.label :picture, '　画像追加', {class: "input_file fa fa-camera"} %><br/>
   <%= f.file_field :picture %><br/>
 
   <%= f.label :content, 'キモチ' %><br/>
   <%= f.text_area :content, cols: 40, rows: 10 %><br/>
-  
+
   <%= f.submit '口コミを投稿' %>
 <% end %>
-  
