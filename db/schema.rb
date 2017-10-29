@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171021163339) do
+ActiveRecord::Schema.define(version: 20171029073028) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "review_id"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_comments_on_review_id"
+    t.index ["user_id", "review_id"], name: "index_comments_on_user_id_and_review_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
 
   create_table "desired_menus", force: :cascade do |t|
     t.integer  "user_id"
@@ -30,6 +41,16 @@ ActiveRecord::Schema.define(version: 20171021163339) do
     t.index ["menu_id"], name: "index_eaten_menus_on_menu_id"
     t.index ["user_id", "menu_id"], name: "index_eaten_menus_on_user_id_and_menu_id", unique: true
     t.index ["user_id"], name: "index_eaten_menus_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_likes_on_review_id"
+    t.index ["user_id", "review_id"], name: "index_likes_on_user_id_and_review_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "menus", force: :cascade do |t|
