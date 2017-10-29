@@ -9,10 +9,10 @@ class User < ApplicationRecord
                                    dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
-  has_many :eaten_menu, class_name: "EatenMenu",
+  has_many :eaten_menus, class_name: "EatenMenu",
                                foreign_key: "user_id",
                                dependent: :destroy
-  has_many :desired_menu, class_name: "DesiredMenu",
+  has_many :desired_menus, class_name: "DesiredMenu",
                                  foreign_key: "user_id",
                                  dependent: :destroy
   after_create :init_user_profile
@@ -40,33 +40,33 @@ class User < ApplicationRecord
 
   # 食べたメニューに登録する
   def register_eaten_menu(menu)
-    eaten_menu.create(menu_id: menu.id)
+    eaten_menus.create(menu_id: menu.id)
   end
 
   # 食べたメニューの登録を解除する
   def remove_eaten_menu(menu)
-    eaten_menu.find_by(user_id: self.id, menu_id: menu.id).destroy
+    eaten_menus.find_by(user_id: self.id, menu_id: menu.id).destroy
   end
 
   # 現在のメニューが食べたメニューに登録されていたらtrueを返す
   def registering_eaten_menu?(menu)
-    eaten_menu.include?(menu)
+    eaten_menus.include?(menu)
   end
 
-# 食べたいメニューに登録する
-def register_desired_menu(menu)
-  desired_menu.create(menu_id: menu.id)
-end
+  # 食べたいメニューに登録する
+  def register_desired_menu(menu)
+    desired_menus.create(menu_id: menu.id)
+  end
 
-# 食べたいメニューの登録を解除する
-def remove_desired_menu(menu)
-  desired_menu.find_by(user_id: self.id, menu_id: menu.id).destroy
-end
+  # 食べたいメニューの登録を解除する
+  def remove_desired_menu(menu)
+    desired_menus.find_by(user_id: self.id, menu_id: menu.id).destroy
+  end
 
-# 現在のメニューが食べたいメニューに登録されていたらtrueを返す
-def registering_desired_menu?(menu)
-  desired_menu.include?(menu)
-end
+  # 現在のメニューが食べたいメニューに登録されていたらtrueを返す
+  def registering_desired_menu?(menu)
+    desired_menus.include?(menu)
+  end
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

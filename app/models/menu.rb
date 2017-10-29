@@ -3,10 +3,10 @@ class Menu < ApplicationRecord
   enum menu_type: { food:0, drink:1, others:2 }
   belongs_to :shop
   has_many :reviews
-  has_many :eaten_menu, class_name: "EatenMenu",
+  has_many :eaten_menus, class_name: "EatenMenu",
                         foreign_key: "menu_id",
                         dependent: :destroy
-  has_many :desired_menu, class_name: "DesiredMenu",
+  has_many :desired_menus, class_name: "DesiredMenu",
                           foreign_key: "menu_id",
                           dependent: :destroy
 
