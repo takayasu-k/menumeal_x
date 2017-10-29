@@ -38,6 +38,36 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+  # 食べたメニューに登録する
+  def register_eaten_menu(menu)
+    eaten_menu.create(menu_id: menu.id)
+  end
+
+  # 食べたメニューの登録を解除する
+  def remove_eaten_menu(menu)
+    eaten_menu.find_by(user_id: self.id, menu_id: menu.id).destroy
+  end
+
+  # 現在のメニューが食べたメニューに登録されていたらtrueを返す
+  def registering_eaten_menu?(menu)
+    eaten_menu.include?(menu)
+  end
+
+# 食べたいメニューに登録する
+def register_desired_menu(menu)
+  desired_menu.create(menu_id: menu.id)
+end
+
+# 食べたいメニューの登録を解除する
+def remove_desired_menu(menu)
+  desired_menu.find_by(user_id: self.id, menu_id: menu.id).destroy
+end
+
+# 現在のメニューが食べたいメニューに登録されていたらtrueを返す
+def registering_desired_menu?(menu)
+  desired_menu.include?(menu)
+end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
