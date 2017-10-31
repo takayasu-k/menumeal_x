@@ -7,9 +7,9 @@ class DesiredMenusController < ApplicationController
   end
 
   def destroy
-    menu = DesiredMenu.find_by(menu_id: params[:menu_id])
-    current_user.remove_desired_menu(menu)
-    redirect_to menu
+    desired_menu = current_user.desired_menus.find_by(menu_id: params[:id])
+    desired_menu.destroy
+    redirect_to menu_path(params[:id])
   end
 
 end
