@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_one :user_profile, dependent: :destroy
-  has_many :reviews 
+  has_many :reviews
   has_many :active_relationships, class_name: "Relationship",
                                   foreign_key: "follower_id",
                                   dependent: :destroy
@@ -18,7 +18,7 @@ class User < ApplicationRecord
                                  dependent: :destroy
   after_create :init_user_profile
   mount_uploader :prof_picture, ImageUploader
-  
+
   # 空のユーザープロフィールを作成する
   def init_user_profile
     self.create_user_profile!
@@ -46,7 +46,7 @@ class User < ApplicationRecord
 
   # 食べたメニューの登録を解除する
   def remove_eaten_menu(menu)
-    eaten_menus.find_by(user_id: self.id, menu_id: menu.id).destroy
+    eaten_menus.find_by(user_id: self.id, menu_id: menu).destroy
   end
 
   # 現在のメニューが食べたメニューに登録されていたらtrueを返す

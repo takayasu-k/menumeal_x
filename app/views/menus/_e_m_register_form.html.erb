@@ -1,0 +1,7 @@
+  <div id="follow_form">
+  <% if current_user.eaten_menus.find_by(menu_id: params[:id]) %>
+    <%= render 'e_m_unregister' %>
+  <% else %>
+    <%= render 'e_m_register' %>
+  <% end %>
+  </div>

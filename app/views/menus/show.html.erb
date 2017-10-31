@@ -4,8 +4,12 @@
     <div class="menu_detail_header_menu">
       <span class="menu_detail_menu_name"><%= @menu.name %></span>
       <span class="menu_detail_menu_price"><%= @menu.price %>円</span>
-
     </div>
+    <%= render 'e_m_register_form'%>
+    <%= form_tag(desired_menus_path) do |f| %>
+      <div><%= hidden_field_tag :menu_id, @menu.id %></div>
+      <%= submit_tag "食べたい", class: "f-btn" %>
+    <% end %>
   </div><!--.menu_detail_header-->
 
   <div class="menu_detail_image_container">
