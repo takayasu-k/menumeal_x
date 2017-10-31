@@ -742,3 +742,15 @@ a.review_menu_name {
     }
   }
 }
+
+// /*============eaten_menu, desired_menu関連================= */
+
+.register_form {
+  display: inline-block;
+  // margin: 10px 0 -10px;
+}
+#e_m_register_btn, #d_m_register_btn {
+  padding: 0 10px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}

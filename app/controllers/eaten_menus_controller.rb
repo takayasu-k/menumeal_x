@@ -4,7 +4,7 @@ class EatenMenusController < ApplicationController
    menu = Menu.find(params[:menu_id])
    current_user.register_eaten_menu(menu)
    redirect_to menu
- end
+  end
 
   def destroy
     eaten_menu = current_user.eaten_menus.find_by(menu_id: params[:id])
