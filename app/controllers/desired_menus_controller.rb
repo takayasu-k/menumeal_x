@@ -1,14 +1,12 @@
 class DesiredMenusController < ApplicationController
 
   def create
-    menu = Menu.find(params[:menu_id])
-    current_user.register_desired_menu(menu)
-    redirect_to menu
+    @desired_menu = current_user.desired_menus.create(menu_id: params[:id])
+    redirect_to menu_path(params[:menu_id])
   end
 
   def destroy
-    desired_menu = current_user.desired_menus.find_by(menu_id: params[:id])
-    desired_menu.destroy
+    current_user.desired_menus.find_by(menu_id: params[:id]).destroy
     redirect_to menu_path(params[:id])
   end
 

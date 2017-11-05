@@ -16,11 +16,13 @@ Rails.application.routes.draw do
   resources :user_profiles
   resources :users do
     member do
-     get :following, :followers, :eaten_menus, :desired_menus
+     get :following, :followers, :eaten_menus, :desired_menus, :likes
     end
   end
   resources :relationships, only: [:create, :destroy]
   resources :eaten_menus, only: [:create, :destroy]
   resources :desired_menus, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
+  resources :comments, only: [:create, :destroy]
 
 end

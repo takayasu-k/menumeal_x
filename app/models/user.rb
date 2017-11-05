@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :desired_menus, class_name: "DesiredMenu",
                                  foreign_key: "user_id",
                                  dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :comments, dependent: :destroy
   after_create :init_user_profile
   mount_uploader :prof_picture, ImageUploader
 
@@ -34,41 +36,26 @@ class User < ApplicationRecord
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
 
-  # 現在のユーザーがフォローしてたらtrueを返す
+  # 現在のユーザーがフォローしていたらtrueを返す
   def following?(other_user)
     following.include?(other_user)
   end
 
-  # 食べたメニューに登録する
-  def register_eaten_menu(menu)
-    eaten_menus.create(menu_id: menu.id)
-  end
-
-  # 食べたメニューの登録を解除する
-  def remove_eaten_menu(menu)
-    eaten_menus.find_by(user_id: self.id, menu_id: menu).destroy
-  end
-
-  # 現在のメニューが食べたメニューに登録されていたらtrueを返す
+  # 現在のユーザーが食べたメニューに登録していたらtrueを返す
   def registering_eaten_menu?(menu)
     eaten_menus.include?(menu)
   end
 
-  # 食べたいメニューに登録する
-  def register_desired_menu(menu)
-    desired_menus.create(menu_id: menu.id)
-  end
-
-  # 食べたいメニューの登録を解除する
-  def remove_desired_menu(menu)
-    desired_menus.find_by(user_id: self.id, menu_id: menu.id).destroy
-  end
-
-  # 現在のメニューが食べたいメニューに登録されていたらtrueを返す
+  # 現在のユーザーが食べたいメニューに登録していたらtrueを返す
   def registering_desired_menu?(menu)
     desired_menus.include?(menu)
   end
 
+  # 現在のユーザーがいいねしていたらtrueを返す
+  def like?(review)
+    likes.include?(review)
+  end
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
