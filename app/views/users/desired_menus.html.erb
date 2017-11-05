@@ -45,9 +45,9 @@
   </div>
   <!-- ここにユーザーの投稿した写真一覧が出る -->
   <div class="user_profile_bottom_container">
-  <% if @user.eaten_menus %>
-    <% @user.eaten_menus.each do |eaten_menu| %>
-      <%= link_to image_tag(eaten_menu.menu.reviews.last.picture, size: 300), menu_path(eaten_menu.menu), class: "user_post_picture" %>
+  <% if @user.desired_menus %>
+    <% @user.desired_menus.each do |desired_menu| %>
+      <%= link_to image_tag(desired_menu.menu.reviews.last.picture, size: 300), menu_path(desired_menu.menu), class: "user_post_picture" %>
     <% end %>
   <% end %>
   </div>
