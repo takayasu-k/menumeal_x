@@ -38,16 +38,16 @@
 </header>
 
 <div class="user_profile_bottom">
-  <!-- ここにユーザーの投稿した写真一覧が出る -->
   <div class="user_profile_bottom_nav">
-    <%= link_to "投稿", user_path(params[:id]), id: "user_posts_selected" %>
-    <%= link_to "食べたいメニュー", eaten_menus_user_path(params[:id]) %>
+    <%= link_to "投稿", user_path(params[:id]) %>
+    <%= link_to "食べたいメニュー", eaten_menus_user_path(params[:id]), id: "eaten_menus_selected" %>
     <%= link_to "食べたメニュー", desired_menus_user_path(params[:id]) %>
   </div>
+  <!-- ここにユーザーの投稿した写真一覧が出る -->
   <div class="user_profile_bottom_container">
-  <% if @user.reviews %>
-    <% @user.reviews.each do |review| %>
-      <%= link_to image_tag(review.picture, size: 300), review_path(review), class: "user_post_picture" %>
+  <% if @user.eaten_menus %>
+    <% @user.eaten_menus.each do |eaten_menu| %>
+      <%= link_to image_tag(eaten_menu.menu.reviews.last.picture, size: 300), menu_path(eaten_menu.menu), class: "user_post_picture" %>
     <% end %>
   <% end %>
   </div>

@@ -30,4 +30,14 @@ class UsersController < ApplicationController
         @user = User.find(params[:id]).registering_desired_menu
         render 'show_registering_desired_menu'
     end
+
+    def eaten_menus
+      @user = User.find_by(id: params[:id])
+      @user_profile = @user.user_profile
+    end
+
+    def desired_menus
+      @user = User.find_by(id: params[:id])
+      @user_profile = @user.user_profile
+    end
 end

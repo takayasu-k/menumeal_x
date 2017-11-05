@@ -610,8 +610,32 @@ a.review_menu_name {
 .user_profile_bottom {
   // border-top: 1px solid #ddd;
   // background-color: green;
-  padding-top: 20px;
+  // padding-top: 10px;
   width: 990px;
+  .user_profile_bottom_nav {
+    // background-color: pink;
+    margin:0 auto 10px;
+    font-size: 2rem;
+    width: 970px;
+    font-weight: normal;
+    a {
+      // border: 1px solid lightgrey;
+      color: lightgrey;
+      padding: 5px;
+      &:first-of-type {
+        margin-left: 130px;
+      }
+      &:nth-of-type(2) {
+        margin-left: 200px;
+      }
+      &:nth-of-type(3) {
+        margin-left: 160px;
+      }
+      &:hover {
+        color: darkgrey;
+      }
+    }
+  }
   .user_profile_bottom_container {
     width: 980px;
     // background-color: pink;
@@ -627,7 +651,9 @@ a.review_menu_name {
   }
 }
 
-
+#eaten_menus_selected, #desired_menus_selected, #user_posts_selected {
+  color: black;
+}
 
 // /*============menu#show関連================= */
 .menu_detail_header {
@@ -735,8 +761,8 @@ a.review_menu_name {
       float: right;
       padding: 10px;
       height: 50px;
-      .f_btn {
-        height: 30px;
+      .f-btn {
+        height: 5px;
         padding: 0 5px;
       }
     }
