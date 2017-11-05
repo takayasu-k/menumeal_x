@@ -16,6 +16,7 @@ class User < ApplicationRecord
   has_many :desired_menus, class_name: "DesiredMenu",
                                  foreign_key: "user_id",
                                  dependent: :destroy
+  has_many :likes, dependent: :destroy
   after_create :init_user_profile
   mount_uploader :prof_picture, ImageUploader
 
