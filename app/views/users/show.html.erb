@@ -12,6 +12,11 @@
     <div class="user_header_right_top">
       <h2 class="user_name"><%= @user.name %></h2>
       <%= render 'follow_form' %>
+      <% if @user.id == current_user.id %>
+        <%= link_to edit_user_profile_path(current_user), class: "settings-link" do %>
+          <i class="fa fa-edit settings-icon"></i>
+        <% end %>
+      <% end %>
     </div>
     <div class="user_header_right_middle">
       <% if @user.reviews %>
