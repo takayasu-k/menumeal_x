@@ -1,4 +1,4 @@
 <%= form_tag(desired_menu_path(@menu), method: :delete ) do |f| %>
   <div><%= hidden_field_tag :menu_id, @menu.id %></div>
-  <%= submit_tag "♥", id: "d_m_register_btn" %>
+  <%= submit_tag "「食べたい」から削除", id: "d_m_register_btn" %>
 <% end %>
