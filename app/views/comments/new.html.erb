@@ -14,9 +14,10 @@
       </div>
     </div>
   </div>
+
   <% if @review.comments.present? %>
     <% @review.comments.each do |comment| %>
-    <div class="comments_review_container">
+    <div class="comments_review_container_c">
 
       <div class="comments_review_container_left">
         <%= link_to image_tag(comment.user.prof_picture, class: "comments_user_icon"),
@@ -33,8 +34,19 @@
     </div>
     <% end %>
   <% end %>
-  <%= form_for(@comment, url: comments_path) do |f| %>
-    <%= f.text_area :content, placeholder: "コメント...", class: "comment_text_form" %><br/>
+
+  <!-- <%= form_for(@comment, url: comments_path) do |f| %>
+    <%= f.text_area :content, class: "comment_text_form" %><br/>
+    <%= f.hidden_field :review_id, :value => @review.id %>
     <%= f.submit '投稿', id: "comment_submit" %>
+  <% end %> -->
+
+  <%= form_tag(comments_path) do %>
+    <%= text_area :comment, :content , :placeholder => "コメント..", class: "comment_text_form" %></br>
+    <%= hidden_field_tag 'comment[review_id]', @review.id %>
+    <%= submit_tag '投稿', id: "comment_submit" %>
   <% end %>
+
+
+
 </div><!--.comments_container-->

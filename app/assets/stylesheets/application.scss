@@ -372,7 +372,10 @@ a.review_menu_name {
 .rev-bottom li {
   margin-bottom: 5px;
 }
-
+.comment_count {
+  color: lightgrey;
+  font-weight: normal;
+}
 
 /*=================外部サイトから=====================*/
 .item__header {
@@ -785,11 +788,13 @@ a.review_menu_name {
 .comments_container {
   width: 600px;
   margin: 0 auto;
-  background-color: pink;
+  // background-color: pink;
   .comments_review_container {
     // background-color: grey;
+    margin-top: 10px;
     border-bottom: 1px dotted lightgrey;
-    margin-bottom: 50px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
     .comments_review_container_left {
       // background-color: lightgreen;
       width: 90px;
@@ -810,6 +815,35 @@ a.review_menu_name {
       .comment_review_content {
         margin-top: 5px;
         font-size: 2rem;
+      }
+    }
+
+  }
+
+ // コメント用コンテナ
+  .comments_review_container_c {
+    // background-color: grey;
+    margin-bottom: 10px;
+    .comments_review_container_left {
+      // background-color: lightgreen;
+      width: 90px;
+      display: inline-block;
+    }
+    .comments_review_container_right {
+      display: inline-block;
+      // background-color: lightblue;
+      width: 500px;
+      vertical-align: top;
+      .comment_review_user_name {
+        font-size: 1.5rem;
+      }
+      .post_time {
+        float: right;
+        padding-top: 2px;
+      }
+      .comment_review_content {
+        margin-top: 5px;
+        font-size: 1.5rem;
       }
     }
 

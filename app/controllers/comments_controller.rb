@@ -6,12 +6,10 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(user_id: current_user, review_id: params[:reveiw_id],
+    @comment = Comment.new(user_id: current_user.id, review_id: params[:comment][:review_id],
     content: params[:comment][:content])
-    if @comment.save
-      redirect_to reviews_path
-    end
-
+    @comment.save!
+    redirect_to review_path(@comment.review_id)
   end
 
   def destroy

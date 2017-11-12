@@ -23,9 +23,13 @@
     <% else %>
       <%= link_to "いいね",  likes_path(review.id), method: :post %>
     <% end %> -->
-    <a href="#">
+    <!-- <a href="/comments/#{review.id}/new">
       <i class="fa fa-comment-o comment-icon"></i>
-    </a>
+    </a> -->
+    <%= link_to comments_new_path(review.id) do %>
+      <i class="fa fa-comment-o comment-icon"></i>
+    <% end %>
+
   </div><!-- .icons-container -->
 
   <div class="rev-bottom">
@@ -34,6 +38,13 @@
         <%= link_to review.user.name, user_path(review.user_id), class: "content-user-name" %>
         <span><%= review.content %></span>
       </li>
+
+      <% if review.comments.present? %>
+          <%= link_to comments_new_path(review.id) do %>
+          <span class="comment_count">コメント<%= review.comments.count %>件
+          <% end %>
+         </span>
+      <% end %>
       <!-- ここ以下は他人からのコメント(if文で分岐)-->
       <!-- <li>
         <a href="#" class="content-user-name">shinnosuke_nohara</a>
