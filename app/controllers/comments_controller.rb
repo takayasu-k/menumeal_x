@@ -1,8 +1,17 @@
 class CommentsController < ApplicationController
 
+  def new
+    @comment = Comment.new()
+    @review = Review.find_by(id: params[:review_id])
+  end
+
   def create
-    @comment = current_user.comments.create(review_id: params[:review_id], content: params[:content])
-    redirect_to review_path(params[:review_id])
+    @comment = Comment.new(user_id: current_user, review_id: params[:reveiw_id],
+    content: params[:comment][:content])
+    if @comment.save
+      redirect_to reviews_path
+    end
+
   end
 
   def destroy

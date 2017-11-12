@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   resources :eaten_menus, only: [:create, :destroy]
   resources :desired_menus, only: [:create, :destroy]
   resources :likes, only: [:create, :destroy]
-  resources :comments, only: [:create, :destroy]
+  get 'comments/:review_id/new' => 'comments#new', as: 'comments_new'
+  resources :comments
 
 end

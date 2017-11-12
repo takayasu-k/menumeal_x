@@ -17,6 +17,12 @@
     <a href="#">
       <i class="fa fa-heart-o heart-icon"></i>
     </a>
+    <!-- <%= render partial: "likes/like_links", locales: {review: review} %> -->
+    <!-- <% if review.like_user(current_user) %>
+      <%= link_to "いいね取り消し", like_path, method: :delete %>
+    <% else %>
+      <%= link_to "いいね",  likes_path(review.id), method: :post %>
+    <% end %> -->
     <a href="#">
       <i class="fa fa-comment-o comment-icon"></i>
     </a>

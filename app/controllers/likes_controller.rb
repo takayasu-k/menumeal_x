@@ -1,8 +1,9 @@
 class LikesController < ApplicationController
 
   def create
-    @like = current_user.likes.create(review_id: params[:review_id])
-    redirect_to review_path(params[:review_id])
+    @like = Like.new(user_id: current_user, review_id: params[:format])
+    @like.save
+    redirect_to review_path(@like.review_id)
   end
 
   def destroy
