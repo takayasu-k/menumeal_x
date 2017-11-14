@@ -46,8 +46,8 @@
   <!-- ここにユーザーの投稿した写真一覧が出る -->
   <div class="user_profile_bottom_nav">
     <%= link_to "投稿", user_path(params[:id]), id: "user_posts_selected" %>
-    <%= link_to "食べたいメニュー", eaten_menus_user_path(params[:id]) %>
-    <%= link_to "食べたメニュー", desired_menus_user_path(params[:id]) %>
+    <%= link_to "食べたいメニュー", desired_menus_user_path(params[:id]) %>
+    <%= link_to "食べたメニュー", eaten_menus_user_path(params[:id]) %>
   </div>
   <div class="user_profile_bottom_container">
   <% if @user.reviews %>
