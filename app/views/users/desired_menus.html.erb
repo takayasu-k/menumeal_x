@@ -44,13 +44,6 @@
     <%= link_to "食べたメニュー", desired_menus_user_path(params[:id]), id: "desired_menus_selected" %>
   </div>
   <!-- ここにユーザーの投稿した写真一覧が出る -->
-  <!-- <div class="user_profile_bottom_container">
-  <% if @user.desired_menus %>
-    <% @user.desired_menus.each do |desired_menu| %>
-      <%= link_to image_tag(desired_menu.menu.reviews.last.picture, size: 300), menu_path(desired_menu.menu), class: "user_post_picture" %>
-    <% end %>
-  <% end %>
-  </div> -->
   <div class="user_profile_bottom_container">
   <% if @user.desired_menus %>
     <% @user.desired_menus.each do |desired_menu| %>
