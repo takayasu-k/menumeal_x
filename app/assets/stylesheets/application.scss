@@ -652,14 +652,20 @@ a.review_menu_name {
     // background-color: pink;
     margin: 0 auto;
     padding-left: 6px;
+    .user_post_picture {
+      margin-bottom: 30px;
+      &:nth-of-type(3n-1) {
+        margin-left: 30px;
+        margin-right: 30px;
+      }
+    }
     .user_eaten_menu_container {
       display: inline-block;
       position: relative;
-      .user_post_picture {
-        &:nth-of-type(3n-1) {
-          margin-left: 30px;
-          margin-right: 30px;
-        }
+      // margin-bottom: 30px;
+      &:nth-of-type(3n-1) {
+        margin-left: 30px;
+        margin-right: 30px;
       }
     }
 
@@ -906,7 +912,7 @@ a.review_menu_name {
 .user_eaten_menu_name, .user_desired_menu_name {
   display: inline-block;
   color: #ffffff;
-  bottom: 30px;
+  bottom: 50px;
   left: 5px;
   padding: 5px 15px;
   font-size: 1.1rem;
