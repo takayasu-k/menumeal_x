@@ -1,14 +1,21 @@
 class LikesController < ApplicationController
-
+  before_action :set_review
   def create
-    @like = Like.new(user_id: current_user, review_id: params[:format])
+    @like = Like.create(user_id: current_user.id, review_id: params[:review_id])
+    @likes = Like.where(review_id: params[:review_id])
+    @review_id = params[:review_id]
     @like.save
-    redirect_to review_path(@like.review_id)
   end
 
   def destroy
-    current_user.likes.find_by(review_id: params[:id]).destroy
-    redirect_to review_path(params[:id])
+    @like = Like.find_by(user_id: current_user.id, review_id: params[:id])
+    @like.destroy
+    @likes = Like.where(review_id: params[:review_id])
+    @review_id = params[:review_id]
   end
 
+  private
+    def set_review
+      @review_id = params[:review_id]
+    end
 end

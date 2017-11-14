@@ -13,9 +13,7 @@
   </div>
 
   <div class="icons-container">
-    <a href="#">
-      <i class="fa fa-heart-o heart-icon"></i>
-    </a>
+    <%= render partial: "likes/like_links", locals: { review_id: @review.id } %>
     <a href="#">
       <i class="fa fa-comment-o comment-icon"></i>
     </a>

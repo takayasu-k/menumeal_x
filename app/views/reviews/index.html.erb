@@ -1,4 +1,5 @@
 <% @reviews.each do |review| %>
+<% @review = review %>
 <div class="review-container">
   <div class="item__header clearfix">
       <%= link_to image_tag(review.user.prof_picture, class: "item__user-icon-img user-icon"), user_path(review.user_id), class: "item__user-icon" %>
@@ -14,18 +15,9 @@
   </div>
 
   <div class="icons-container">
-    <a href="#">
-      <i class="fa fa-heart-o heart-icon"></i>
-    </a>
-    <!-- <%= render partial: "likes/like_links", locales: {review: review} %> -->
-    <!-- <% if review.like_user(current_user) %>
-      <%= link_to "いいね取り消し", like_path, method: :delete %>
-    <% else %>
-      <%= link_to "いいね",  likes_path(review.id), method: :post %>
-    <% end %> -->
-    <!-- <a href="/comments/#{review.id}/new">
-      <i class="fa fa-comment-o comment-icon"></i>
-    </a> -->
+    <span class="like-of-<%= review.id %>">
+     <%= render partial: "likes/like_links", locals: { review_id: review.id } %>
+    </span>
     <%= link_to comments_new_path(review.id) do %>
       <i class="fa fa-comment-o comment-icon"></i>
     <% end %>
@@ -40,11 +32,16 @@
 
   <div class="rev-bottom">
     <ul>
-      <li><!--自分のコメント-->
+      <% if review.likes.present? %>
+          <!-- <%= link_to comments_new_path(review.id) do %> -->
+          <span class="like-count">いいね！<%= review.likes.count %>件
+          <!-- <% end %> -->
+         </span>
+      <% end %>
+      <li class="review-my-content"><!--自分のコメント-->
         <%= link_to review.user.name, user_path(review.user_id), class: "content-user-name" %>
         <span><%= review.content %></span>
       </li>
-
       <% if review.comments.present? %>
           <%= link_to comments_new_path(review.id) do %>
           <span class="comment_count">コメント<%= review.comments.count %>件
