@@ -47,7 +47,10 @@
   <div class="user_profile_bottom_container">
   <% if @user.eaten_menus %>
     <% @user.eaten_menus.each do |eaten_menu| %>
+    <div class="user_eaten_menu_container">
       <%= link_to image_tag(eaten_menu.menu.reviews.last.picture, size: 300), menu_path(eaten_menu.menu), class: "user_post_picture" %>
+      <%= link_to eaten_menu.menu.name, menu_path(eaten_menu.menu_id), class: "user_eaten_menu_name" %>
+    </div>
     <% end %>
   <% end %>
   </div>
