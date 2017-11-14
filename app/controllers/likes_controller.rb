@@ -4,6 +4,7 @@ class LikesController < ApplicationController
     @like = Like.create(user_id: current_user.id, review_id: params[:review_id])
     @likes = Like.where(review_id: params[:review_id])
     @review_id = params[:review_id]
+
     @like.save
   end
 
@@ -16,6 +17,6 @@ class LikesController < ApplicationController
 
   private
     def set_review
-      @review_id = params[:review_id]
+      @review = Review.find_by(id: params[:review_id])
     end
 end
