@@ -32,12 +32,8 @@
 
   <div class="rev-bottom">
     <ul>
-      <% if review.likes.present? %>
-          <!-- <%= link_to comments_new_path(review.id) do %> -->
-          <span class="like-count">いいね！<%= review.likes.count %>件
-          <!-- <% end %> -->
-         </span>
-      <% end %>
+      <span class="like-count">いいね！<%= review.likes.count %>件
+      </span>
       <li class="review-my-content"><!--自分のコメント-->
         <%= link_to review.user.name, user_path(review.user_id), class: "content-user-name" %>
         <span><%= review.content %></span>
