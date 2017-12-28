@@ -1,0 +1,2 @@
+$("#like-of-<%= @review_id %>").html("<%= j( render partial: 'likes/like_links', locals: { likes: @likes, like: @like, review_id: @review_id}) %>");
+$(".like-count").html("いいね！<%= @review.likes.count %>件");

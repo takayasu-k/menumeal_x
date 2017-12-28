@@ -1,167 +1,55 @@
+<% @reviews.each do |review| %>
+<% @review = review %>
 <div class="review-container">
   <div class="item__header clearfix">
-    <a class="item__user-icon" href="#">
-      <img src="/user_picts/user-icon1.jpg" alt="ジバニャン" class="item__user-icon-img user-icon" />
-    </a>
-    <a class="item__user-name" href="#">
-      <strong>jibanyan</strong>
-    </a>
+      <%= link_to image_tag(review.user.prof_picture, class: "item__user-icon-img user-icon"), user_path(review.user_id), class: "item__user-icon" %>
+      <strong><%= link_to review.user.name, user_path(review.user_id), class: "item__user-name" %></strong>
     <!-- <span class="item__date">
       2014/08/29 19:00
     </span> -->
   </div>
 
   <div class="image-container">
-    <img src="/user_picts/ra-men.jpg" alt="" class="rev-img">
-    <a href="#" class="menu-name">特濃醤油豚骨らーめん並盛／南</a>
+    <%= link_to image_tag(review.picture, class: "rev-img"), review_path(review) %>
+    <%= link_to review.menu.name, menu_path(review.menu_id), class: "review_menu_name" %>
   </div>
 
   <div class="icons-container">
-    <a href="#">
-      <i class="fa fa-heart-o heart-icon"></i>
-    </a>
-    <a href="#">
+    <span id="like-of-<%= review.id %>">
+     <%= render partial: "likes/like_links", locals: { review_id: review.id } %>
+    </span>
+    <%= link_to comments_new_path(review.id) do %>
       <i class="fa fa-comment-o comment-icon"></i>
+    <% end %>
+    <a href="#">
+      <i class="fa fa-bookmark-o"></i>
     </a>
+    <a href="#">
+      <i class="fa fa-check-square-o"></i>
+    </a>
+
   </div><!-- .icons-container -->
 
   <div class="rev-bottom">
     <ul>
-      <li><!--自分のコメント-->
-        <a href="#" class="content-user-name">jibanyan</a>
-        <span>新家系ラーメン！！！！！！！！いいね。</span>
+      <span class="like-count">いいね！<%= review.likes.count %>件
+      </span>
+      <li class="review-my-content"><!--自分のコメント-->
+        <%= link_to review.user.name, user_path(review.user_id), class: "content-user-name" %>
+        <span><%= review.content %></span>
       </li>
+      <% if review.comments.present? %>
+          <%= link_to comments_new_path(review.id) do %>
+          <span class="comment_count">コメント<%= review.comments.count %>件
+          <% end %>
+         </span>
+      <% end %>
       <!-- ここ以下は他人からのコメント(if文で分岐)-->
-      <li>
+      <!-- <li>
         <a href="#" class="content-user-name">shinnosuke_nohara</a>
         <span>同じの食べてんねｗ</span>
-      </li>
+      </li> -->
     </ul>
   </div>
 </div><!-- review-container -->
-
-<div class="review-container">
-  <div class="item__header clearfix">
-    <a class="item__user-icon" href="#">
-      <img src="/user_picts/user-icon1.jpg" alt="ジバニャン" class="item__user-icon-img user-icon" />
-    </a>
-    <a class="item__user-name" href="#">
-      <strong>jibanyan</strong>
-    </a>
-    <!-- <span class="item__date">
-      2014/08/29 19:00
-    </span> -->
-  </div>
-
-  <div class="image-container">
-    <img src="/user_picts/ra-men.jpg" alt="" class="rev-img">
-    <a href="#" class="menu-name">特濃醤油豚骨らーめん並盛／南</a>
-  </div>
-
-  <div class="icons-container">
-    <a href="#">
-      <i class="fa fa-heart-o heart-icon"></i>
-    </a>
-    <a href="#">
-      <i class="fa fa-comment-o comment-icon"></i>
-    </a>
-  </div><!-- .icons-container -->
-
-  <div class="rev-bottom">
-    <ul>
-      <li><!--自分のコメント-->
-        <a href="#" class="content-user-name">jibanyan</a>
-        <span>新家系ラーメン！！！！！！！！いいね。</span>
-      </li>
-      <!-- ここ以下は他人からのコメント(if文で分岐)-->
-      <li>
-        <a href="#" class="content-user-name">shinnosuke_nohara</a>
-        <span>同じの食べてんねｗ</span>
-      </li>
-    </ul>
-  </div>
-</div><!-- review-container -->
-
-<div class="review-container">
-  <div class="item__header clearfix">
-    <a class="item__user-icon" href="#">
-      <img src="/user_picts/user-icon1.jpg" alt="ジバニャン" class="item__user-icon-img user-icon" />
-    </a>
-    <a class="item__user-name" href="#">
-      <strong>jibanyan</strong>
-    </a>
-    <!-- <span class="item__date">
-      2014/08/29 19:00
-    </span> -->
-  </div>
-
-  <div class="image-container">
-    <img src="/user_picts/ra-men.jpg" alt="" class="rev-img">
-    <a href="#" class="menu-name">特濃醤油豚骨らーめん並盛／南</a>
-  </div>
-
-  <div class="icons-container">
-    <a href="#">
-      <i class="fa fa-heart-o heart-icon"></i>
-    </a>
-    <a href="#">
-      <i class="fa fa-comment-o comment-icon"></i>
-    </a>
-  </div><!-- .icons-container -->
-
-  <div class="rev-bottom">
-    <ul>
-      <li><!--自分のコメント-->
-        <a href="#" class="content-user-name">jibanyan</a>
-        <span>新家系ラーメン！！！！！！！！いいね。</span>
-      </li>
-      <!-- ここ以下は他人からのコメント(if文で分岐)-->
-      <li>
-        <a href="#" class="content-user-name">shinnosuke_nohara</a>
-        <span>同じの食べてんねｗ</span>
-      </li>
-    </ul>
-  </div>
-</div><!-- review-container -->
-
-<div class="review-container">
-  <div class="item__header clearfix">
-    <a class="item__user-icon" href="#">
-      <img src="/user_picts/user-icon1.jpg" alt="ジバニャン" class="item__user-icon-img user-icon" />
-    </a>
-    <a class="item__user-name" href="#">
-      <strong>jibanyan</strong>
-    </a>
-    <!-- <span class="item__date">
-      2014/08/29 19:00
-    </span> -->
-  </div>
-
-  <div class="image-container">
-    <img src="/user_picts/ra-men.jpg" alt="" class="rev-img">
-    <a href="#" class="menu-name">特濃醤油豚骨らーめん並盛／南</a>
-  </div>
-
-  <div class="icons-container">
-    <a href="#">
-      <i class="fa fa-heart-o heart-icon"></i>
-    </a>
-    <a href="#">
-      <i class="fa fa-comment-o comment-icon"></i>
-    </a>
-  </div><!-- .icons-container -->
-
-  <div class="rev-bottom">
-    <ul>
-      <li><!--自分のコメント-->
-        <a href="#" class="content-user-name">jibanyan</a>
-        <span>新家系ラーメン！！！！！！！！いいね。</span>
-      </li>
-      <!-- ここ以下は他人からのコメント(if文で分岐)-->
-      <li>
-        <a href="#" class="content-user-name">shinnosuke_nohara</a>
-        <span>同じの食べてんねｗ</span>
-      </li>
-    </ul>
-  </div>
-</div><!-- review-container -->
+<% end %>

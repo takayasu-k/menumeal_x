@@ -1,2 +1,38 @@
-<h1>Menus#show</h1>
-<p>Find me in app/views/menus/show.html.erb</p>
+<div class="menu_detail_container">
+  <div class="menu_detail_header">
+    <%= link_to @menu.shop.name, shop_path(@menu.shop_id), class: "menu_shop_name" %>
+    <%= render 'e_m_register_form'%>
+    <%= render 'd_m_register_form'%>
+    <div class="menu_detail_header_menu">
+      <span class="menu_detail_menu_name"><%= @menu.name %></span>
+      <span class="menu_detail_menu_price"><%= @menu.price %>円</span>
+    </div>
+
+  </div><!--.menu_detail_header-->
+
+  <div class="menu_detail_image_container">
+    <% if @review.present? %>
+    <%= image_tag @review.picture, class: "menu_show_picture" %>
+    <% else %>
+    <%= image_tag "/user_picts/noimage.png", class: "menu_show_picture" %>
+    <% end %>
+  </div>
+
+  <div class="menu_detail_reviews_container">
+    <% @reviews.each do |review| %>
+    <div class="menu_detail_review_container clearfix">
+      <div class="review_left">
+      <%= link_to image_tag(review.user.prof_picture, class: "item__user-icon"), user_path(review.user_id) %>
+      </div>
+      <div class="review_right clear">
+      <span class="user_name"><%= link_to review.user.name, user_path(review.user_id) %></span>
+      <span class="post_time"><%= review.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
+      <div class="review_content">
+        <span><%= review.content %></span>
+      </div><!--.review_content -->
+    </div><!--.review_right-->
+    </div><!--.menu_detail_review_container-->
+    <!-- <div class="clearfix"></div> -->
+    <% end %>
+  </div><!--.menu_detail_reviews_container-->
+</div><!--.menu_detail_container-->

@@ -11,5 +11,19 @@ Rails.application.routes.draw do
   get 'shops/:id/menu' => 'shops#shop_menu', as: 'shop_menu'
   resources :menus
   resources :reviews
+  get 'shop_detail/:id/new' => 'shop_details#new', as: 'shop_detail_new'
   resources :shop_details
+  resources :user_profiles
+  resources :users do
+    member do
+     get :following, :followers, :eaten_menus, :desired_menus, :likes
+    end
+  end
+  resources :relationships, only: [:create, :destroy]
+  resources :eaten_menus, only: [:create, :destroy]
+  resources :desired_menus, only: [:create, :destroy]
+  resources :likes, only: [:create, :destroy]
+  get 'comments/:review_id/new' => 'comments#new', as: 'comments_new'
+  resources :comments
+
 end

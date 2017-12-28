@@ -10,7 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170917073458) do
+ActiveRecord::Schema.define(version: 20171029073028) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "review_id"
+    t.string   "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_comments_on_review_id"
+    t.index ["user_id", "review_id"], name: "index_comments_on_user_id_and_review_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "desired_menus", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "menu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_desired_menus_on_menu_id"
+    t.index ["user_id", "menu_id"], name: "index_desired_menus_on_user_id_and_menu_id", unique: true
+    t.index ["user_id"], name: "index_desired_menus_on_user_id"
+  end
+
+  create_table "eaten_menus", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "menu_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["menu_id"], name: "index_eaten_menus_on_menu_id"
+    t.index ["user_id", "menu_id"], name: "index_eaten_menus_on_user_id_and_menu_id", unique: true
+    t.index ["user_id"], name: "index_eaten_menus_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "review_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["review_id"], name: "index_likes_on_review_id"
+    t.index ["user_id", "review_id"], name: "index_likes_on_user_id_and_review_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
 
   create_table "menus", force: :cascade do |t|
     t.integer  "shop_id"
@@ -20,6 +61,16 @@ ActiveRecord::Schema.define(version: 20170917073458) do
     t.integer  "menu_type",  default: 0, null: false
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+  end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -44,6 +95,7 @@ ActiveRecord::Schema.define(version: 20170917073458) do
     t.string   "bar"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "holiday"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -54,6 +106,15 @@ ActiveRecord::Schema.define(version: 20170917073458) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.string   "kana"
+  end
+
+  create_table "user_profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "profile"
+    t.date     "birthday"
+    t.integer  "gender"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

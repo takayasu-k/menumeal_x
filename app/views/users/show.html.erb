@@ -1,0 +1,59 @@
+<header class="user_profile_header">
+  <div class="user_header_left">
+  <% if @user.prof_picture? %>
+   <%= image_tag @user.prof_picture %>
+  <% else %>
+   <%= image_tag '/user_picts/default.png' %>
+  <% end %>
+  <!--ユーザープロフ画像-->
+  </div>
+
+  <div class="user_header_right">
+    <div class="user_header_right_top">
+      <h2 class="user_name"><%= @user.name %></h2>
+      <%= render 'follow_form' %>
+      <% if @user.id == current_user.id %>
+        <%= link_to edit_user_profile_path(current_user), class: "settings-link" do %>
+          <i class="fa fa-edit settings-icon"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="user_header_right_middle">
+      <% if @user.reviews %>
+        <span>投稿件数<%= @user.reviews.count %>件</span>
+      <% else %>
+        <span>投稿件数0件</span>
+      <% end %>
+
+      <% if @user.followers %>
+        <span><%= link_to "フォロワー#{@user.followers.count}人", followers_user_path(@user) %></span>
+      <% else %>
+        <span>フォロワー0人</span>
+      <% end  %>
+      <% if @user.following %>
+      <span><%= link_to "フォロー中#{@user.following.count}人", following_user_path(@user) %></span>
+      <% else %>
+      <span>フォロー中0人</span>
+      <% end %>
+    </div>
+    <div class="user_header_right_bottom">
+      <span><%= @user_profile.profile %></span>
+    </div>
+  </div>
+</header>
+
+<div class="user_profile_bottom">
+  <!-- ここにユーザーの投稿した写真一覧が出る -->
+  <div class="user_profile_bottom_nav">
+    <%= link_to "投稿", user_path(params[:id]), id: "user_posts_selected" %>
+    <%= link_to "食べたいメニュー", desired_menus_user_path(params[:id]) %>
+    <%= link_to "食べたメニュー", eaten_menus_user_path(params[:id]) %>
+  </div>
+  <div class="user_profile_bottom_container">
+  <% if @user.reviews %>
+    <% @user.reviews.each do |review| %>
+      <%= link_to image_tag(review.picture, size: 300), review_path(review), class: "user_post_picture" %>
+    <% end %>
+  <% end %>
+  </div>
+</div>

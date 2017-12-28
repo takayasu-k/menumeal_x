@@ -1,17 +1,23 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.all.order(created_at: :desc)
+    following_user_ids = current_user.following.ids
+    @reviews = Review.where(user_id: following_user_ids).order(created_at: :desc)
   end
 
   def new
     @review = Review.new()
+    @menus = Menu.all
   end
 
   def create
     @review = Review.new()
+    @review.user_id = current_user.id
+    @review.menu_id = params[:review][:menu_id]
+    @review.picture = params[:review][:picture]
+    @review.content = params[:review][:content]
     @review.save
-    redirect_to "/review"
+    redirect_to reviews_path
   end
 
   def show

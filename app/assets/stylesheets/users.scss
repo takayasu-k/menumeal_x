@@ -1,0 +1,54 @@
+/*============================= */
+/*=============↓user_profile関連================ */
+
+
+
+.user_profile_header {
+  background-color: #fafafa;
+  height: 200px;
+}
+
+.user_header_left {
+  height: 100%;
+  width: 33%;
+  float: left;
+}
+
+.user_header_left img {
+  height: 152px;
+  width: 152px;
+  border-radius: 50%;
+  margin-left: 45px;
+  margin-top: 25px;
+}
+
+
+.user_header_right {
+  width: 67%;
+  height: 100%;
+  padding-left: 15px;
+  // background-color: lightgreen;
+  display: inline-block;
+}
+
+.user_header_right_top {
+  // background-color: red;
+  height: 40%;
+}
+.user_name {
+  font-size: 2.5rem;
+  font-weight: normal;
+  padding-top: 25px;
+}
+.user_header_right_bottom {
+  padding-bottom: 25px;
+}
+.user_header_right_bottom span {
+  font-size: 1.5rem;
+}
+
+
+.user_profile_bottom {
+  // background-color: pink;
+  min-height: 500px;
+}

@@ -17,11 +17,16 @@ class ShopsController < ApplicationController
     prof_picture: "default.jpg"
     )
     @shop.save
+    @shop_detail = ShopDetail.new(
+    shop_id: @shop.id
+    )
+    @shop_detail.save
     redirect_to "/shops/#{@shop.id}"
   end
 
   def show
     @shop = Shop.find_by(id: params[:id])
+    @shop_detail = ShopDetail.find_by(shop_id: params[:id])
   end
 
   def edit
