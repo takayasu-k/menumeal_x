@@ -10,35 +10,8 @@
   </head>
 
   <body>
-  <header class="header">
-    <div class="header__container">
-      <div class="header__logo">
-        <h1>
-          <a href="/">
-            menumeal
-          </a>
-        </h1>
-      </div><!-- .header__logo -->
-      <div class="header__menu">
-        <ul>
-          <% if user_signed_in? %>
-            <li><strong><%= link_to current_user.name, user_path(current_user) %></strong></li>
-            <li><%= link_to '店舗一覧', shops_path %></li>
-            <li><%= link_to '店舗を登録', new_shop_path %></li>
-            <li><%= link_to 'メニューを登録', new_menu_path %></li>
-            <li><%= link_to '口コミを投稿', new_review_path %></li>
-            <li><%= link_to "(仮)TL", reviews_path %></li>
-            <li><%= link_to 'プロフィール変更', edit_user_registration_path %></li>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-          <% else %>
-            <li><a href="/top/about">menumealの使い方</a><%=  %></li>
-            <li><%= link_to '店舗一覧', shops_path %></li>
-            <li><%= link_to '無料会員登録', new_user_registration_path %></li>
-            <li><%= link_to 'ログイン', new_user_session_path %></li>
-          <% end %>
-        </ul>
-      </div><!-- .header__menu -->
-    </div>
+  <header class="global-header">
+      <div class="container"></div>
   </header>
 
   <main class="main">

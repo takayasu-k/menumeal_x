@@ -1,3 +1,284 @@
 // Place all the styles related to the top controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+/*   以下個別 */
+/*=========== .top-wrapper =======================================*/
+
+
+.container {
+  /*background-color: rgba(0,0,0,0.2);*/
+   /* 最終的には透過させる */
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 5px;
+}
+
+
+.global-header {
+  display: none;
+}
+.top-wrapper {
+  background-image: url("menumeal_top2.jpg");
+  background-size: cover;
+  height: 250px;
+}
+.top-wrapper-header {
+  height: 20px;
+  text-align: right;
+}
+
+.top-wrapper-header a {
+  display: inline-block;
+  height: 100%;
+  color: #fff;
+  padding-top: 5px;
+  /*background-color: orange;*/
+}
+
+.sp-title {
+  color: #fff;
+  font-size: 3rem;
+  margin: 0 20px;
+  padding: 80px 0 20px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+.pc-message {
+  display: none;
+}
+.search-box {
+  background-color: #f9f9f9;
+  height: 40px;
+  width: 300px;
+  margin: 0 auto;
+}
+
+/*================= .find-by-area-wrapper ==============================*/
+.find-by-area-wrapper {
+  display: none;
+}
+/*================= .recommended-menu-wrapper ==============================*/
+.section-title {
+  color: #777;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 5px 0;
+}
+
+.recommended-menu-wrapper {
+  margin-bottom: 10px;
+}
+.menus-container {
+  height: 200px;
+  /*background-color: orange;*/
+  text-align: center;
+}
+.menu-container {
+  display: inline-block;
+  background-color: #fff;
+  width: 49%;
+  height: 100%;
+  text-align: left;
+  /*background-color: blue;*/
+}
+/*.menu-container:nth-of-type(1) {
+  margin-right: 2px;
+}*/
+.menu-container img {
+  width: 100%;
+  height: 80%;
+}
+.menu-name {
+  color: #777;
+  display: block;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 5px 0;
+}
+.shop-name {
+  color: #777;
+  padding-bottom: 5px;
+}
+
+/*===================== .ranking-wrapper =============================*/
+.ranking-wrapper {
+  display: none;
+}
+
+/*===================== .shop-finder-wrapper =============================*/
+
+.shop-finder-wrapper {
+  /*background-color: lightblue;*/
+  margin-bottom: 10px;
+}
+.find-by-location-button {
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: normal;
+  padding: 12px;
+  text-align: center;
+  background-color: #ff8000;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+
+
+/*===================== .new-menu-wrapper =============================*/
+.new-menu-wrapper {
+  /*background-color: yellow;*/
+  margin-bottom: 5px;
+}
+.new-menus-container {
+  text-align: center;
+}
+.new-menu-image {
+  width: 32%;
+  height: 100px;
+}
+
+/*===================== .footer =============================*/
+.footer {
+  background-color: #e4e4e4;
+  text-align: center;
+}
+.footer li {
+  display: inline-block;
+  padding: 5px 15px;
+  color: #777;
+}
+.copyright {
+  display: inline-block;
+  padding: 5px;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+
+
+/*===================== =============================*/
+/*===================== =============================*/
+/*===================== =============================*/
+/* PC タブレット向け表示*/
+@media (min-width: 769px) {
+/*===================== 全体共通 =============================*/
+  .container {
+    width: 1100px;
+  }
+  .section-title {
+    font-size: 2rem;
+    color: black;
+    border-bottom: 1px solid #B2B2B2;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+/*===================== .global-header =============================*/
+  .global-header {
+    display: block;
+    height: 60px;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+  }
+/*===================== .top-wrapper =============================*/
+  .top-wrapper {
+     height: 500px;
+     margin-bottom: 20px;
+  }
+  .top-wrapper-header {
+    display: none;
+  }
+  .sp-title {
+    display: none;
+  }
+  .pc-message {
+    display: block;
+    font-size: 5rem;
+    color: #fff;
+    text-align: center;
+    padding: 200px 0 50px;
+    text-shadow: 2px 2px 2px #000;
+    font-weight: normal;
+  }
+  .search-box {
+    height: 60px;
+    width: 500px;
+    margin: 0 auto;
+  }
+/*===================== .shop-finder-wrapper =============================*/
+  .shop-finder-wrapper {
+    display: none;
+  }
+
+/*===================== .find-by-area-wrapper =============================*/
+  .find-by-area-wrapper {
+    display: inline-block;
+    background-color: #fff;
+    height: 380px;
+    width: 780px;
+    padding: 0 5px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+  .find-by-area-wrapper .container {
+    /*background-color: blue;*/
+    width: 100%;
+
+  }
+  .recommended-menu-wrapper {
+    width: 780px;
+    background-color: #fff;
+    height: 400px;
+    margin-right: 20px;
+  }
+  section.recommended-menu-wrapper .container {
+    width: 100%;
+  }
+
+  .ranking-wrapper {
+    display:inline-block !important;
+    width: 300px;
+    height: 800px;
+    background-color: #fff;
+    float: right;
+  }
+
+  .pc-section {
+    width: 1100px;
+    /*background-color: red;*/
+    max-height: 800px;
+    margin: 0 auto;
+  }
+
+  .ranking-container {
+    margin: 0 auto;
+    padding: 0 5px;
+    height: 100%;
+  }
+  .new-menu-wrapper {
+    padding-top: 10px;
+  }
+
+/*===================== .footer =============================*/
+ .footer {
+   padding: 15px;
+ }
+  .footer li {
+    padding: 20px;
+  }
+
+
+
+
+
+}
