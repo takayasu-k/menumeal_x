@@ -138,10 +138,16 @@
 }
 .new-menus-container {
   text-align: center;
+  // background-color: pink;
+  min-width: 300px;
+  min-height: 300px;
 }
 .new-menu-image {
+  display: inline-block;
+  background-size: cover;
+  min-height: 100px;
+  min-width: 100px;
   width: 32%;
-  height: 100px;
 }
 
 /*===================== .footer =============================*/
@@ -265,8 +271,17 @@
     padding: 0 5px;
     height: 100%;
   }
+
   .new-menu-wrapper {
     padding-top: 10px;
+  }
+  .new-menus-container {
+    // background-color: pink;
+  }
+  .new-menu-image {
+    background-size: cover;
+    width: 360px;
+    height: 360px;
   }
 
 /*===================== .footer =============================*/

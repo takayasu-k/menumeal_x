@@ -58,16 +58,9 @@
         新着メニューから探す
       </h1>
       <div class="new-menus-container">
-        <img class="new-menu-image" src="#">
-        <img class="new-menu-image" src="#">
-        <img class="new-menu-image" src="#">
-        <img class="new-menu-image" src="#">
-        <img class="new-menu-image" src="#">
-        <img class="new-menu-image" src="#">
-        <img class="new-menu-image" src="#">
-        <img class="new-menu-image" src="#">
-        <img class="new-menu-image" src="#">
-
+        <% @reviews.each do |review| %>
+          <a class="new-menu-image" href="<%= menu_path(review.menu_id) %>" style="background-image: url(<%= review.picture %>)"></a>
+        <% end %>
       </div>
     </div>
   </section>
