@@ -189,12 +189,39 @@
   .global-header {
     display: block;
     height: 60px;
-    background-color: rgba(0,0,0,0.5);
-    color: #fff;
+    background-color: rgba(0,0,0,0);
     position: fixed;
     top: 0;
     z-index: 10;
     width: 100%;
+    &:hover {
+      background-color: rgba(0,0,0,0.5);
+    }
+    .container {
+      padding-top: 10px;
+    }
+  }
+  .logo {
+    display: inline-block;
+    padding-top: 5px;
+    color: #fff;
+    font-size: 3rem;
+    letter-spacing: 1px;
+  }
+  .header-nav-container {
+    float: right;
+    // background-color: pink;
+    height: 100%;
+  }
+  .header-nav-item {
+    color: #fff;
+    display: inline-block;
+    padding-top: 20px;
+    margin-right: 20px;
+    &:hover {
+      color: #ff8000;
+      transition: 0.5s;
+    }
   }
 /*===================== .top-wrapper =============================*/
   .top-wrapper {
