@@ -1,4 +1,28 @@
-.shop_container {
-  padding: 10px;
-  border-bottom: 1px dotted grey;
+// .shop_container {
+//   padding: 10px;
+//   border-bottom: 1px dotted grey;
+// }
+
+/*=================↓スマホ用スタイル====================*/
+
+.sp-header {
+  width: 100%;
+  background-color: #ff8000;
+  height: 40px;
+  text-align: center;
+}
+.sp-header-logo {
+  color: #fff;
+  // background-color: pink;
+  display: inline-block;
+  padding-top: 5px;
+  font-size: 3rem;
+  letter-spacing: 1px;
+}
+
+/*=================↓タブレット/PC用スタイル====================*/
+
+@media (min-width: 769px) {
+
+
 }
