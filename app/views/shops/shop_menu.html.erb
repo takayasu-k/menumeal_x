@@ -8,7 +8,7 @@
       </li>
     <% end %>
   </ul> -->
-  <div class="shop_menu_header">
+  <!-- <div class="shop_menu_header">
     <%= link_to @shop.name, shop_path(@shop) %>
     <span> > メニュー</span>
   </div>
@@ -27,4 +27,41 @@
     </li>
     <% end %>
   </ul>
-</div>
+</div> -->
+<nav class="sp-header">
+  <div class="container">
+    <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
+  </div>
+</nav>
+
+<section class="shop-top-wrapper" style="background-image: url(/shop_prof_images/<%= @shop.prof_picture %>)">
+  <div class="container">
+    <h1 class="shop-name"><%= @shop.name %></h1>
+    <span class="shop-kana">(<%= @shop.kana %>)</span>
+  </div>
+</section>
+<nav class="shop-nav-wrapper">
+  <%= link_to "基本情報", shop_path(@shop.id), class:"shop-nav-item" %>
+  <%= link_to "メニュー", shop_menu_path(@shop.id), class:"shop-nav-item" %>
+</nav>
+
+<section class="shop-menus-wrapper">
+  <nav class="shop-menus-header">
+  </nav>
+  <div class="container">
+    <ul>
+      <% @shop_menus.each do |menu| %>
+        <%= link_to(menu_path(menu), class: "menu-container-li") do %>
+          <% if menu.reviews.present? %>
+            <%= image_tag menu.reviews.last.picture, size: 40, class: "menu-pict" %>
+          <% else %>
+            <%= image_tag "/user_picts/noimage.png", size: 40, class: "menu-pict" %>
+          <% end %>
+          <span class="menu-name"><%= menu.name %></span>
+          <span class="menu-price"><%= menu.price %>円</span>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+</section>

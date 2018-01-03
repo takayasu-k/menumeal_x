@@ -26,9 +26,13 @@
   </div>
 </nav>
 
-<section class="shop-top-wrapper">
+<section class="shop-top-wrapper" style="background-image: url(/shop_prof_images/<%= @shop.prof_picture %>)">
   <div class="container">
     <h1 class="shop-name"><%= @shop.name %></h1>
-    <span class="shop-"></span>
+    <span class="shop-kana">(<%= @shop.kana %>)</span>
   </div>
 </section>
+<nav class="shop-nav-wrapper">
+  <%= link_to "基本情報", shop_path(@shop.id), class:"shop-nav-item" %>
+  <%= link_to "メニュー", shop_menu_path(@shop.id), class:"shop-nav-item" %>
+</nav>
