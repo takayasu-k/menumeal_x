@@ -1,5 +1,5 @@
 <!-- 店舗トップページ -->
-<div class="shop_top">
+<!-- <div class="shop_top">
   <h1 class="shop_name"><%= @shop.name %><span class="shop_kana">(<%= @shop.kana %>)</span></h1>
 
   <img src="<%= "/shop_prof_images/#{@shop.prof_picture}" %>" width="50%" height="50%"><br/>
@@ -10,13 +10,29 @@
   <span><%= @shop.address %></span>
 
   <h2>■電話番号</h2>
-  <span><%= @shop.tel %></span><br/>
+  <span><%= @shop.tel %></span><br/> -->
 
   <!-- ここに詳細情報を挿入 -->
-  <%= render 'shops/shop_detail' %>
+  <!-- <%= render 'shops/shop_detail' %>
 
   <%= link_to '編集', edit_shop_path(@shop)  %>|
   <%= link_to '削除', shop_path(@shop), method: :delete, data: {confirm: '本当に削除しますか？'} %><br>
 
   <%= link_to '詳細情報を編集', edit_shop_detail_path(@shop)  %>|
-</div>
+</div> -->
+<nav class="sp-header">
+  <div class="container">
+    <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
+  </div>
+</nav>
+
+<section class="shop-top-wrapper" style="background-image: url(/shop_prof_images/<%= @shop.prof_picture %>)">
+  <div class="container">
+    <h1 class="shop-name"><%= @shop.name %></h1>
+    <span class="shop-kana">(<%= @shop.kana %>)</span>
+  </div>
+</section>
+<nav class="shop-nav-wrapper">
+  <%= link_to "基本情報", shop_path(@shop.id), class:"shop-nav-item" %>
+  <%= link_to "メニュー", shop_menu_path(@shop.id), class:"shop-nav-item" %>
+</nav>

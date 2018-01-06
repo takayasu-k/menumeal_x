@@ -18,8 +18,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -45,6 +43,7 @@ gem 'hirb-unicode'
 gem 'carrierwave'
 gem 'mini_magick'
 # gem 'rmagick', require: 'RMagick'
+gem 'google-analytics-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -62,6 +61,13 @@ group :development do
   gem 'pry-doc'    # methodを表示
   gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
   gem 'pry-stack_explorer' # スタックをたどれる
+end
+
+group :production do
+  # See https://github.com/rails/execjs#readme for more supported runtimes
+  gem 'therubyracer', platforms: :ruby
+  gem 'unicorn', '~> 5.3'
+  gem 'mysql2'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
