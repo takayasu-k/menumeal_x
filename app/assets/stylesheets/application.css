@@ -1,9 +1,10 @@
 
 /*
  *= require_self
+ *= require font-awesome
  *= require_tree .
  */
-@import 'font-awesome';
+/*@import 'font-awesome';*/
 /*@import 'top';*/
 /*@import 'shops';*/
 /*@import "bootstrap";*/
