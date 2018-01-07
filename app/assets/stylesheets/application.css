@@ -268,7 +268,7 @@ select {
  /*======================================================================*/
  /*======================================================================*/
 
-.signup-title {
+.signup-title, .login-title {
   color: #fff;
   text-align: center;
   border-bottom: 1px solid #E9E9E9;
@@ -279,24 +279,32 @@ select {
   margin-bottom: 30px;
 }
 
-.signup-form-wrapper {
+.signup-form-wrapper, .login-form-wrapper {
   background-image: url("menumeal_top2.jpg");
   background-size: cover;
   text-align: center;
   padding-bottom: 40px;
 }
-.signup-form {
+.signup-form, .login-form {
   width: 80%;
   height: 40px;
   background-color: #f9f9f9;
   margin-bottom: 20px;
   border: none;
 }
-.signup-form-btn {
+.signup-form-btn, .login-form-btn {
   width: 80%;
   background-color: #ff8000;
   color: #fff;
   border: none;
+}
+.login-form-btn {
+  margin-top: 10px
+}
+
+.login-remember-label {
+  color: #fff;
+  font-size: 1rem;
 }
 
 input::-webkit-input-placeholder {
@@ -307,10 +315,15 @@ input:-moz-placeholder {
   text-align: center;
   color: #bbb;
 }
-.login-link {
+
+.login-link, .signup-link {
   color: #fff;
   font-size: 1rem;
   margin-top: 30px;
+}
+.forgot-password-link {
+  color: #bbb;
+  font-size: 1rem;
 }
 
 
