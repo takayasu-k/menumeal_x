@@ -198,31 +198,37 @@
       background-color: rgba(0,0,0,0.5);
     }
     .container {
-      padding-top: 10px;
+      // padding-top: 10px;
     }
   }
   .logo {
     display: inline-block;
-    padding-top: 5px;
+    padding-top: 15px;
     color: #fff;
     font-size: 3rem;
     letter-spacing: 1px;
   }
   .header-nav-container {
     float: right;
-    // background-color: pink;
+    // background-color: lightblue;
     height: 100%;
+    padding-top: 10px;
   }
   .header-nav-item {
     color: #fff;
+    // background-color: pink;
     display: inline-block;
-    padding-top: 14px;
     margin-right: 20px;
+    padding-top: 15px;
+    &:last-child {
+      margin-right: 0;
+    }
     &:hover {
       color: #ff8000;
       transition: 0.5s;
     }
   }
+
 /*===================== .top-wrapper =============================*/
   .top-wrapper {
      height: 500px;

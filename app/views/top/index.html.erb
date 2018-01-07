@@ -29,16 +29,7 @@
         <h1 class="section-title">注目のメニュー</h1>
 
         <div class="menus-container">
-          <!-- <div class="menu-container">
-            <img src="#">
-            <a class="menu-name">サザエ丼</a>
-            <a class="shop-name">とびっちょ本店</a>
-          </div>
-          <div class="menu-container">
-            <img src="#">
-            <a class="menu-name">しらす丼</a>
-            <a class="shop-name">とびっちょ本店</a>
-          </div> -->
+
           <% @menus.each do |menu| %>
             <div class="menu-container">
               <%= image_tag menu.reviews.last.picture %>
