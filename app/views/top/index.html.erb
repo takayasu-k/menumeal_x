@@ -2,7 +2,7 @@
 <section class="top-wrapper wrapper">
     <div class="container">
       <div class="top-wrapper-header">
-        <a href="#">ログイン</a>
+        <%= link_to "ログイン", new_user_session_path %>
       </div>
       <h1 class="sp-title">Menumeal</h1>
       <h1 class="pc-message">おすすめメニューをみつけよう</h1>
@@ -27,18 +27,18 @@
     <section class="recommended-menu-wrapper wrapper">
       <div class="container">
         <h1 class="section-title">注目のメニュー</h1>
+
         <div class="menus-container">
-          <div class="menu-container">
-            <img src="#">
-            <a class="menu-name">サザエ丼</a>
-            <a class="shop-name">とびっちょ本店</a>
-          </div>
-          <div class="menu-container">
-            <img src="#">
-            <a class="menu-name">しらす丼</a>
-            <a class="shop-name">とびっちょ本店</a>
-          </div>
+
+          <% @menus.each do |menu| %>
+            <div class="menu-container">
+              <%= image_tag menu.reviews.last.picture %>
+              <a class="menu-name"><%= menu.name %></a>
+              <a class="shop-name"><%= menu.shop.name %></a>
+            </div>
+          <% end %>
         </div>
+
       </div>
     </section>
 
