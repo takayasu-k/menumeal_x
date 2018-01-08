@@ -18,6 +18,7 @@
           <ul>
             <% if user_signed_in? %>
               <%= link_to "使い方", top_about_path, class: "header-nav-item" %>
+              <%= link_to "投稿する", new_review_path, class: "header-nav-item" %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-nav-item" %>
               <%= link_to "マイページ", user_path(current_user), class: "header-nav-item" %>
             <% else %>
