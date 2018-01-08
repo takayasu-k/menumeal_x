@@ -2,7 +2,9 @@
 <section class="top-wrapper wrapper">
     <div class="container">
       <div class="top-wrapper-header">
-        <%= link_to "ログイン", new_user_session_path %>
+        <% unless user_signed_in? %>
+          <%= link_to "ログイン", new_user_session_path %>
+        <% end %>
       </div>
       <h1 class="sp-title">Menumeal</h1>
       <h1 class="pc-message">おすすめメニューをみつけよう</h1>

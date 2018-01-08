@@ -35,7 +35,17 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
   </main>
-
+  <% if user_signed_in? %>
+    <nav class="sp-nav-wrapper">
+      <ul class="sp-nav-container">
+        <li class="sp-nav-item"><%= link_to "○", reviews_path %></li>
+        <li class="sp-nav-item"><a href="#">○</a></li>
+        <li class="sp-nav-item"><%= link_to "＋", new_review_path %></li>
+        <li class="sp-nav-item"><a href="#">○</a></li>
+        <li class="sp-nav-item"><%= link_to "○", user_path(current_user) %></li>
+      </ul>
+    </nav>
+  <% end %>
   <footer class="footer wrapper">
     <div class="container">
       <ul>
