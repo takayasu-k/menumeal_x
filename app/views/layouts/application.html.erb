@@ -44,31 +44,31 @@
         <li class="sp-nav-item"><a href="#">○</a></li>
         <li class="sp-nav-item"><%= link_to "○", user_path(current_user) %></li> -->
         <li class="sp-nav-item">
-          <a>
+          <a href="<%= reviews_path %>">
             <div class="sp-nav-icon"></div>
             <span class="sp-nav-text">ホーム</span>
           </a>
         </li>
         <li class="sp-nav-item">
-          <a>
+          <a href="#">
             <div class="sp-nav-icon"></div>
             <span class="sp-nav-text">みつける</span>
           </a>
         </li>
         <li class="sp-nav-item">
-          <a>
+          <a href="<%= new_review_path %>">
             <div class="sp-nav-icon"></div>
             <span class="sp-nav-text">投稿</span>
           </a>
         </li>
         <li class="sp-nav-item">
-          <a>
+          <a href="#">
             <div class="sp-nav-icon"></div>
             <span class="sp-nav-text">通知</span>
           </a>
         </li>
         <li class="sp-nav-item">
-          <a>
+          <a href="<%= user_path(current_user) %>">
             <div class="sp-nav-icon"></div>
             <span class="sp-nav-text">マイページ</span>
           </a>
