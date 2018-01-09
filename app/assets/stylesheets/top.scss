@@ -24,10 +24,11 @@
 .top-wrapper {
   background-image: url("menumeal_top2.jpg");
   background-size: cover;
-  height: 250px;
+  height: 280px;
 }
 .top-wrapper-header {
-  height: 20px;
+  height: 30px;
+  padding-top: 10px;
   text-align: right;
 }
 
@@ -189,22 +190,24 @@
   .global-header {
     display: block;
     height: 60px;
-    background-color: rgba(0,0,0,0);
+    background-color: #fff;
     position: fixed;
     top: 0;
     z-index: 10;
     width: 100%;
-    &:hover {
-      background-color: rgba(0,0,0,0.5);
-    }
+    // border-top: 2px solid #ff8000;
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     .container {
       // padding-top: 10px;
     }
   }
+  .main {
+    padding-top: 60px;
+  }
   .logo {
     display: inline-block;
     padding-top: 15px;
-    color: #fff;
+    color: #ff8000;
     font-size: 3rem;
     letter-spacing: 1px;
   }
@@ -215,7 +218,7 @@
     padding-top: 10px;
   }
   .header-nav-item {
-    color: #fff;
+    color: #282828;
     // background-color: pink;
     display: inline-block;
     margin-right: 20px;
@@ -233,6 +236,7 @@
   .top-wrapper {
      height: 500px;
      margin-bottom: 20px;
+     margin-top: -60px;
   }
   .top-wrapper-header {
     display: none;
@@ -317,9 +321,14 @@
     height: 215px;
   }
 
+
+  .sp-nav-wrapper {
+    display: none;
+  }
 /*===================== .footer =============================*/
  .footer {
    padding: 15px;
+   margin-bottom: 0;
  }
   .footer li {
     padding: 20px;
