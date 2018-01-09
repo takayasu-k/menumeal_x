@@ -328,13 +328,13 @@ input:-moz-placeholder {
 
 
 .sp-nav-wrapper {
-  height: 40px;
+  height: 45px;
   width: 100%;
   position: fixed;
   bottom: 0;
   background-color: #e9e9e9;
   border-top: 1px solid #bbb;
-  padding: 5px 0 5px;
+  padding-top: 5px;
 }
 
 .sp-nav-container {
@@ -354,8 +354,19 @@ input:-moz-placeholder {
   display: inline-block;
   height: 100%;
   width: 100%;
-  font-size: 3rem;
   color: #777;
+}
+.sp-nav-icon {
+  width: 20px;
+  height: 20px;
+  /*background-color: grey;*/
+  border: 1px solid grey;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+.sp-nav-text {
+  font-size: 1rem;
+  display: block;
 }
 
 
