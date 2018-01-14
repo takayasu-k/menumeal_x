@@ -314,7 +314,7 @@ input::-webkit-input-placeholder {
   text-align: center;
   color: #bbb;
 }
-input:-moz-placeholder {
+input::-moz-placeholder {
   text-align: center;
   color: #bbb;
 }
