@@ -1,3 +1,21 @@
 // Place all the styles related to the menus controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.new_menu {
+  // menus/newページ
+  // background-color: pink;
+  text-align: center;
+  width: 300px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+#menu_shop_id, #menu_menu_type {
+  border: 1px solid #ccc;
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  background-color: rgba(0,0,0,0);
+  border-radius: 3px;
+  padding-left: 20px;
+  color: #777;
+}

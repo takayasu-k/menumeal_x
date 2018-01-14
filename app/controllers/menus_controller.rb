@@ -24,6 +24,8 @@ class MenusController < ApplicationController
   end
 
   def edit
+    @menu = Menu.find_by(id: params[:id])
+    @shops = Shop.all
   end
 
   def update
