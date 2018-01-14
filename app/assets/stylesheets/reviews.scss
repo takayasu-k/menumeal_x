@@ -1,142 +1,27 @@
-
-
-.main__container {
-  width: 970px;
-  height: 500px;  /* ←-----------------------------仮のコンテンツの高さ */
+.new_review {
+  // reviews/newページ
+  // background-color: pink;
+  text-align: center;
+  width: 300px;
   margin: 0 auto;
-  background-color: grey;
+  padding: 10px 0;
 }
-a {
-  text-decoration: none;
-  color: black;
-  display: inline-block;
-}
-* {
-  font-family: Arial;
-}
-/*=================以下==============================*/
-.review-container {
-  /*margin: 0 auto;*/
-  margin-bottom: 20px;
-  width: 300px;
-  /*background-color: pink;*/
-  /*float: left;*/
-  background-color: white;
-}
-
-/*===============================*/
-.rev-top {
+#review_menu_id {
+  border: 1px solid #ccc;
+  width: 100%;
   height: 40px;
-  /*background-color: lightgrey;*/
-  padding: 5px;
+  margin-top: 5px;
+  background-color: rgba(0,0,0,0);
+  border-radius: 3px;
+  padding-left: 20px;
+  color: #777;
 }
-.rev-top-left {
-  float: left;
-  padding: 5px;
-}
-.user-icon-a {
-  display: inline-block;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 5px;
-}
-.user-icon {
-  height: 100%;
+.sp-form-text-area {
+  border: 1px solid #ccc;
   width: 100%;
-  border-radius: 50%;
-}
-.user-name {
-  vertical-align: 80%;
-  font-size: 1.4rem;
-  /*background-color: red;*/
-}
-
-/*==============レビュー画像部分=====================*/
-.image-container {
-  position: relative;
-  width: 300px;
-  background-color: lightgreen;
-}
-.rev-img {
-  width: 100%;
-}
-
-.image-container a {
-  color: white;
-  display: inline-block;
-  bottom: 5px;
-  left: 5px;
-  padding: 5px 15px;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  background-color: rgba(50,50,50,0.5);
-  color: #eeeeee;
-  position: absolute;
-  /*border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;*/
-  border-radius: 15px;
-}
-
-.icons-container {
-  margin:0 5px;
-  height: 30px;
-  /*background-color: pink;*/
-  font-size: 1.8rem;
-}
-.icons-container a {
-  display: inline-block;
-  float: left;
-  margin: 5px;
-  font-size: 2rem;
-}
-.heart-icon {
-  /*color: grey;*/
-  /*background-color: blue;*/
-}
-.comment-icon {
-  /*background-color: red;*/
-  /*color: grey;*/
-}
-
-
-/*==================レビューボトム===================================*/
-.rev-bottom {
-  /*background-color: lightblue;*/
-  min-height: 30px;
-  margin: 0 10px;
-  padding-bottom: 5px;
-}
-.rev-bottom a {
-  font-weight: bold;
-  font-size: 1.2rem;
-}
-.rev-bottom span {
-  font-size: 1.1rem;
-}
-
-.rev-bottom li {
-  margin-bottom: 5px;
-}
-
-
-/*=================外部サイトから=====================*/
-.item__header {
-  padding: 10px;
-}
-
-.item__user-icon {
-  float: left;
-  width: 30px;
-  height: 30px;
-}
-
-.item__user-name, .item__date {
-  display: block;
-  margin-left: 40px;
-  margin-bottom: 2px;
-}
-.item__date {
-  font-size: 1rem;
+  height: 80px;
+  margin-top: 5px;
+  background-color: rgba(0,0,0,0);
+  border-radius: 5px;
+  padding-left: 20px;
 }

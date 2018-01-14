@@ -1,13 +1,17 @@
+<h1 class="sp-form-title">レビュー(メニュー写真)を投稿</h1>
 <%= form_for(@review, url: reviews_path) do |f| %>
 
-  <%= f.label :menu_id, 'メニュー' %><br/>
+  <!-- <%= f.label :menu_id, 'メニュー' %><br/> -->
+  <h3 class="sp-form-label">メニュー</h3>
   <%= f.collection_select :menu_id, @menus, :id, :name %><br/>
 
+  <h3 class="sp-form-label">画像</h3>
   <%= f.label :picture, '　画像追加', {class: "input_file fa fa-camera"} %><br/>
   <%= f.file_field :picture %><br/>
 
-  <%= f.label :content, 'キモチ' %><br/>
-  <%= f.text_area :content, cols: 40, rows: 10 %><br/>
+  <!-- <%= f.label :content, 'キモチ' %><br/> -->
+  <h3 class="sp-form-label">口コミ</h3>
+  <%= f.text_area :content, cols: 40, rows: 10, class: "sp-form-text-area" %><br/>
 
-  <%= f.submit '口コミを投稿' %>
+  <%= f.submit '口コミを投稿', class: "sp-form-submit" %>
 <% end %>
