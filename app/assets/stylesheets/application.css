@@ -161,6 +161,9 @@ form input[type="submit"] {
   &:hover {
     background-color: white;
   }
+  -webkit-appearance: none;
+  border-radius: 0;
+
 }
 
 
