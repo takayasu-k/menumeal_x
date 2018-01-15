@@ -1,11 +1,13 @@
-<h2>ユーザー情報編集 <%= resource_name.to_s.humanize %></h2>
+<section class="sp-form-wrapper">
+<h1 class="sp-form-title">ユーザー情報編集 <%= resource_name.to_s.humanize %></h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :email, 'メールアドレス' %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <!-- <%= f.label :email, 'メールアドレス' %><br /> -->
+    <h3 class="sp-form-label">メールアドレス</h3>
+    <%= f.email_field :email, autofocus: true, class: "sp-form-text" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -13,13 +15,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name, 'ユーザーネーム' %><br />
-    <%= f.text_field :name %>
+    <!-- <%= f.label :name, 'ユーザーネーム' %><br /> -->
+    <h3 class="sp-form-label">ユーザーネーム</h3>
+    <%= f.text_field :name, class: "sp-form-text" %>
   </div>
 
   <div class="field">
-    <%= f.label :password, '新しいパスワード' %> <i>(変更する場合のみ入力してください)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <!-- <%= f.label :password, '新しいパスワード' %> <i>(変更する場合のみ入力してください)</i><br /> -->
+    <h3 class="sp-form-label">新しいパスワード</h3>
+    <%= f.password_field :password, autocomplete: "off", class: "sp-form-text" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> 文字以内</em>
@@ -27,27 +31,33 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, '新しいパスワード（確認）' %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <!-- <%= f.label :password_confirmation, '新しいパスワード（確認）' %><br /> -->
+    <h3 class="sp-form-label">新しいパスワード(確認)</h3>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "sp-form-text" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password, '現在のパスワード' %> <i>(ユーザー情報の変更を行う場合は確認のため入力してください)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <!-- <%= f.label :current_password, '現在のパスワード' %> <i>(ユーザー情報の変更を行う場合は確認のため入力してください)</i><br /> -->
+    <h3 class="sp-form-label">現在のパスワード</h3>
+    <%= f.password_field :current_password, autocomplete: "off", class: "sp-form-text" %>
   </div>
 
   <div class="field">
-    <%= f.label :prof_picture, '　画像追加', {class: "input_file fa fa-camera"} %><br/>  
+    <h3 class="sp-form-label">メニュー</h3>
+    <%= f.label :prof_picture, '　画像追加', {class: "input_file fa fa-camera"} %><br/>
     <%= f.file_field :prof_picture %><br/>
   </div>
 
   <div class="actions">
-    <%= f.submit "更新" %>
+    <%= f.submit "更新", class: "sp-form-submit " %>
   </div>
 <% end %>
 
-<h3>退会</h3>
 
-<p>不幸ですか? <%= button_to "退会する", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete %></p>
+<!-- <h3>退会</h3>
 
-<%= link_to "戻る", :back %>
+<p>不幸ですか? <%= button_to "退会する", registration_path(resource_name), data: { confirm: "本当によろしいですか？" }, method: :delete %></p> -->
+
+<!-- <%= link_to "戻る", :back %> -->
+
+</section>

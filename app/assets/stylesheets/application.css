@@ -132,11 +132,13 @@ a {
 
 /*---------- フォーム関連 ----------*/
 input {
+  -webkit-appearance: none;
   background-color: rgba(250,250,250,0.5);
   border: 1px solid grey;
   margin-bottom: 10px;
 }
 textarea {
+  -webkit-appearance: none;
   background-color: rgba(250,250,250,0.5);
   margin-bottom: 10px;
 }

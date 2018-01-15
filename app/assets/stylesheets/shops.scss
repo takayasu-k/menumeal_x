@@ -105,13 +105,17 @@
 
 
 /*=================フォーム関連====================*/
+.sp-form-wrapper {
+  background-color: #fff;
+}
+
 .sp-form-title {
   font-size: 1.5rem;
   border-bottom: 1px solid #e9e9e9;
   text-align: center;
   padding: 20px 0;
 }
-.new_shop {
+.new_shop, .edit_shop {
   // shop/newページ
   // background-color: pink;
   text-align: center;
@@ -146,11 +150,9 @@
 .sp-form-text::-webkit-input-placeholder {
   text-align: left;
   color: #bbb;
-  font-size: 1.4rem;
 }
 .sp-form-text::-moz-placeholder {
   text-align: left;
-  color: #bbb;
 }
 
 /*=================メニュー一覧ページ====================*/
@@ -171,4 +173,12 @@
     display: none;
   }
 
+  .sp-form-wrapper {
+    width: 800px;
+    margin: 0 auto;
+  }
+  .sp-form-title {
+    font-size: 1.8rem;
+    padding: 30px 0;
+  }
 }
