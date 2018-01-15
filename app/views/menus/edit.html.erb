@@ -1,6 +1,6 @@
 <h1 class="sp-form-title">メニューを修正</h1>
 
-<%= form_for(@menu, url: menus_path) do |f| %>
+<%= form_for(@menu, url: menu_path(@menu)) do |f| %>
 
   <!-- <%= f.label :shop_id, '店舗' %><br/> -->
   <h3 class="sp-form-label">店舗</h3>
@@ -19,5 +19,5 @@
   <%= f.select :menu_type, ['food', 'drink', 'others'],
           { include_blank: '選択してください' }, class: "sp-form-text" %><br/>
 
-  <%= f.submit 'メニューを新規登録', class: "sp-form-submit" %>
+  <%= f.submit 'メニューを修正', class: "sp-form-submit" %>
 <% end %>
