@@ -1,10 +1,11 @@
+<section class="sp-form-wrapper">
 <h1 class="sp-form-title">メニューを修正</h1>
 
 <%= form_for(@menu, url: menu_path(@menu)) do |f| %>
 
   <!-- <%= f.label :shop_id, '店舗' %><br/> -->
   <h3 class="sp-form-label">店舗</h3>
-  <%= f.collection_select :shop_id, @shops, :id, :name %><br/>
+  <%= f.collection_select :shop_id, @shops, :id, :name, class: "sp-form-text" %><br/>
 
   <!-- <%= f.label :name, 'メニュー名' %><br/> -->
   <h3 class="sp-form-label">メニュー名</h3>
@@ -21,3 +22,4 @@
 
   <%= f.submit 'メニューを修正', class: "sp-form-submit" %>
 <% end %>
+</section>

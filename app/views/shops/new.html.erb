@@ -1,3 +1,4 @@
+<section class="sp-form-wrapper">
 <h1 class="sp-form-title">店舗登録</h1>
 <%= form_for(@shop, url: shops_path) do |f| %>
   <!-- <%= f.label :name, '店舗名', class: "sp-form-label" %><br/> -->
@@ -16,5 +17,10 @@
   <h3 class="sp-form-label">電話番号</h3>
   <%= f.text_field :tel, size: 12, placeholder: "例) 0000-00-0000", class: "sp-form-text" %><br/>
 
+  <h3 class="sp-form-label">画像</h3>
+  <%= f.label :prof_picture, '　画像追加', {class: "input_file fa fa-camera"} %><br/>
+  <%= f.file_field :prof_picture %><br/>
+
   <%= f.submit '店舗を登録', class: "sp-form-submit" %>
 <% end %>
+<section>
