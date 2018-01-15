@@ -75,6 +75,7 @@
     <div class="container">
       <ul>
         <li><%= link_to "Menumeal", root_path, class: "footer-item" %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "footer-item" %></li>
         <li><%= link_to "運営会社", "#", class: "footer-item" %></li>
         <li><%= link_to "利用規約", "#", class: "footer-item" %></li>
         <li><%= link_to "プライバシーポリシー", "#", class: "footer-item" %></li>
