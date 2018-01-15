@@ -38,5 +38,9 @@ class MenusController < ApplicationController
   end
 
   def destroy
+    @menu = Menu.find_by(id: params[:id])
+    shop_id = @menu.shop_id
+    @menu.destroy
+    redirect_to shop_menu_path(shop_id)
   end
 end
