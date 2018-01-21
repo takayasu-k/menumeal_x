@@ -14,7 +14,6 @@
 }
 .sp-header-logo {
   color: #fff;
-  // background-color: pink;
   display: inline-block;
   padding-top: 10px;
   font-size: 2rem;
@@ -33,8 +32,6 @@
       color: #fff;
       font-size: 2rem;
       text-shadow: 2px 2px 2px #000;
-      // background-color: pink;
-      // letter-spacing: 1px;
       font-weight: normal;
 
     }
@@ -47,7 +44,6 @@
   padding-left: 5px;
   font-size: 1rem;
   text-shadow: 2px 2px 2px #000;
-  // background-color: pink;
 }
 
 /*================= .shop-nav-wrapper ====================*/
@@ -55,18 +51,15 @@
   height: 40px;
   width: 100%;
   background-color: #e4e4e4;
-  // background-color: blue;
   text-align: center;
 }
 .shop-nav-item {
   display: inline-block;
   height: 100%;
-  // background-color: pink;
   color: #777;
   font-size: 1.6rem;
   padding-top: 12px;
   width: 49%;
-  // margin-left: -5px;
 }
 
 /*=================.shop-menus ====================*/
@@ -79,15 +72,13 @@
   width: 100%;
   height: 50px;
   display: block;
-  // background-color: pink;
   padding-top: 5px;
   border-bottom: 1px solid #e4e4e4;
   .menu-name {
     font-size: 1.4rem;
     height: 40px;
     padding-top: 13px;
-    display: inline-block;;
-    // background-color: blue;
+    display: inline-block;
     vertical-align: top;
     margin-left: 5px;
     color: #000;
@@ -99,7 +90,6 @@
     height: 40px;
     font-size: 1.4rem;
     padding-top: 13px;
-    // background-color: red;
   }
 
 }
@@ -143,7 +133,6 @@
   text-align: right;
   font-size: 1rem;
   color: blue;
-  // background-color: pink;
   margin-top: 15px;
 }
 .shop-info-table {
@@ -174,9 +163,7 @@
 }
 .new_shop, .edit_shop {
   // shop/newページ
-  // background-color: pink;
   text-align: center;
-  // padding: 40px 0;
   width: 300px;
   margin: 0 auto;
   padding: 10px 0;
