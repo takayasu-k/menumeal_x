@@ -1,6 +1,6 @@
 class TopController < ApplicationController
   def index
-    @reviews = Review.limit(15)
+    @reviews = Review.order(created_at: :desc).limit(15)
     @menus = Menu.limit(2)
   end
 
