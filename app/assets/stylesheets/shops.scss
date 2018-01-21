@@ -109,7 +109,11 @@
   margin-bottom: 10px;
   .shop-base-info-wrapper {
     margin-top: 5px;
+    .container {
+      height: 40px;
+    }
     .section-title {
+      display: inline-block;
       color: #000;
       font-size: 1.4rem;
       border-left: 3px solid #ff8000;
@@ -122,6 +126,7 @@
   .shop-detail-info-wrapper {
     margin-top: 5px;
     .section-title {
+      display: inline-block;
       color: #000;
       font-size: 1.4rem;
       border-left: 3px solid #ff8000;
@@ -131,6 +136,15 @@
       margin: 10px 0 10px;
     }
   }
+}
+.edit-form {
+  float: right;
+  display: inline-block;
+  text-align: right;
+  font-size: 1rem;
+  color: blue;
+  // background-color: pink;
+  margin-top: 15px;
 }
 .shop-info-table {
   width: 100%;

@@ -40,6 +40,7 @@
     <div class="shop-base-info-wrapper">
       <div class="container">
         <h2 class="section-title">基本情報</h2>
+        <%= link_to "修正", edit_shop_path(@shop), class: "edit-form" %>
       </div>
       <table class="shop-info-table">
         <tr>
@@ -55,6 +56,7 @@
     <div class="shop-detail-info-wrapper">
       <div class="container">
       <h2 class="section-title">詳細情報</h2>
+      <%= link_to "修正", edit_shop_detail_path(@shop), class: "edit-form" %>
       </div>
       <table class="shop-info-table">
         <tr>
