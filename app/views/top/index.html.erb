@@ -32,13 +32,11 @@
 
         <div class="menus-container">
 
-          <% @menus.each do |menu| %>
+          <% @recommended_reviews.each do |review| %>
             <div class="menu-container">
-              <%= image_tag menu.reviews.last.picture %>
-              <!-- <a class="menu-name" href=""><%= menu.name %></a> -->
-              <%= link_to menu.name, menu_path(menu), class: "menu-name" %>
-              <!-- <a class="shop-name"><%= menu.shop.name %></a> -->
-              <%= link_to menu.shop.name, shop_path(menu.shop.id), class: "shop-name" %>
+              <%= image_tag review.picture %>
+              <%= link_to review.menu.name, menu_path(review.menu.id), class: "menu-name" %>
+              <%= link_to review.menu.shop.name, shop_path(review.menu.shop.id), class: "shop-name" %>
             </div>
           <% end %>
         </div>

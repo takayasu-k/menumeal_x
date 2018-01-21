@@ -1,25 +1,4 @@
 <!-- 店舗トップページ -->
-<!-- <div class="shop_top">
-  <h1 class="shop_name"><%= @shop.name %><span class="shop_kana">(<%= @shop.kana %>)</span></h1>
-
-  <img src="<%= "/shop_prof_images/#{@shop.prof_picture}" %>" width="50%" height="50%"><br/>
-  <%= link_to "メニュー (#{@shop.menus.size})", shop_menu_path(@shop), class: "shop_menu_link" %>
-  <%= link_to '＋', new_menu_path %>
-
-  <h2>■住所</h2>
-  <span><%= @shop.address %></span>
-
-  <h2>■電話番号</h2>
-  <span><%= @shop.tel %></span><br/> -->
-
-  <!-- ここに詳細情報を挿入 -->
-  <!-- <%= render 'shops/shop_detail' %>
-
-  <%= link_to '編集', edit_shop_path(@shop)  %>|
-  <%= link_to '削除', shop_path(@shop), method: :delete, data: {confirm: '本当に削除しますか？'} %><br>
-
-  <%= link_to '詳細情報を編集', edit_shop_detail_path(@shop)  %>|
-</div> -->
 <nav class="sp-header">
   <div class="container">
     <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
@@ -36,3 +15,69 @@
   <%= link_to "基本情報", shop_path(@shop.id), class:"shop-nav-item" %>
   <%= link_to "メニュー", shop_menu_path(@shop.id), class:"shop-nav-item" %>
 </nav>
+<section class="shop-info-wrapper">
+    <div class="shop-base-info-wrapper">
+      <div class="container">
+        <h2 class="section-title">基本情報</h2>
+        <%= link_to "修正", edit_shop_path(@shop), class: "edit-form" %>
+      </div>
+      <table class="shop-info-table">
+        <tr>
+          <th>電話番号</th>
+          <td><%= @shop.tel %></td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td><%= @shop.address %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="shop-detail-info-wrapper">
+      <div class="container">
+      <h2 class="section-title">詳細情報</h2>
+      <%= link_to "修正", edit_shop_detail_path(@shop), class: "edit-form" %>
+      </div>
+      <table class="shop-info-table">
+        <tr>
+          <th>営業時間</th>
+          <td><%= @shop_detail.operating_hours %></td>
+        </tr>
+        <tr>
+          <th>定休日</th>
+          <td><%= @shop_detail.holiday %></td>
+        </tr>
+        <tr>
+          <th>アクセス</th>
+          <td><%= @shop_detail.access %></td>
+        </tr>
+        <tr>
+          <th>予算</th>
+          <td><%= @shop_detail.budget %></td>
+        </tr>
+        <tr>
+          <th>支払い方法</th>
+          <td><%= @shop_detail.payment %></td>
+        </tr>
+        <tr>
+          <th>席数</th>
+          <td><%= @shop_detail.seats %></td>
+        </tr>
+        <tr>
+          <th>個室</th>
+          <td><%= @shop_detail.private_room %></td>
+        </tr>
+        <tr>
+          <th>カウンター席</th>
+          <td><%= @shop_detail.bar %></td>
+        </tr>
+        <tr>
+          <th>喫煙</th>
+          <td><%= @shop_detail.smoking %></td>
+        </tr>
+        <tr>
+          <th>駐車場</th>
+          <td><%= @shop_detail.parking %></td>
+        </tr>
+      </table>
+    </div>
+</section>
