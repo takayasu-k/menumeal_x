@@ -1,3 +1,9 @@
+<nav class="sp-header">
+  <div class="container">
+    <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
+  </div>
+</nav>
+
 <%= form_for(@user_profile, url: user_profile_path(@user), method: :put) do |f| %>
   <%= f.label :profile, 'プロフィール文' %><br/>
   <%= f.text_area :profile, cols: 40, rows: 10 %><br/>
