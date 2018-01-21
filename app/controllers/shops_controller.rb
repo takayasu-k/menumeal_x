@@ -39,11 +39,11 @@ class ShopsController < ApplicationController
     @shop.kana = params[:shop][:kana]
     @shop.address = params[:shop][:address]
     @shop.tel = params[:shop][:tel]
-    params[:shop][:prof_picture] # ショップの画像ファイルが有る場合のみ処理
+    if params[:shop][:prof_picture] # ショップの画像ファイルが有る場合のみ処理
       @shop.prof_picture = "#{@shop.id}.jpg"
       image = params[:shop][:prof_picture]
       File.binwrite("public/shop_prof_images/#{@shop.prof_picture}", image.read)
-    
+    end
     @shop.save
     redirect_to "/shops/#{@shop.id}"
   end
