@@ -68,6 +68,7 @@ group :production do
   gem 'therubyracer', platforms: :ruby
   gem 'unicorn', '~> 5.3'
   gem 'mysql2'
+  gem 'fog'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
