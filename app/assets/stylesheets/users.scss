@@ -10,66 +10,118 @@
   padding: 10px 0;
 }
 
+/*=============↓user_profile関連(20180128ver)================ */
+.user-top-wrapper {
+  .user-top-top {
+    height: 100px;
+    .user-top-left {
+      display: inline-block;
+      width: 32%;
+      .user-icon {
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+      }
+    }
+    .user-top-right {
+      display: inline-block;
+      background-color: pink;
+      height: 100%;
+      width: 66%;
+    }
+  }
+  .user-top-bottom {
 
-
-
-
-
-
-
-
-
-
-/*=============↓user_profile関連================ */
-
-
-
-.user_profile_header {
-  background-color: #fafafa;
-  height: 200px;
+  }
 }
 
-.user_header_left {
-  height: 100%;
-  width: 33%;
-  float: left;
+.user-nav-wrapper {
+  height: 40px;
+  border-top: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  text-align: center;
+  .user-nav-item {
+    color: #777;
+    display: inline-block;
+    height: 40px;
+    font-size: 1.4rem;
+    padding-top: 13px;
+    width: 32.5%;
+  }
 }
 
-.user_header_left img {
-  height: 152px;
-  width: 152px;
-  border-radius: 50%;
-  margin-left: 45px;
-  margin-top: 25px;
-}
-
-
-.user_header_right {
-  width: 67%;
-  height: 100%;
-  padding-left: 15px;
-  // background-color: lightgreen;
-  display: inline-block;
-}
-
-.user_header_right_top {
-  // background-color: red;
-  height: 40%;
-}
-.user_name {
-  font-size: 2.5rem;
-  font-weight: normal;
-  padding-top: 25px;
-}
-.user_header_right_bottom {
-  padding-bottom: 25px;
-}
-.user_header_right_bottom span {
-  font-size: 1.5rem;
+.user-bottom-wrapper {
+  height: 600px;
 }
 
 
-.user_profile_bottom {
-  // background-color: pink;
-  min-height: 500px;
+
+
+
+/*=============↓user_profile関連(過去ver)================ */
+//
+// .user_profile_header {
+//   background-color: #fafafa;
+//   height: 200px;
+// }
+//
+// .user_header_left {
+//   height: 100%;
+//   width: 33%;
+//   float: left;
+// }
+//
+// .user_header_left img {
+//   height: 152px;
+//   width: 152px;
+//   border-radius: 50%;
+//   margin-left: 45px;
+//   margin-top: 25px;
+// }
+//
+//
+// .user_header_right {
+//   width: 67%;
+//   height: 100%;
+//   padding-left: 15px;
+//   // background-color: lightgreen;
+//   display: inline-block;
+// }
+//
+// .user_header_right_top {
+//   // background-color: red;
+//   height: 40%;
+// }
+// .user_name {
+//   font-size: 2.5rem;
+//   font-weight: normal;
+//   padding-top: 25px;
+// }
+// .user_header_right_bottom {
+//   padding-bottom: 25px;
+// }
+// .user_header_right_bottom span {
+//   font-size: 1.5rem;
+// }
+//
+//
+// .user_profile_bottom {
+//   // background-color: pink;
+//   min-height: 500px;
+// }
+
+
+
+
+
+
+
+
+
+
+
+/*=================↓タブレット/PC用スタイル====================*/
+/*=================↓タブレット/PC用スタイル====================*/
+@media (min-width: 769px) {
+
 }
