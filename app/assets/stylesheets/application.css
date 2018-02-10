@@ -421,8 +421,8 @@ input::-moz-placeholder {
   border-radius: 50%;
 }
 .user-name {
-  vertical-align: 80%;
-  font-size: 1.4rem;
+  /*vertical-align: 80%;*/
+  /*font-size: 1.4rem;*/
   /*background-color: red;*/
 }
 
