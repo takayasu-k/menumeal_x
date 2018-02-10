@@ -1,15 +1,43 @@
 <section class="user-top-wrapper">
     <div class="container">
       <div class="user-top-top">
+
         <% if @user.prof_picture? %>
          <%= link_to image_tag(@user.prof_picture, class: "user-icon"), edit_user_registration_path, class: "user-top-left" %>
         <% else %>
          <%= link_to image_tag('/user_picts/default.png', class: "user-icon"), edit_user_registration_path, class: "user-top-left" %>
         <% end %>
-        <div class="user-top-right"></div>
+
+        <div class="user-top-right">
+          <div class="user-top-right-top">
+            <!-- ユーザーネーム、設定 -->
+            <span class="user-name"><%= @user.name %></span>
+            <%= link_to "◯", edit_user_registration_path, class: "settings-icon" %>
+          </div>
+          <div class="user-top-right-bottom">
+            <!-- 投稿、フォロー、フォロワー -->
+            <div class="user-relation-info">
+              <%= link_to @user.reviews.count, user_path(@user), class: "count" %>
+              <span class="type">投稿</span>
+            </div>
+            <div class="user-relation-info">
+              <%= link_to @user.followers.count, followers_user_path(@user), class: "count" %>
+              <span class="type">フォロワー</span>
+            </div>
+            <div class="user-relation-info">
+              <%= link_to @user.following.count, following_user_path(@user), class: "count" %>
+              <span class="type">フォロー中</span>
+            </div>
+          </div>
+        </div>
+
       </div>
+
       <div class="user-top-bottom">
+        <!-- ユーザープロフィール文 -->
+        <span class="user-profile"><%= @user_profile.profile %></span>
       </div>
+
     </div>
 </section>
 

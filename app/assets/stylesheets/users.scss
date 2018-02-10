@@ -14,24 +14,78 @@
 .user-top-wrapper {
   .user-top-top {
     height: 100px;
+    // background-color: pink;
+    text-align: center;
     .user-top-left {
-      display: inline-block;
-      width: 32%;
+      // background-color: lightblue;
+      height: 80px;
+      border-radius: 50%;
+      margin-top: 10px;
+      padding-left: 10px;
       .user-icon {
-        height: 90px;
-        width: 90px;
-        border-radius: 50%;
+        width: 80px;
       }
     }
     .user-top-right {
-      display: inline-block;
-      background-color: pink;
-      height: 100%;
-      width: 66%;
+      float: right;
+      width: 70%;
+      .user-top-right-top {
+        height: 50px;
+        text-align: left;
+        padding-top: 5px;
+        .user-name {
+          display: inline-block;
+          height: 100%;
+          font-size: 1.8rem;
+          padding-top: 15px;
+          // width: 70%;
+          padding-left: 20px;
+        }
+        .settings-icon {
+          display: inline-block;
+          text-align: center;
+          height: 20px;
+          width: 30px;
+          padding-top: 2px;
+          border: 1px solid #d3d3d3;
+          border-radius: 3px;
+          margin-top: 13px;
+          vertical-align: top;
+          font-size: 1.4rem;
+          margin-left: 5px;
+        }
+      }
+      .user-top-right-bottom {
+        height: 50px;
+        padding-right: 30px;
+        .user-relation-info {
+          display: inline-block;
+          width: 32%;
+          height: 100%;
+          .count {
+            display: block;
+            font-size: 1.8rem;
+            // height: 30px;
+            padding-top: 5px;
+          }
+          .type {
+            display: block;
+            font-size: 1rem;
+            margin-top: 2px;
+            // color: #d3d3d3;
+          }
+        }
+      }
     }
   }
   .user-top-bottom {
-
+    // height: 50px;
+    // background-color: lightgreen;
+    margin-top: 10px;
+    padding-left: 20px;
+    .user-profile {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -40,6 +94,7 @@
   border-top: 1px solid #bbb;
   border-bottom: 1px solid #bbb;
   text-align: center;
+  margin-top: 20px;
   .user-nav-item {
     color: #777;
     display: inline-block;
