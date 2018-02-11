@@ -1,18 +1,31 @@
 <section class="user-top-wrapper">
     <div class="container">
       <div class="user-top-top">
-
-        <% if @user.prof_picture? %>
-         <%= link_to image_tag(@user.prof_picture, class: "user-icon"), edit_user_registration_path, class: "user-top-left" %>
+        <% if @user ==  current_user %>
+          <% if @user.prof_picture? %>
+           <%= link_to image_tag(@user.prof_picture, class: "user-icon"), edit_user_registration_path, class: "user-top-left" %>
+          <% else %>
+           <%= link_to image_tag('/user_picts/default.png', class: "user-icon"), edit_user_registration_path, class: "user-top-left" %>
+          <% end %>
         <% else %>
-         <%= link_to image_tag('/user_picts/default.png', class: "user-icon"), edit_user_registration_path, class: "user-top-left" %>
+          <% if @user.prof_picture? %>
+          <div class="user-top-left">
+           <%= image_tag(@user.prof_picture, class: "user-icon") %>
+          </div>
+          <% else %>
+          <div class="user-top-left">
+           <%= image_tag('/user_picts/default.png', class: "user-icon") %>
+          </div>
+          <% end %>
         <% end %>
 
         <div class="user-top-right">
           <div class="user-top-right-top">
             <!-- ユーザーネーム、設定 -->
             <span class="user-name"><%= @user.name %></span>
-            <%= link_to "◯", edit_user_registration_path, class: "settings-icon" %>
+            <% if @user == current_user%>
+              <%= link_to "◯", edit_user_registration_path, class: "settings-icon" %>
+            <% end %>
           </div>
           <div class="user-top-right-bottom">
             <!-- 投稿、フォロー、フォロワー -->
