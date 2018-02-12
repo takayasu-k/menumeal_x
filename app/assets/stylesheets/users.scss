@@ -19,6 +19,8 @@
     .user-top-left {
       // background-color: lightblue;
       height: 80px;
+      display: inline-block;
+      width: 80px;
       border-radius: 50%;
       margin-top: 10px;
       padding-left: 10px;
@@ -106,7 +108,15 @@
 }
 
 .user-bottom-wrapper {
-  height: 600px;
+  text-align: center;
+  .user-review-container {
+    display: inline-block;
+    width: 32.5%;
+    .user-review-image {
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 

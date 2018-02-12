@@ -3,6 +3,7 @@ class UsersController < ApplicationController
     def show
         @user = User.find_by(id: params[:id])
         @user_profile = @user.user_profile
+        @reviews = @user.reviews.order(created_at: :desc)
     end
 
     def following
@@ -34,10 +35,12 @@ class UsersController < ApplicationController
     def eaten_menus
       @user = User.find_by(id: params[:id])
       @user_profile = @user.user_profile
+      @eaten_menus = @user.eaten_menus.order(created_at: :desc)
     end
 
     def desired_menus
       @user = User.find_by(id: params[:id])
       @user_profile = @user.user_profile
+      @desired_menus = @user.desired_menus.order(created_at: :desc)
     end
 end
