@@ -9,13 +9,7 @@ class ShopsController < ApplicationController
   end
 
   def create
-    @shop = Shop.new(
-    name: params[:shop][:name],
-    kana: params[:shop][:kana],
-    address: params[:shop][:address],
-    tel: params[:shop][:tel],
-    prof_picture: "default.jpg"
-    )
+    @shop = Shop.new(shop_params)
     @shop.save
     @shop_detail = ShopDetail.new(
     shop_id: @shop.id
@@ -35,16 +29,7 @@ class ShopsController < ApplicationController
 
   def update
     @shop = Shop.find_by(id: params[:id])
-    @shop.name = params[:shop][:name]
-    @shop.kana = params[:shop][:kana]
-    @shop.address = params[:shop][:address]
-    @shop.tel = params[:shop][:tel]
-    if params[:shop][:prof_picture] # ショップの画像ファイルが有る場合のみ処理
-      @shop.prof_picture = "#{@shop.id}.jpg"
-      image = params[:shop][:prof_picture]
-      File.binwrite("public/shop_prof_images/#{@shop.prof_picture}", image.read)
-    end
-    @shop.save
+    @shop.update(shop_params)
     redirect_to "/shops/#{@shop.id}"
   end
 
@@ -58,4 +43,10 @@ class ShopsController < ApplicationController
     @shop = Shop.find_by(id: params[:id])
     @shop_menus = @shop.menus # 関連付けを利用して店舗に紐づくメニューを取得
   end
+
+  private
+
+    def shop_params
+      params.require(:shop).permit(:name, :kana, :address, :tel, :prof_picture)
+    end
 end
