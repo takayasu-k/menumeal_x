@@ -9,7 +9,9 @@
   <%= image_tag(@shop.prof_picture, class: "shop-image") %>
   <div class="container">
     <h1 class="shop-name"><%= @shop.name %></h1>
-    <span class="shop-kana">(<%= @shop.kana %>)</span>
+    <% if @shop.kana.present? %>
+      <span class="shop-kana">(<%= @shop.kana %>)</span>
+    <% end %>
   </div>
 </section>
 <nav class="shop-nav-wrapper">
