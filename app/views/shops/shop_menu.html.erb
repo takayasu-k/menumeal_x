@@ -1,40 +1,12 @@
 <div class="shop_menus_container">
-  <!-- <ul>
-    <% @shop_menus.each do |menu|%>
-      <li>
-        <%= image_tag "/user_picts/ra-men.jpg", size: 50, class: "menu_pict" %>
-        <%= link_to menu.name, menu_path(menu), class: "menu_name" %>
-        <span class="menu_price"><%= menu.price %></span>
-      </li>
-    <% end %>
-  </ul> -->
-  <!-- <div class="shop_menu_header">
-    <%= link_to @shop.name, shop_path(@shop) %>
-    <span> > メニュー</span>
-  </div>
-  <ul>
-    <% @shop_menus.each do |menu|%>
-    <li>
-      <%= link_to(menu_path(menu), class: "shop_menu_container") do %>
-        <% if menu.reviews.present? %>
-        <%= image_tag menu.reviews.last.picture, size: 30, class: "menu_pict" %>
-        <% else %>
-        <%= image_tag "/user_picts/noimage.png", size: 30, class: "menu_pict" %>
-        <% end %>
-          <span class="menu_name"><%= menu.name %></span>
-          <span class="menu_price clearfix"><%= menu.price %>円</span>
-      <% end %>
-    </li>
-    <% end %>
-  </ul>
-</div> -->
 <nav class="sp-header">
   <div class="container">
     <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
   </div>
 </nav>
 
-<section class="shop-top-wrapper" style="background-image: url(/shop_prof_images/<%= @shop.prof_picture %>)">
+<section class="shop-top-wrapper">
+  <%= image_tag(@shop.prof_picture, class: "shop-image") %>
   <div class="container">
     <h1 class="shop-name"><%= @shop.name %></h1>
     <span class="shop-kana">(<%= @shop.kana %>)</span>
