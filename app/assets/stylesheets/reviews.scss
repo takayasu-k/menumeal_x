@@ -25,3 +25,64 @@
   border-radius: 5px;
   padding-left: 20px;
 }
+
+/*=================タイムライン====================*/
+.review-container {
+  .review-top-container {
+    height: 50px;
+    // background-color: pink;
+    padding-top: 10px;
+    .user-icon {
+      display: inline-block;
+      border-radius: 50%;
+      height: 30px;
+      .user-icon-image {
+        border-radius: 50%;
+        height: 30px;
+      }
+    }
+    .user-name {
+      display: inline-block;
+      // background-color: red;
+      vertical-align: top;
+      padding-top: 9px;
+      font-size: 1.2rem;
+    }
+  }
+  .review-image-container {
+    display: block;
+    width: 100%;
+    max-width: 769px;
+    margin: 0 auto;
+  }
+  .icons-container {
+    height: 40px;
+    // background-color: pink;
+    padding-top: 5px;
+    .counter {
+      color: #777;
+      font-size: 1.4rem;
+    }
+    .icon-item {
+      display: inline-block;
+      font-size: 2rem;
+      padding-top: 5px;
+      padding-left: 20px;
+      padding-right: 5px;
+    }
+    .last {
+      float: right;
+    }
+  }
+  .text-container {
+    margin-bottom: 10px;
+  }
+}
+
+
+
+/*=================↓タブレット/PC用スタイル====================*/
+/*=================↓タブレット/PC用スタイル====================*/
+@media (min-width: 769px) {
+
+}

@@ -1,35 +1,45 @@
 <div class="review-container">
-  <div class="item__header clearfix">
-      <%= link_to image_tag(@review.user.prof_picture, class: "item__user-icon-img user-icon"), user_path(@review.user_id), class: "item__user-icon" %>
-      <strong><%= link_to @review.user.name, user_path(@review.user_id), class: "item__user-name" %></strong>
-    <span class="item__date">
-      2014/08/29 19:00
-    </span>
+  <div class="review-top-container">
+    <div class="container">
+      <%= link_to image_tag(@review.user.prof_picture, class: "user-icon-image"), user_path(@review.user_id), class: "user-icon" %>
+      <%= link_to @review.user.name, user_path(@review.user_id), class: "user-name" %>
+    </div>
   </div>
 
-  <div class="image-container">
-    <%= image_tag @review.picture, class: "rev-img" %>
-    <%= link_to @review.menu.name, menu_path(@review.menu_id), class: "review_menu_name" %>
-  </div>
+  <%= link_to image_tag(@review.picture), review_path(@review), class: "review-image-container" %>
 
   <div class="icons-container">
-    <%= render partial: "likes/like_links", locals: { review_id: @review.id } %>
+    <div class="container">
+      <span id="like-of-<%= @review.id %>">
+     <%= render partial: "likes/like_links", locals: { review_id: @review.id } %>
+    </span>
+    <% if @review.likes.present? %>
+    <span class="counter"><%= @review.likes.count %></span>
+    <% end %>
+    <%= link_to comments_new_path(@review.id) do %>
+      <i class="fa fa-comment-o comment-icon icon-item"></i>
+      <% if @review.comments.present? %>
+      <%= link_to @review.comments.count, comments_new_path(@review.id), class: "counter" %>
+      <% end %>
+    <% end %>
     <a href="#">
-      <i class="fa fa-comment-o comment-icon"></i>
+      <i class="fa fa-check-square-o icon-item"></i>
+      <% if @review.menu.eaten_menus.present? %>
+      <span class="counter"><%= @review.menu.eaten_menus.count %></span>
+      <% end %>
     </a>
-  </div><!-- .icons-container -->
-
-  <div class="rev-bottom">
-    <ul>
-      <li><!--自分のコメント-->
-        <%= link_to @review.user.name, user_path(@review.user_id), class: "content-user-name" %>
-        <span><%= @review.content %></span>
-      </li>
-      <!-- ここ以下は他人からのコメント(if文で分岐)-->
-      <!-- <li>
-        <a href="#" class="content-user-name">shinnosuke_nohara</a>
-        <span>同じの食べてんねｗ</span>
-      </li> -->
-    </ul>
+    <a href="#" class="last">
+      <i class="fa fa-bookmark-o icon-item"></i>
+      <% if @review.menu.desired_menus.present? %>
+      <span class="counter"><%= @review.menu.desired_menus.count %></span>
+      <% end %>
+    </a>
+    </div>
   </div>
-</div><!-- review-container -->
+
+  <div class="text-container">
+    <div class="container">
+      <span><%= @review.content %></span>
+    </div>
+  </div>
+</div>
