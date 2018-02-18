@@ -1,8 +1,8 @@
 class UserProfilesController < ApplicationController
 
     def show
-      @user = User.find_by(id: params[:id])
-      @user_profile = UserProfile.find_by(user_id: params[:id])
+        @user = User.find_by(id: params[:id])
+        @user_profile = UserProfile.find_by(user_id: params[:id])
     end
 
     def edit
@@ -12,11 +12,13 @@ class UserProfilesController < ApplicationController
 
     def update
         @user_profile = UserProfile.find_by(user_id: params[:id])
-        @user_profile.profile = params[:user_profile][:profile]
-        @user_profile.birthday = params[:user_profile][:birthday]
-        @user_profile.gender = params[:user_profile][:gender]
-
-        @user_profile.save
+        @user_profile.update(user_profile_params)
         redirect_to "/users/#{@user_profile.user_id}"
+    end
+
+    private
+    
+    def user_profile_params
+        params.require(:user_profile).permit(:profile, :birthdat, :gender)
     end
 end

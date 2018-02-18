@@ -26,12 +26,18 @@
 .shop-top-wrapper {
   height: 200px;
   background-size: cover;
+  position: relative;
   .shop-image {
     width: 100%;
     height: 100%;
+    background-size: cover;
   }
   .container {
-    // padding-top: 140px;
+    position: absolute;
+    top: 150px;
+    height: 40px;
+    left: 0;
+    z-index: 10;
     .shop-name {
       color: #fff;
       font-size: 2rem;
