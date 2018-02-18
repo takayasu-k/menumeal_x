@@ -41,13 +41,31 @@
         height: 30px;
       }
     }
-    .user-name {
+    .name-container {
       display: inline-block;
-      // background-color: red;
+      // background-color: lightgreen;
       vertical-align: top;
-      padding-top: 9px;
-      font-size: 1.2rem;
+      .user-name {
+        display: block;
+        // background-color: red;
+        // vertical-align: top;
+        // padding-top: 9px;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+      .menu-name, .shop-name {
+        display: inline-block;
+        font-size: 1.2rem;
+        // background-color: pink;
+        text-align: left;
+        color: #777;
+        font-weight: normal;
+      }
+      .span {
+        color: #777;
+      }
     }
+
   }
   .review-image-container {
     display: block;
@@ -69,9 +87,6 @@
       padding-top: 5px;
       padding-left: 20px;
       padding-right: 5px;
-    }
-    .last {
-      float: right;
     }
   }
   .text-container {
