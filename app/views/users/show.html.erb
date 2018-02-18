@@ -25,6 +25,8 @@
             <span class="user-name"><%= @user.name %></span>
             <% if @user == current_user%>
               <%= link_to "◯", edit_user_registration_path, class: "settings-icon" %>
+            <% else %>
+              <%= render 'follow_form' %>
             <% end %>
           </div>
           <div class="user-top-right-bottom">
