@@ -11,11 +11,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new()
+    @review = Review.new(review_params)
     @review.user_id = current_user.id
-    @review.menu_id = params[:review][:menu_id]
-    @review.picture = params[:review][:picture]
-    @review.content = params[:review][:content]
     @review.save
     redirect_to reviews_path
   end
@@ -30,10 +27,7 @@ class ReviewsController < ApplicationController
 
   def update
     @review = Review.find_by(id: params[:id])
-    @review.menu_id = params[:menu_id]
-    @review.picture = params[:picture]
-    @review.content = params[:content]
-    @review.save
+    @review.update(review_params)
     redirect_to "/review/#{@review.id}"
   end
 
@@ -41,5 +35,11 @@ class ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
     @review.destroy
     redirect_to "/review"
+  end
+
+  private
+
+  def review_params
+    params.require(:review).permit(:menu_id, :picture, :content)
   end
 end

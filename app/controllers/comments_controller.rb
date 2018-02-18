@@ -6,8 +6,8 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(user_id: current_user.id, review_id: params[:comment][:review_id],
-    content: params[:comment][:content])
+    @comment = Comment.new(comment_params)
+    @comment.user_id = current_user.id
     @comment.save!
     redirect_to review_path(@comment.review_id)
   end
@@ -15,6 +15,12 @@ class CommentsController < ApplicationController
   def destroy
     current_user.comments.find_by(id: params[:comment_id]).destroy
     redirect_to review_path(params[:review_id])
+  end
+
+  private
+
+  def comment_params
+    params.require(:comment).permit(:review_id, :content)
   end
 
 end
