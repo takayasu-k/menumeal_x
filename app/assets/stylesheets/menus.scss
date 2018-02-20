@@ -19,3 +19,72 @@
   padding-left: 20px;
   color: #777;
 }
+
+/*================= menu-show-header ====================*/
+.menu-show-header {
+  border-bottom: 1px solid #ff8000;
+  // box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+  width: 100%;
+  background-color: #fff;
+  .menu-header-top {
+    color: #777;
+    padding: 5px;
+
+    a {
+      color: #777;
+    }
+  }
+  .menu-header-menu-name {
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .menu-header-menu-price {
+    text-align: center;
+    margin-top: 10px;
+    display: block;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+  .menu-icons-container {
+    text-align: center;
+    margin-top: 10px;
+    .register_form {
+      display: inline-block;
+      #e_m_register_btn, #d_m_register_btn {
+        padding: 0 5px;
+        padding-top: 2px;
+        border-radius: 5px;
+        font-size: 0.8rem;
+        color: #777;
+        margin-right: 10px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+/*=================↓sort-btn-wrapper====================*/
+
+.sort-btn-wrapper {
+  height: 30px;
+  // background-color: pink;
+  padding-top: 6px;
+  .container {
+    text-align: right;
+  }
+  .sort-btn {
+    display: inline-block;
+    font-size: 1.2rem;
+    border: 1px solid #777;
+    color: #777;
+    padding: 2px 5px;
+    border-radius: 4px;
+  }
+}
+
+
+/*=================↓タブレット/PC用スタイル====================*/
+/*=================↓タブレット/PC用スタイル====================*/
+@media (min-width: 769px) {
+
+}

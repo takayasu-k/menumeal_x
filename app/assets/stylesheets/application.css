@@ -380,47 +380,8 @@ input::-moz-placeholder {
 
 
 /*=================外部サイトから=====================*/
-// .item__header {
-//   padding: 10px;
-// }
-//
-// .item__user-icon {
-//   float: left;
-//   width: 30px;
-//   height: 30px;
-// }
-// // .item__user-icon a {
-// //   z-index: 10;
-// // }
-//
-// .item__user-name, .item__date {
-//   display: block;
-//   margin-left: 40px;
-//   margin-bottom: 3px;
-// }
-// .item__date {
-//   font-size: 1rem;
-//   color: lightgrey;
-// }
-//
-//
-//
-// .shop_container {
-//   padding: 10px;
-//   border-bottom: 1px solid #eaeaea;
-//   display: block;
-//   background-color: #fafafa;
-//   // margin-bottom: 1px;
-// }
-// .shop_container:hover {
-//   background-color: #fff;
-// }
-//
-// .shop_container a {
-//   font-weight: bold;
-// }
 
-// /*=============↓user_profile関連================ */
+ /*=============↓user_profile関連================ */
 
 
 /*
@@ -568,76 +529,7 @@ input::-moz-placeholder {
 }*/
 
 // /*============menu#show関連================= */
-.menu_detail_header {
-  text-align: center;
-  padding: 10px;
-  .menu_shop_name {
-    font-size: 1.2rem;
-    text-align: center;
-    display: block;
-    margin-bottom: 10px;
-  }
-  .menu_detail_header_menu {
-    font-size: 2rem;
-    font-weight: normal;
-    margin: 0 auto;
-    width: 495px;
-  }
-}
 
-.menu_detail_image_container {
-  margin-bottom: 10px;
-  text-align: center;
-  .menu_show_picture {
-    max-width: 50%;
-  }
-}
-
-.menu_detail_review_container {
-  max-width: 50%;
-  min-height: 50px;
-  text-align: center;
-  margin: 0 auto 10px;
-  padding-bottom: 10px;
-  &:last-child {
-    margin-bottom: 0;
-  }
-  .review_left {
-    max-width: 50px;
-    float: left;
-    margin-right: 10px;
-    .item__user-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
-  }
-
-
-  .review_right {
-    width: 445px;
-    display: inline-block;
-    text-align: left;
-
-    .user_name {
-      font-size: 1.1rem;
-      padding-top: 0;
-      margin-bottom: 5px;
-      color: lightgrey;
-      display: inline-block;
-    }
-    .review_content {
-      font-size: 1.3rem;
-      // letter-spacing: 1px;
-      line-height: 1.5rem;
-    }
-  }
-}
-.post_time {
-  font-size: 1rem;
-  float: right;
-  color: grey;
-}
 
 // /*============フォロー／フォロワー一覧画面関連================= */
 
@@ -683,15 +575,16 @@ input::-moz-placeholder {
 
 // /*============eaten_menu, desired_menu関連================= */
 
-.register_form {
+/*.register_form {
   display: inline-block;
-  // margin: 10px 0 -10px;
-}
-#e_m_register_btn, #d_m_register_btn {
+
+}*/
+/*#e_m_register_btn, #d_m_register_btn {
   padding: 0 10px;
   border-radius: 10px;
   font-size: 0.8rem;
-}
+  background-color: pink;
+}*/
 
 // /*============.comment関連================= */
 .comments_container {

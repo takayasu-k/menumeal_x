@@ -1,38 +1,66 @@
-<div class="menu_detail_container">
-  <div class="menu_detail_header">
-    <%= link_to @menu.shop.name, shop_path(@menu.shop_id), class: "menu_shop_name" %>
+<section class="menu-show-header">
+  <div class="container">
+  <div class="menu-header-top">
+    <%= link_to "Top", root_path %>
+    <span> > </span>
+    <%= link_to @menu.shop.name, shop_menu_path(@menu.shop) %>
+  </div>
+  <h2 class="menu-header-menu-name"><%= @menu.name %></h2>
+  <span class="menu-header-menu-price"><%= @menu.price %>円</span>
+  </div>
+  <div class="menu-icons-container">
     <%= render 'e_m_register_form'%>
     <%= render 'd_m_register_form'%>
-    <div class="menu_detail_header_menu">
-      <span class="menu_detail_menu_name"><%= @menu.name %></span>
-      <span class="menu_detail_menu_price"><%= @menu.price %>円</span>
+  </div>
+</section>
+<nav class="sort-btn-wrapper">
+  <div class="container">
+    <a href="#" class="sort-btn">▼</a>
+  </div>
+</nav>
+<% @reviews.each do |review| %>
+<div class="review-container">
+  <div class="review-top-container">
+    <div class="container">
+      <%= link_to image_tag(review.user.prof_picture, class: "user-icon-image"), user_path(review.user_id), class: "user-icon" %>
+      <div class="name-container">
+        <%= link_to review.user.name, user_path(review.user_id), class: "user-name" %>
+        <%= link_to review.menu.name, menu_path(review.menu_id), class: "menu-name" %>
+        <span class="span">/</span>
+        <%= link_to review.menu.shop.name, shop_path(review.menu.shop_id), class: "shop-name" %>
+      </div>
     </div>
-
-  </div><!--.menu_detail_header-->
-
-  <div class="menu_detail_image_container">
-    <% if @review.present? %>
-    <%= image_tag @review.picture, class: "menu_show_picture" %>
-    <% else %>
-    <%= image_tag "/user_picts/noimage.png", class: "menu_show_picture" %>
-    <% end %>
   </div>
 
-  <div class="menu_detail_reviews_container">
-    <% @reviews.each do |review| %>
-    <div class="menu_detail_review_container clearfix">
-      <div class="review_left">
-      <%= link_to image_tag(review.user.prof_picture, class: "item__user-icon"), user_path(review.user_id) %>
-      </div>
-      <div class="review_right clear">
-      <span class="user_name"><%= link_to review.user.name, user_path(review.user_id) %></span>
-      <span class="post_time"><%= review.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
-      <div class="review_content">
-        <span><%= review.content %></span>
-      </div><!--.review_content -->
-    </div><!--.review_right-->
-    </div><!--.menu_detail_review_container-->
-    <!-- <div class="clearfix"></div> -->
+  <%= link_to image_tag(review.picture), review_path(review), class: "review-image-container" %>
+
+  <div class="icons-container">
+    <div class="container">
+      <span id="like-of-<%= review.id %>">
+     <%= render partial: "likes/like_links", locals: { review_id: review.id } %>
+    </span>
+    <% if review.likes.present? %>
+    <span class="counter"><%= review.likes.count %></span>
     <% end %>
-  </div><!--.menu_detail_reviews_container-->
-</div><!--.menu_detail_container-->
+    <%= link_to comments_new_path(review.id) do %>
+      <i class="fa fa-comment-o comment-icon icon-item"></i>
+      <% if review.comments.present? %>
+      <%= link_to review.comments.count, comments_new_path(review.id), class: "counter" %>
+      <% end %>
+    <% end %>
+    <a href="#">
+      <i class="fa fa-bookmark-o icon-item"></i>
+      <% if review.menu.desired_menus.present? %>
+      <span class="counter"><%= review.menu.desired_menus.count %></span>
+      <% end %>
+    </a>
+    </div>
+  </div>
+
+  <div class="text-container">
+    <div class="container">
+      <span><%= review.content %></span>
+    </div>
+  </div>
+</div>
+<% end %>

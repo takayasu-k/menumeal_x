@@ -63,9 +63,9 @@
 </nav>
 
 <section class="user-bottom-wrapper">
-  <!-- <div class="container"> -->
+  <div class="reviews-container">
     <% @eaten_menus.each do |eaten_menu| %>
       <%= link_to image_tag(eaten_menu.menu.reviews.last.picture, class: "user-review-image"), review_path(eaten_menu.menu_id), class: "user-review-container" %>
     <% end %>
-  <!-- </div> -->
+  </div>
 </section>
