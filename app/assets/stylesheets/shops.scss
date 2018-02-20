@@ -88,13 +88,19 @@
   border-bottom: 1px solid #e4e4e4;
   .menu-name {
     font-size: 1.4rem;
-    height: 40px;
-    padding-top: 13px;
+    height: 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     display: inline-block;
     vertical-align: top;
     margin-left: 5px;
+    margin-top:10px;
+    padding-bottom: 5px;
     color: #000;
     font-weight: bold;
+    max-width: 65%;
+    // background-color: pink;
+    overflow: scroll;
   }
   .menu-price {
     display: inline-block;
