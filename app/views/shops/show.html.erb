@@ -43,7 +43,7 @@
       <table class="shop-info-table">
         <tr>
           <th>営業時間</th>
-          <td><%= @shop_detail.operating_hours %></td>
+          <td><%= simple_format(@shop_detail.operating_hours) %></td>
         </tr>
         <tr>
           <th>定休日</th>
