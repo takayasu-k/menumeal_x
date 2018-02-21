@@ -14,7 +14,7 @@ class MenusController < ApplicationController
   end
 
   def create
-    @menu = Menu.new(menu_parmas)
+    @menu = Menu.new(menu_params)
     @menu.save
     redirect_to shop_menu_path(@menu.shop_id)
   end
@@ -40,7 +40,7 @@ class MenusController < ApplicationController
 
   private
 
-  def menu_parmas
+  def menu_params
     params.require(:menu).permit(:shop_id, :name, :price, :menu_type)
   end
 end
