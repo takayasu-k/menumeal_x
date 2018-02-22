@@ -18,7 +18,7 @@
     <div class="container">
       <span id="like-of-<%= review.id %>">
      <%= render partial: "likes/like_links", locals: { review_id: review.id } %>
-    </span>
+      </span>
     <% if review.likes.present? %>
     <span class="counter"><%= review.likes.count %></span>
     <% end %>
