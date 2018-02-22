@@ -210,6 +210,11 @@
   color: #fff;
   height: 40px;
   font-size: 1.5rem;
+  &:hover {
+    background-color: #fff;
+    color: #ff8000;
+    border: 1px solid #ff8000;
+  }
 }
 
 .sp-form-text::-webkit-input-placeholder {
