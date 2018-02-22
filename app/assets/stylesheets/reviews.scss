@@ -53,9 +53,14 @@
         font-weight: bold;
         font-size: 1.2rem;
       }
+      .post_time {
+        display: inline-block;
+        font-size: 1rem;
+        color: lightgrey;
+      }
       .menu-name, .shop-name {
         display: inline-block;
-        font-size: 1.2rem;
+        font-size: 1rem;
         // background-color: pink;
         text-align: left;
         color: #777;
@@ -80,7 +85,6 @@
     height: 30px;
     margin-top: -5px;
     // background-color: pink;
-    margin-bottom: 5px;
     form.button_to {
       width: 20px;
       display: inline-block;
@@ -99,6 +103,8 @@
   }
   .text-container {
     margin-bottom: 10px;
+    font-size: 1.2rem;
+    margin-top: 5px;
   }
 }
 
