@@ -39,11 +39,12 @@
         #follow_form {
           display: inline-block;
           .f-btn {
-            padding: 1px 4px;
+            padding: 3px 4px;
             margin-left: 5px;
             border-radius: 4px;
             border: 1px solid lightgrey;
-            font-size: 1.2rem;
+            font-size: 1rem;
+            color: lightgrey;
           }
           .follow {
             background-color: #0080FF;
