@@ -150,60 +150,66 @@
 
 
 
-/*=============↓user_profile関連(過去ver)================ */
-//
-// .user_profile_header {
-//   background-color: #fafafa;
-//   height: 200px;
-// }
-//
-// .user_header_left {
-//   height: 100%;
-//   width: 33%;
-//   float: left;
-// }
-//
-// .user_header_left img {
-//   height: 152px;
-//   width: 152px;
-//   border-radius: 50%;
-//   margin-left: 45px;
-//   margin-top: 25px;
-// }
-//
-//
-// .user_header_right {
-//   width: 67%;
-//   height: 100%;
-//   padding-left: 15px;
-//   // background-color: lightgreen;
-//   display: inline-block;
-// }
-//
-// .user_header_right_top {
-//   // background-color: red;
-//   height: 40%;
-// }
-// .user_name {
-//   font-size: 2.5rem;
-//   font-weight: normal;
-//   padding-top: 25px;
-// }
-// .user_header_right_bottom {
-//   padding-bottom: 25px;
-// }
-// .user_header_right_bottom span {
-//   font-size: 1.5rem;
-// }
-//
-//
-// .user_profile_bottom {
-//   // background-color: pink;
-//   min-height: 500px;
-// }
+/*=============↓show_follow================ */
 
 
+/*============フォロー／フォロワー一覧画面関連================= */
 
+.follow-container {
+  margin: 0 auto;
+  .follow_title {
+    font-size: 2rem;
+    padding: 10px 0;
+    text-align: center;
+    color: #777;
+    border-bottom: 1px solid #eee;
+  }
+  .follow_user_container {
+    // background-color: pink;
+    padding: 5px;
+    border-bottom: 1px solid #eee;
+    .f_u_c_left {
+      // background-color: lightblue;
+      display: inline-block;
+      .user_icon {
+        float: left;
+        width: 40px;
+        // background-color: pink;
+        img {
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .f_user_name {
+        font-size: 1.4rem;
+        font-weight: bold;
+        // background-color: blue;
+        padding-top: 14px;
+        margin-left: 5px;
+      }
+    }
+    #follow_form {
+      // background-color: blue;
+      float: right;
+      height: 50px;
+      #follow {
+        background-color: #0080FF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      #unfollow {
+        border-radius: 5px;
+        border: 1px solid #777;
+        color: #777;
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
+  }
+}
 
 
 
