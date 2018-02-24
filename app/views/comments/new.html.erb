@@ -1,53 +1,45 @@
 <div class="comments_container">
   <div class="container">
-  <div class="comments_review_container">
-
-    <div class="comments_review_container_left">
-      <%= link_to image_tag(@review.user.prof_picture, class: "comments_user_icon"),
-      user_path(@review.user_id) %>
-    </div>
-
-    <div class="comments_review_container_right">
-      <span class="comment_review_user_name"><%= link_to @review.user.name, user_path(@review.user_id) %></span>
-      <span class="post_time"><%= @review.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
-      <div class="comment_review_content">
-        <span><%= @review.content %></span>
-      </div>
-    </div>
-  </div>
-
-  <% if @review.comments.present? %>
-    <% @review.comments.each do |comment| %>
-    <div class="comments_review_container_c">
-
+    <div class="comments_review_container">
       <div class="comments_review_container_left">
-        <%= link_to image_tag(comment.user.prof_picture, class: "comments_user_icon"),
-        user_path(comment.user_id) %>
+        <%= link_to image_tag(@review.user.prof_picture, class: "comments_user_icon"),
+        user_path(@review.user_id) %>
       </div>
 
       <div class="comments_review_container_right">
-        <span class="comment_review_user_name"><%= link_to comment.user.name, user_path(comment.user_id) %></span>
-        <span class="post_time"><%= comment.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
+        <span class="comment_review_user_name"><%= link_to @review.user.name, user_path(@review.user_id) %></span>
+        <span class="post_time"><%= @review.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
         <div class="comment_review_content">
-          <span><%= comment.content %></span>
+          <span><%= @review.content %></span>
         </div>
       </div>
     </div>
+
+    <div cla>
+    <% if @review.comments.present? %>
+      <% @review.comments.each do |comment| %>
+      <div class="comments_review_container_c">
+        <div class="comments_review_container_left">
+          <%= link_to image_tag(comment.user.prof_picture, class: "comments_user_icon"),
+          user_path(comment.user_id) %>
+        </div>
+
+        <div class="comments_review_container_right">
+          <span class="comment_review_user_name"><%= link_to comment.user.name, user_path(comment.user_id) %></span>
+          <span class="post_time"><%= comment.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
+          <div class="comment_review_content">
+            <span><%= comment.content %></span>
+          </div>
+        </div>
+      </div>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <!-- <%= form_for(@comment, url: comments_path) do |f| %>
-    <%= f.text_area :content, class: "comment_text_form" %><br/>
-    <%= f.hidden_field :review_id, :value => @review.id %>
-    <%= f.submit '投稿', id: "comment_submit" %>
-  <% end %> -->
+    <%= form_tag(comments_path, class: "comments-form") do %>
+      <%= hidden_field_tag 'comment[review_id]', @review.id %>
+      <%= text_area :comment, :content , :placeholder => "コメントを記入..", class: "comment_text_form" %>
 
-  <%= form_tag(comments_path) do %>
-    <%= text_area :comment, :content , :placeholder => "コメント..", class: "comment_text_form" %></br>
-    <%= hidden_field_tag 'comment[review_id]', @review.id %>
-    <%= submit_tag '投稿', id: "comment_submit" %>
-  <% end %>
-
-
+      <%= submit_tag '投稿する', id: "comment_submit" %>
+    <% end %>
   </div>
 </div><!--.comments_container-->

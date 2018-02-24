@@ -25,16 +25,14 @@
       <%= link_to image_tag(review.user.prof_picture, class: "user-icon-image"), user_path(review.user_id), class: "user-icon" %>
       <div class="name-container">
         <%= link_to review.user.name, user_path(review.user_id), class: "user-name" %>
-        <%= link_to review.menu.name, menu_path(review.menu_id), class: "menu-name" %>
-        <span class="span">/</span>
-        <%= link_to review.menu.shop.name, shop_path(review.menu.shop_id), class: "shop-name" %>
+        <span class="post_time"><%= review.updated_at.strftime("%Y年%m月%d日 %H時%M分") %></span>
       </div>
     </div>
   </div>
 
   <%= link_to image_tag(review.picture), review_path(review), class: "review-image-container" %>
 
-  <div class="icons-container">
+  <!-- <div class="icons-container">
     <div class="container">
       <span id="like-of-<%= review.id %>">
      <%= render partial: "likes/like_links", locals: { review_id: review.id } %>
@@ -55,7 +53,7 @@
       <% end %>
     </a>
     </div>
-  </div>
+  </div> -->
 
   <div class="text-container">
     <div class="container">
