@@ -10,7 +10,8 @@ class Menu < ApplicationRecord
   has_many :desired_menus, class_name: "DesiredMenu",
                           foreign_key: "menu_id",
                           dependent: :destroy
-  validates :shop_id, presence: true;
-  validates :name, presence: true;
-  validates :menu_type, presence: true;
+  validates :shop_id, presence: true
+  validates :name, presence: true,
+                    length: { maximum: 90 }
+  validates :menu_type, presence: true
 end
