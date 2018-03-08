@@ -180,101 +180,7 @@ select {
   border-radius: 0;
   margin-bottom: 10px;
 }
-/*---------- .header ----------*/
-/*// .header {
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   height: 55px;
-//   border-bottom: 1px solid #ddd;
-//   background-color: #fefefe;
-//   // opacity: 1;
-//   z-index: 10;
-// }*/
-/*// .header__container {
-//   display: table;
-//   width: 970px;
-//   height: 55px;
-//   margin: 0 auto;
-//   // background-color: pink;
-// }
-// .header__logo {
-//   display: table-cell;
-//   vertical-align: middle;
-//   width: 150px;
-//   height: 40px;
-//   // padding-left: 10px;
-//   // margin-left: 10px;
-// }
-// .header__logo h1 a{
-//   // background-color: pink;
-//   display: inline-block;
-//   width: 150px;
-//   height: 40px;
-//   overflow: hidden;
-//   text-indent: 100%;
-//   white-space: nowrap;
-//   vertical-align: middle;
-//   background: url(menumeal_logo_7.png) no-repeat 0 0;
-// }*/
-/*// .header__menu {
-//   display: table-cell;
-//   vertical-align: middle;
-//   text-align: right;
-// }
-// .header__menu li {
-//   display: inline-block;
-//   font-size: 1.2rem;
-//   letter-spacing: 1px;
-// }
-// .header__menu li::after {
-//   content: '|';
-//   display: inline-block;
-//   padding: 0 5px;
-// }
-// .header__menu li:last-of-type::after {
-//   content: none;
-// }
-// .header__menu a {
-//   color: #ff8000;
-// }
-// .header__menu a:hover {
-//   border-bottom: 1px solid #ff8000;
-// }
-//*/
 
-/* ------- .container ------- */
-/*main {
-  background-color: #f9f9f9;
-}
-//
-// .main__container {
-//   width: 990px;
-//   margin: 0 auto;
-//   padding-top: 55px; /* header分の余白確保 */
-/*//   // padding-bottom: 0px;
-//   // background-color: grey;
-// }*/
-/* ------------ .footer --------- */
-/*// .footer {
-//   width: 100%;
-//   max-height: 80px;
-//   border-top: 1px solid #ddd;
-//   background-color: #fafafa;
-//   text-align: center;
-// }
-// .footer__container {
-//   width: 970px;
-//   height: 80px;
-//   margin: 0 auto;
-// }
-// .footer__menu {
-//   height: 60px;
-// }
-// .footer__copyright {
-//   color: grey;
-//
-// }*/
  /*======================================================================*/
  /*======================================================================*/
 
@@ -345,6 +251,7 @@ input::-moz-placeholder {
   background-color: #e9e9e9;
   border-top: 1px solid #bbb;
   padding-top: 5px;
+  z-index: 3;
 }
 
 .sp-nav-container {

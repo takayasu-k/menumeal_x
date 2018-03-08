@@ -32,15 +32,16 @@
   max-width: 769px;
   .shop-image {
     width: 100%;
+    max-width: 769px;
     height: 100%;
     background-size: cover;
   }
   .container {
     position: absolute;
-    top: 150px;
+    bottom: 10px;
     height: 40px;
     left: 0;
-    z-index: 10;
+    z-index: 2;
     .shop-name {
       color: #fff;
       font-size: 2rem;
@@ -62,6 +63,8 @@
 /*================= .shop-nav-wrapper ====================*/
 .shop-nav-wrapper {
   height: 40px;
+  max-width: 769px;
+  margin: 0 auto;
   width: 100%;
   background-color: #e4e4e4;
   text-align: center;
@@ -158,6 +161,8 @@
 }
 .shop-info-table {
   width: 100%;
+  max-width: 769px;
+  margin: 0 auto;
   font-size: 1.2rem;
   th, td {
     border: 1px solid #ccc;
