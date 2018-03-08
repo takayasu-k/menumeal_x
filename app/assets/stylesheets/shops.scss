@@ -158,6 +158,8 @@
 }
 .shop-info-table {
   width: 100%;
+  max-width: 769px;
+  margin: 0 auto;
   font-size: 1.2rem;
   th, td {
     border: 1px solid #ccc;
