@@ -21,6 +21,10 @@ class User < ApplicationRecord
   after_create :init_user_profile
   mount_uploader :prof_picture, ImageUploader
 
+  validates :name, presence: true,
+                    uniqueness: true
+  validates :email, uniqueness: true
+
   # 空のユーザープロフィールを作成する
   def init_user_profile
     self.create_user_profile!
@@ -55,7 +59,7 @@ class User < ApplicationRecord
   def like?(review)
     likes.include?(review)
   end
-  
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

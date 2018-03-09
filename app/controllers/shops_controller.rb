@@ -1,7 +1,12 @@
 class ShopsController < ApplicationController
 
+  # def index
+  #   @shops = Shop.all
+  # end
+
   def index
-    @shops = Shop.all
+    @q = Shop.ransack(search_params)
+    @shops = @q.result(distinct: true)
   end
 
   def new
@@ -48,5 +53,9 @@ class ShopsController < ApplicationController
 
     def shop_params
       params.require(:shop).permit(:name, :kana, :address, :tel, :prof_picture)
+    end
+
+    def search_params
+      params.require(:q).permit(:name_cont)
     end
 end
