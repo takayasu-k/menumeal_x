@@ -9,8 +9,8 @@
       <h1 class="sp-title">Menumeal</h1>
       <h1 class="pc-message">おすすめメニューをみつけよう</h1>
       <%= search_form_for(@q, url:shops_path, class: "search-box") do |f| %>
-        <%= f.label :name_cont, "店舗名" %>
-        <%= f.search_field :name_cont, class: "form-control" %>
+        <!-- <%= f.label :name_cont, "店舗名" %> -->
+        <%= f.search_field :name_cont, :placeholder => "店舗名で検索", class: "form-control" %>
         <%= f.submit "検索" %>
       <% end %>
     </div>
