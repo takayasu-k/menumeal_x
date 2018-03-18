@@ -130,6 +130,9 @@ a {
   clear: both;
 }
 
+.notice {
+  background-color: #ff8000;
+}
 /*---------- フォーム関連 ----------*/
 input {
   -webkit-appearance: none;

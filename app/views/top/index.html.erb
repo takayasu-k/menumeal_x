@@ -10,9 +10,16 @@
       <h1 class="pc-message">おすすめメニューをみつけよう</h1>
       <%= search_form_for(@q, url:shops_path, class: "search-box") do |f| %>
         <%= f.label :name_cont, "店舗名" %>
-        <%= f.search_field :name_cont, class: "form-control" %>
+        <%= f.search_field :name_cont, :placeholder => "店舗名で検索", class: "form-control" %>
         <%= f.submit "検索" %>
       <% end %>
+      <!-- <div class="search-box">
+        <ul>
+          <li class="search-item">メニュー</li>
+          <li class="search-item">お店</li>
+          <li class="search-button">検索</li>
+        </ul>
+      </div> -->
     </div>
 </section>
 
@@ -51,12 +58,12 @@
 
 </div><!-- pcsection -->
 
-  <section class="shop-finder-wrapper wrapper">
+  <!-- <section class="shop-finder-wrapper wrapper">
     <div class="container">
       <h1 class="section-title">お店を探す</h1>
       <div class="find-by-location-button"><i class="fa fa-map-marker"></i>　現在位置から探す</div>
     </div>
-  </section>
+  </section> -->
 
   <section class="new-menu-wrapper wrapper">
     <div class="container">
