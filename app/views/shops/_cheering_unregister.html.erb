@@ -1,0 +1,4 @@
+<%= form_tag(cheering_path(@shop), method: :delete ) do |f| %>
+  <div><%= hidden_field_tag :shop_id, @shop.id %></div>
+  <%= submit_tag "応援をやめる", id: "cheering_register_btn" %>
+<% end %>

@@ -34,5 +34,6 @@ Rails.application.routes.draw do
   resources :likes, only: [:create, :destroy]
   get 'comments/:review_id/new' => 'comments#new', as: 'comments_new'
   resources :comments
+  resources :cheerings, only: [:create, :destroy]
 
 end
