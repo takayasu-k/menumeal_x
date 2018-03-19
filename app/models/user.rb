@@ -18,6 +18,9 @@ class User < ApplicationRecord
                                  dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :cheerings, class_name: "Cheering",
+                      foreign_key: "user_id",
+                      dependent: :destroy
   after_create :init_user_profile
   mount_uploader :prof_picture, ImageUploader
 
@@ -60,6 +63,11 @@ class User < ApplicationRecord
     likes.include?(review)
   end
 
+  # 現在のユーザーが応援していたらtrueを返す
+  def registering_cheering?(shop)
+    cheerings.include?(shop)
+  end
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
