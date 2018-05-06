@@ -1,6 +1,6 @@
 class Menu < ApplicationRecord
   enum status: { available:0, sold_out:1, end_of_sale:2 }
-  enum menu_type: { food:0, drink:1, others:2 }
+  enum menu_type: { food:0, drink:1, course:2, others:9 }
   belongs_to :shop
   has_many :reviews
   has_many :users

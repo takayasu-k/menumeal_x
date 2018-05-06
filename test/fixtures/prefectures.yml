@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  prefecture_id: 1 
+  name: 北海道
+
+two:
+  prefecture_id: 2
+  name: 青森県
+
+three:
+  prefecture_id: 3
+  name: 岩手県

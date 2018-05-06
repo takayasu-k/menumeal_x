@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180318133215) do
+ActiveRecord::Schema.define(version: 20180506094156) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -83,10 +83,18 @@ ActiveRecord::Schema.define(version: 20180318133215) do
     t.integer  "shop_id"
     t.string   "name"
     t.integer  "price"
-    t.integer  "status",     default: 0, null: false
-    t.integer  "menu_type",  default: 0, null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "status",       default: 0, null: false
+    t.integer  "menu_type",    default: 0, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.string   "prof_picture"
+  end
+
+  create_table "prefectures", force: :cascade do |t|
+    t.integer  "prefecture_id"
+    t.string   "name"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -129,9 +137,11 @@ ActiveRecord::Schema.define(version: 20180318133215) do
     t.string   "address"
     t.string   "tel"
     t.string   "prof_picture"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.string   "kana"
+    t.integer  "tkg_flg",       default: 0, null: false
+    t.integer  "prefecture_id", default: 0, null: false
   end
 
   create_table "user_profiles", force: :cascade do |t|

@@ -5,9 +5,60 @@ one:
   address: MyString
   tel: MyString
   prof_picture: MyString
+  kana: MyString
+  tkg_flg: 1
+  prefecture_id: 1
 
 two:
   name: MyString
   address: MyString
   tel: MyString
   prof_picture: MyString
+  kana: MyString
+  tkg_flg: 1
+  prefecture_id: 1
+
+three:
+  name: MyString
+  address: MyString
+  tel: MyString
+  prof_picture: MyString
+  kana: MyString
+  tkg_flg: 1
+  prefecture_id: 2
+
+four:
+  name: MyString
+  address: MyString
+  tel: MyString
+  prof_picture: MyString
+  kana: MyString
+  tkg_flg: 1
+  prefecture_id: 3
+
+five:
+  name: MyString
+  address: MyString
+  tel: MyString
+  prof_picture: MyString
+  kana: MyString
+  tkg_flg: 1
+  prefecture_id: 3
+
+six:
+  name: MyString
+  address: MyString
+  tel: MyString
+  prof_picture: MyString
+  kana: MyString
+  tkg_flg: 1
+  prefecture_id: 3
+
+seven:
+  name: MyString
+  address: MyString
+  tel: MyString
+  prof_picture: MyString
+  kana: MyString
+  tkg_flg: 0
+  prefecture_id: 2

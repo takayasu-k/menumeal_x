@@ -4,6 +4,7 @@ class Shop < ApplicationRecord
                       foreign_key: "shop_id",
                       dependent: :destroy
   has_one :shop_detail
+  belongs_to :prefecture
   mount_uploader :prof_picture, ImageUploader
   validates :name, presence: true;
   validates :address, presence: true;

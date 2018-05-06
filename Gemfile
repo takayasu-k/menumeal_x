@@ -45,10 +45,16 @@ gem 'mini_magick'
 # gem 'rmagick', require: 'RMagick'
 gem 'google-analytics-rails'
 gem 'ransack'
+gem 'rack-cors'
+gem 'swagger-blocks'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+  # gem 'rspec-rails'
+  # gem 'factory_girl_rails'
+  # gem 'guard-rspec'
+  # gem 'spring-commands-rspec'
 end
 
 group :development do
