@@ -1,10 +1,11 @@
 require 'test_helper'
 
-class ShopsControllerTest < ActionDispatch::IntegrationTest
+class PrefShopsTest < ActionDispatch::IntegrationTest
+  
   def setup
-    prefectures(:one)
-    prefectures(:two)
-    prefectures(:three)
+    prefecures(:one)
+    prefecures(:two)
+    prefecures(:three)
     shops(:one)
     shops(:two)
     shops(:three)
@@ -15,7 +16,7 @@ class ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get search" do
-    get search_shops_url, as: :json
+    get search_shops, as: :json
     assert_response :success
   end
 end
