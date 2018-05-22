@@ -16,15 +16,13 @@
         <%= link_to "Menumeal", root_path, class: "logo" %>
         <nav class="header-nav-container">
           <ul>
-            <% if user_signed_in? %>
-              <%= link_to "使い方", top_about_path, class: "header-nav-item" %>
-              <%= link_to "投稿する", new_review_path, class: "header-nav-item" %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-nav-item" %>
-              <%= link_to "マイページ", user_path(current_user), class: "header-nav-item" %>
+            <% if admin_user_signed_in? %>
+              <%= link_to "使い方", admin_top_about_path, class: "header-nav-item" %>
+              <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete, class: "header-nav-item" %>
             <% else %>
-              <%= link_to "使い方", top_about_path, class: "header-nav-item" %>
-              <%= link_to '無料会員登録', new_user_registration_path, class: "header-nav-item" %>
-              <%= link_to 'ログイン', new_user_session_path, class: "header-nav-item" %>
+              <%= link_to "使い方", admin_top_about_path, class: "header-nav-item" %>
+              <%= link_to '無料会員登録', new_admin_user_registration_path, class: "header-nav-item" %>
+              <%= link_to 'ログイン', new_admin_user_session_path, class: "header-nav-item" %>
             <% end %>
           </ul>
         </nav>
@@ -35,37 +33,12 @@
       <p class="alert"><%= alert %></p>
       <%= yield %>
   </main>
-  <% if user_signed_in? %>
+  <% if admin_user_signed_in? %>
     <nav class="sp-nav-wrapper">
       <ul class="sp-nav-container">
         <li class="sp-nav-item">
-          <a href="<%= reviews_path %>">
             <div class="sp-nav-icon"></div>
             <span class="sp-nav-text">ホーム</span>
-          </a>
-        </li>
-        <li class="sp-nav-item">
-          <a href="#">
-            <div class="sp-nav-icon"></div>
-            <span class="sp-nav-text">みつける</span>
-          </a>
-        </li>
-        <li class="sp-nav-item">
-          <a href="<%= new_review_path %>">
-            <div class="sp-nav-icon"></div>
-            <span class="sp-nav-text">投稿</span>
-          </a>
-        </li>
-        <li class="sp-nav-item">
-          <a href="#">
-            <div class="sp-nav-icon"></div>
-            <span class="sp-nav-text">通知</span>
-          </a>
-        </li>
-        <li class="sp-nav-item">
-          <a href="<%= user_path(current_user) %>">
-            <div class="sp-nav-icon"></div>
-            <span class="sp-nav-text">マイページ</span>
           </a>
         </li>
       </ul>
@@ -75,7 +48,7 @@
     <div class="container">
       <ul>
         <li><%= link_to "Menumeal", root_path, class: "footer-item" %></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "footer-item" %></li>
+        <li><%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete, class: "footer-item" %></li>
         <li><%= link_to "運営会社", "#", class: "footer-item" %></li>
         <li><%= link_to "利用規約", "#", class: "footer-item" %></li>
         <li><%= link_to "プライバシーポリシー", "#", class: "footer-item" %></li>
