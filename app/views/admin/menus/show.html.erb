@@ -1,0 +1,16 @@
+<section class="menu-show-header">
+  <div class="container">
+  <div class="menu-header-top">
+    <%= link_to "Top", root_path %>
+    <span> > </span>
+    <%= link_to @menu.shop.name, admin_shop_menu_path(@menu.shop) %>
+  </div>
+  <h2 class="menu-header-menu-name"><%= @menu.name %></h2>
+  <span class="menu-header-menu-price"><%= @menu.price %>円</span>
+  </div>
+</section>
+<nav class="sort-btn-wrapper">
+  <div class="container">
+    <a href="#" class="sort-btn">▼</a>
+  </div>
+</nav>

@@ -1,0 +1,52 @@
+<nav class="sp-header">
+  <div class="container">
+    <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
+  </div>
+</nav>
+
+<section class="sp-form-wrapper">
+  <h1 class="sp-form-title"><%= @shop.name %>の詳細情報を修正</h1>
+  <%= form_for(@shop_detail, url: admin_shop_detail_path(@shop)) do |f| %>
+    <!-- <%= f.label :access, 'アクセス情報' %><br/> -->
+    <h3 class="sp-form-label">アクセス情報</h3>
+    <%= f.text_field :access, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :parking, '駐車場' %><br/> -->
+    <h3 class="sp-form-label">駐車場</h3>
+    <%= f.text_field :parking, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :operating_hours,'営業時間' %><br/> -->
+    <h3 class="sp-form-label">営業時間</h3>
+    <%= f.text_area :operating_hours, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :holiday, '定休日' %><br/> -->
+    <h3 class="sp-form-label">定休日</h3>
+    <%= f.text_area :holiday, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :budget, '予算' %><br/> -->
+    <h3 class="sp-form-label">予算</h3>
+    <%= f.text_field :budget, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :payment, '支払い方法' %><br/> -->
+    <h3 class="sp-form-label">支払い方法</h3>
+    <%= f.text_field :payment, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :seats, '席数' %><br/> -->
+    <h3 class="sp-form-label">席数</h3>
+    <%= f.number_field :seats, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :private_room, '個室の有無' %><br/> -->
+    <h3 class="sp-form-label">個室</h3>
+    <%= f.text_field :private_room, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :smoking, '喫煙情報' %><br/> -->
+    <h3 class="sp-form-label">喫煙</h3>
+    <%= f.text_field :smoking, class: "sp-form-text" %><br/>
+
+    <!-- <%= f.label :bar, 'カウンター席' %><br/> -->
+    <h3 class="sp-form-label">カウンター席</h3>
+    <%= f.text_field :bar, class: "sp-form-text" %><br/>
+
+    <%= f.submit '情報を修正', class: "sp-form-submit" %>
+<% end %>
+</section>

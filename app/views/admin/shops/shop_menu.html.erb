@@ -1,0 +1,39 @@
+<div class="shop_menus_container">
+<nav class="sp-header">
+  <div class="container">
+    <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
+  </div>
+</nav>
+
+<section class="shop-top-wrapper">
+  <%= image_tag(@shop.prof_picture, class: "shop-image") %>
+  <div class="container">
+    <h1 class="shop-name"><%= @shop.name %></h1>
+    <% if @shop.kana.present? %>
+      <span class="shop-kana">(<%= @shop.kana %>)</span>
+    <% end %>
+  </div>
+</section>
+<nav class="shop-nav-wrapper">
+  <%= link_to "基本情報", admin_shop_path(@shop.id), class:"shop-nav-item" %>
+  <%= link_to "メニュー", admin_shop_menu_path(@shop.id), class:"shop-nav-item" %>
+</nav>
+
+<section class="shop-menus-wrapper">
+  <nav class="shop-menus-header">
+    <div class="container">
+      <%= link_to "＋", new_admin_menu_path, class: "shop-menus-header-item" %>
+    </div>
+  </nav>
+  <div class="container">
+    <ul>
+      <% @shop_menus.each do |menu| %>
+        <%= link_to(admin_menu_path(menu), class: "menu-container-li") do %>
+          <span class="menu-name"><%= menu.name %></span>
+          <span class="menu-price"><%= menu.price %>円</span>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+
+</section>

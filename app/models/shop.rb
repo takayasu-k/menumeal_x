@@ -1,4 +1,5 @@
 class Shop < ApplicationRecord
+  enum tkg_flg: { not_tkg:0, tkg:1}
   has_many :menus
   has_many :cheerings, class_name: "Cheering",
                       foreign_key: "shop_id",
