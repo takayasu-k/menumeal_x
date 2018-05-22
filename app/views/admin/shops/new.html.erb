@@ -1,0 +1,41 @@
+<nav class="sp-header">
+  <div class="container">
+    <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
+  </div>
+</nav>
+
+<section class="sp-form-wrapper">
+<h1 class="sp-form-title">店舗登録</h1>
+<%= form_for(@shop, url: admin_shops_path) do |f| %>
+  <!-- <%= f.label :name, '店舗名', class: "sp-form-label" %><br/> -->
+  <h3 class="sp-form-label">店舗名</h3>
+  <%= f.text_field :name, size: 25, placeholder: "例) menumealカフェ", class: "sp-form-text" %><br/>
+
+  <!-- <%= f.label :kana, 'よみがな(店舗名)', class: "sp-form-label" %><br/> -->
+  <h3 class="sp-form-label">よみがな(店舗名)</h3>
+  <%= f.text_field :kana, size: 25, placeholder: "例) めにゅみーるかふぇ", class: "sp-form-text" %><br/>
+
+  <!-- <%= f.label :address,'住所', class: "sp-form-label" %><br/> -->
+  <h3 class="sp-form-label">住所</h3>
+  <%= f.text_field :address, size: 25, placeholder: "例) 東京都 ◯◯ ◯◯", class: "sp-form-text" %><br/>
+
+  <!-- <%= f.label :tel, '電話番号', class: "sp-form-label" %><br/> -->
+  <h3 class="sp-form-label">電話番号</h3>
+  <%= f.text_field :tel, size: 12, placeholder: "例) 0000-00-0000", class: "sp-form-text" %><br/>
+
+  <h3 class="sp-form-label">画像</h3>
+  <%= f.label :prof_picture, '　画像追加', {class: "input_file fa fa-camera"} %><br/>
+  <%= f.file_field :prof_picture %><br/>
+
+  <!-- <%= f.label :tkg_flg, 'TKGフラグ' %><br/> -->
+  <h3 class="sp-form-label">TKGフラグ</h3>
+  <%= f.select :tkg_flg, ['not_tkg', 'tkg'],
+          { include_blank: '選択してください' }, class: "sp-form-text" %><br/>
+  
+  <!-- <%= f.label :prefecture_id, '都道府県ID', class: "sp-form-label" %><br/> -->
+  <h3 class="sp-form-label">都道府県ID</h3>
+  <%= f.number_field :prefecture_id, size: 12, class: "sp-form-text" %><br/>
+
+  <%= f.submit '店舗を登録', class: "sp-form-submit" %>
+<% end %>
+<section>

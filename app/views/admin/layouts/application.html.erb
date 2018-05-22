@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Menumeal</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= analytics_init if Rails.env.production? %>
+  </head>
+
+  <body>
+  <header class="global-header">
+      <div class="container">
+        <%= link_to "Menumeal", root_path, class: "logo" %>
+        <nav class="header-nav-container">
+          <ul>
+            <% if admin_user_signed_in? %>
+              <%= link_to "使い方", admin_top_about_path, class: "header-nav-item" %>
+              <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete, class: "header-nav-item" %>
+            <% else %>
+              <%= link_to "使い方", admin_top_about_path, class: "header-nav-item" %>
+              <%= link_to '無料会員登録', new_admin_user_registration_path, class: "header-nav-item" %>
+              <%= link_to 'ログイン', new_admin_user_session_path, class: "header-nav-item" %>
+            <% end %>
+          </ul>
+        </nav>
+  </header>
+
+  <main class="main">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+  </main>
+  <% if admin_user_signed_in? %>
+    <nav class="sp-nav-wrapper">
+      <ul class="sp-nav-container">
+        <li class="sp-nav-item">
+            <div class="sp-nav-icon"></div>
+            <span class="sp-nav-text">ホーム</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  <% end %>
+  <footer class="footer wrapper">
+    <div class="container">
+      <ul>
+        <li><%= link_to "Menumeal", root_path, class: "footer-item" %></li>
+        <li><%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete, class: "footer-item" %></li>
+        <li><%= link_to "運営会社", "#", class: "footer-item" %></li>
+        <li><%= link_to "利用規約", "#", class: "footer-item" %></li>
+        <li><%= link_to "プライバシーポリシー", "#", class: "footer-item" %></li>
+        <li><%= link_to "取材申し込み", "#", class: "footer-item" %></li>
+      </ul>
+      <span class="copyright">© Menumeal, Inc. All Right Reserved.</span>
+    </div>
+  </footer>
+  </body>
+</html>

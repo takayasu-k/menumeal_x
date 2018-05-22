@@ -1,0 +1,86 @@
+<!-- 店舗トップページ -->
+<nav class="sp-header">
+  <div class="container">
+    <%= link_to "Menumeal", root_path, class: "sp-header-logo" %>
+  </div>
+</nav>
+
+<section class="shop-top-wrapper">
+<%= image_tag(@shop.prof_picture, class: "shop-image") %>
+  <div class="container">
+    <h1 class="shop-name"><%= @shop.name %></h1>
+    <% if @shop.kana.present? %>
+      <span class="shop-kana">(<%= @shop.kana %>)</span>
+    <% end %>
+  </div>
+</section>
+<nav class="shop-nav-wrapper">
+  <%= link_to "基本情報", admin_shop_path(@shop.id), class:"shop-nav-item" %>
+  <%= link_to "メニュー", admin_shop_menu_path(@shop.id), class:"shop-nav-item" %>
+</nav>
+<section class="shop-info-wrapper">
+    <div class="shop-base-info-wrapper">
+      <div class="container">
+        <h2 class="section-title">基本情報</h2>
+        <%= link_to "修正", edit_admin_shop_path(@shop), class: "edit-form" %>
+      </div>
+      <table class="shop-info-table">
+        <tr>
+          <th>電話番号</th>
+          <td><%= @shop.tel %></td>
+        </tr>
+        <tr>
+          <th>住所</th>
+          <td><%= @shop.address %></td>
+        </tr>
+      </table>
+    </div>
+    <div class="shop-detail-info-wrapper">
+      <div class="container">
+      <h2 class="section-title">詳細情報</h2>
+      <%= link_to "修正", edit_admin_shop_detail_path(@shop), class: "edit-form" %>
+      </div>
+      <table class="shop-info-table">
+        <tr>
+          <th>営業時間</th>
+          <td><%= simple_format(@shop_detail.operating_hours) %></td>
+        </tr>
+        <tr>
+          <th>定休日</th>
+          <td><%= @shop_detail.holiday %></td>
+        </tr>
+        <tr>
+          <th>アクセス</th>
+          <td><%= @shop_detail.access %></td>
+        </tr>
+        <tr>
+          <th>予算</th>
+          <td><%= @shop_detail.budget %></td>
+        </tr>
+        <tr>
+          <th>支払い方法</th>
+          <td><%= @shop_detail.payment %></td>
+        </tr>
+        <tr>
+          <th>席数</th>
+          <td><%= @shop_detail.seats %></td>
+        </tr>
+        <tr>
+          <th>個室</th>
+          <td><%= @shop_detail.private_room %></td>
+        </tr>
+        <tr>
+          <th>カウンター席</th>
+          <td><%= @shop_detail.bar %></td>
+        </tr>
+        <tr>
+          <th>喫煙</th>
+          <td><%= @shop_detail.smoking %></td>
+        </tr>
+        <tr>
+          <th>駐車場</th>
+          <td><%= @shop_detail.parking %></td>
+        </tr>
+      </table>
+    </div>
+</section>

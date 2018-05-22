@@ -1,25 +1,32 @@
 Rails.application.routes.draw do
-  get 'api-docs', to: 'api_docs#index'
 
-  # devise_for :admin_users, controllers: {
-  #   sessions:      'admin_users/sessions',
-  #   passwords:     'admin_users/passwords',
-  #   registrations: 'admin_users/registrations'
-  # }
+  
+  devise_for :admin_users, controllers: {
+    sessions:      'admin_users/sessions',
+    passwords:     'admin_users/passwords',
+    registrations: 'admin_users/registrations'
+  }
+  namespace :admin do
+    get 'top/index'
+    get 'top/about'
+    get 'top/show'
+    resources :shops
+    resources :shop_details
+    resources :menus
+    get 'shops/:id/menu' => 'shops#shop_menu', as: 'shop_menu'
+    get 'shop_detail/:id/new' => 'shop_details#new', as: 'shop_detail_new'
+  end
+
   # devise_for :users, controllers: {
   #   sessions:      'users/sessions',
   #   passwords:     'users/passwords',
   #   registrations: 'users/registrations'
   # }
 
-  # root 'top#index'
-  # get 'top/index'
-  # get 'top/about'
-  # get 'top/show'
+  root 'top#index'
 
-  resources :shops do
-    get 'search', on: :collection
-  end
+  get 'api-docs', to: 'api_docs#index'
+  get 'shops/search'
 
   # get 'shops/:id/menu' => 'shops#shop_menu', as: 'shop_menu'
   # resources :menus
