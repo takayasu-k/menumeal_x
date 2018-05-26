@@ -11,6 +11,7 @@ class Admin::ShopsController < Admin::ApplicationController
 
   def new
     @shop = Shop.new()
+    @prefectures = Prefecture.all
   end
 
   def create
