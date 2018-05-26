@@ -3,8 +3,8 @@
     <ul>
     <% @shops.each do |shop| %>
     <li class="shop-container">
-      <%= link_to image_tag(shop.prof_picture, class: "shop-image"), shop_path(shop), class: "shop-container-left" %>
-      <%= link_to shop.name, shop_path(shop), class: "shop-name" %>
+      <%= link_to image_tag(shop.prof_picture, class: "shop-image"), admin_shop_path(shop), class: "shop-container-left" %>
+      <%= link_to shop.name, admin_shop_path(shop), class: "shop-name" %>
     </li>
     <% end %>
     </ul>

@@ -34,7 +34,7 @@
   
   <!-- <%= f.label :prefecture_id, '都道府県ID', class: "sp-form-label" %><br/> -->
   <h3 class="sp-form-label">都道府県ID</h3>
-  <%= f.number_field :prefecture_id, size: 12, class: "sp-form-text" %><br/>
+  <%= f.collection_select :prefecture_id, @prefectures, :prefecture_id, :name %><br/>
 
   <%= f.submit '店舗を登録', class: "sp-form-submit" %>
 <% end %>
