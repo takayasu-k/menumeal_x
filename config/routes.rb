@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   
-  devise_for :admin_users, controllers: {
+  devise_for :admin_users, skip: [:registrations], controllers: {
     sessions:      'admin_users/sessions',
     passwords:     'admin_users/passwords'
   }
@@ -12,8 +12,8 @@ Rails.application.routes.draw do
     resources :shops
     resources :shop_details
     resources :menus
-    get 'shops/:id/menu' => 'shops#shop_menu', as: 'shop_menu'
-    get 'shop_detail/:id/new' => 'shop_details#new', as: 'shop_detail_new'
+    get 'shops/:id/menus' => 'shops#shop_menu', as: 'shop_menu'
+    get 'shop_details/:id/new' => 'shop_details#new', as: 'shop_detail_new'
   end
 
   # devise_for :users, controllers: {
@@ -25,7 +25,8 @@ Rails.application.routes.draw do
   root 'top#index'
 
   get 'api-docs', to: 'api_docs#index'
-  get 'shops/search'
+  get 'pref_shops/search'
+  get 'pref_shops/:prefecture_id/shops/search' => 'shops#search', as: 'shops_search_by_prefecture'
 
   # get 'shops/:id/menu' => 'shops#shop_menu', as: 'shop_menu'
   # resources :menus
