@@ -3,7 +3,7 @@
     <div class="container">
       <div class="top-wrapper-header">
         <% unless admin_user_signed_in? %>
-          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "ログイン", new_admin_user_session_path %>
         <% end %>
       </div>
       <h1 class="sp-title">Menumeal</h1>
