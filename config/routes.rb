@@ -26,7 +26,10 @@ Rails.application.routes.draw do
 
   get 'api-docs', to: 'api_docs#index'
   get 'pref_shops/search'
-  get 'pref_shops/:prefecture_id/shops/search' => 'shops#search', as: 'shops_search_by_prefecture'
+  get 'pref_shops/:prefecture_id/shops/search' => 'shops#search_by_prefecture', as: 'shops_search_by_prefecture'
+  get 'shops/search' => 'shops#search_by_keyword', as: 'shops_search_by_keyword'
+  get 'shops/:id' => 'shops#shop_detail', as: 'shop_detail'
+  get 'shops/:id/menus' => 'shops#shop_menu', as: 'shop_menu'
 
   # get 'shops/:id/menu' => 'shops#shop_menu', as: 'shop_menu'
   # resources :menus
