@@ -14,4 +14,5 @@ class Menu < ApplicationRecord
   validates :name, presence: true,
                     length: { maximum: 90 }
   validates :menu_type, presence: true
+  mount_uploader :prof_picture, ImageUploader
 end
