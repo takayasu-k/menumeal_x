@@ -26,6 +26,10 @@
   <%= f.select :menu_type, ['food', 'drink', 'course', 'others'],
           { include_blank: '選択してください' }, class: "sp-form-text" %><br/>
 
+  <h3 class="sp-form-label">画像</h3>
+  <%= f.label :prof_picture, '　画像追加', {class: "input_file fa fa-camera"} %><br/>
+  <%= f.file_field :prof_picture %><br/>
+        
   <%= f.submit 'メニューを修正', class: "sp-form-submit" %>
 <% end %>
 </section>

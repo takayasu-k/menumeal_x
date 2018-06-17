@@ -6,8 +6,17 @@ class ShopsController < ApplicationController
   end
 
   def search_by_keyword
-    @shops = Shop.where('tkg_flg = 1')
-                  .where('name LIKE ?', "%#{params[:q]}%")
+    keywords = params[:q].gsub(/¥s|　/, ' ').split(" ") unless params[:q].blank?
+    if keywords.present?
+      keywords.each_with_index do |keyword, i|
+        if i == 0
+          @shops = Shop.where('name LIKE ?', "%#{keyword}%")
+          next
+        end
+        @shops = @shops.where('name LIKE ?', "%#{keyword}%")
+      end
+      @shops = @shops.where('tkg_flg = 1')
+    end
     render json: @shops, only:[:id, :name, :address, :tel, :prof_picture]
   end
 
