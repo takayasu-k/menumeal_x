@@ -11,4 +11,12 @@ class Review < ApplicationRecord
   def like_user(user_id)
     likes.find_by(user_id: user_id)
   end
+
+  class << self
+    def search_by_menu(menu_id)
+      left_outer_joins(:user)
+        .select('reviews.id as review_id, users.name as user_name, reviews.content, reviews.updated_at')
+        .where(menu_id: menu_id)
+    end
+  end
 end
