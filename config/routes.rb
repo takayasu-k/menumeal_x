@@ -17,12 +17,15 @@ Rails.application.routes.draw do
 
   root 'top#index'
 
+  mount_devise_token_auth_for 'User', at: 'auth', skip: [:token_validations, :omniauth_callbacks]
   get 'api-docs', to: 'api_docs#index'
   get 'pref_shops/search'
   get 'pref_shops/:prefecture_id/shops/search' => 'shops#search_by_prefecture', as: 'shops_search_by_prefecture'
   get 'shops/search' => 'shops#search_by_keyword', as: 'shops_search_by_keyword'
   get 'shops/:id' => 'shops#shop_detail', as: 'shop_detail'
   get 'shops/:id/menus' => 'shops#shop_menu', as: 'shop_menu'
+  resources :reviews, only: [:create, :update, :destroy]
+  get 'menus/:id/reviews' => 'reviews#index'
 
   # devise_for :users, controllers: {
   #   sessions:      'users/sessions',
@@ -32,7 +35,6 @@ Rails.application.routes.draw do
 
   # get 'shops/:id/menu' => 'shops#shop_menu', as: 'shop_menu'
   # resources :menus
-  # resources :reviews
   # get 'shop_detail/:id/new' => 'shop_details#new', as: 'shop_detail_new'
   # resources :shop_details
   # resources :user_profiles

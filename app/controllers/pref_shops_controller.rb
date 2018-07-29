@@ -7,7 +7,7 @@ class PrefShopsController < ApplicationController
                   .select('shops.prefecture_id as pref_id, prefectures.name as pref_name, count(shops.id) as shop_count')
                   .where(tkg_flg: 1).where.not(prefecture_id: 0)
                   .group('prefecture_id')
-    render json: @pref_shops
+    render json: @pref_shops, except:[:id]
   end
 
 end
