@@ -17,6 +17,7 @@ class Review < ApplicationRecord
       left_outer_joins(:user)
         .select('reviews.id as review_id, users.name as user_name, reviews.content, reviews.updated_at')
         .where(menu_id: menu_id)
+        .order(id: :desc)
     end
   end
 end
